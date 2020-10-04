@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { AboutUs } from "../AboutUs/AboutUs";
 import {
   Collapse,
   Navbar,
@@ -11,51 +12,53 @@ import {
 
 const links = [
   { href: "#home", text: "Inicio" },
-  { href: "#gallery", text: "Galeria" },
+  { href: "AboutUs", text: "Historia" },
   { href: "#adoptions", text: "Adopciones" },
-  { href: "#others", text: "Otros" },
-  { href: "#others0", text: "Otros0" },
-  { href: "#others1", text: "Otros1" },
+  { href: "#store", text: "Tienda" },
+  { href: "#voluntary", text: "Voluntariado" },
+  { href: "#galery", text: "Galeria" },
   { href: "#others2", text: "Otros2", className: "btnadd" },
   { href: "/donations", text: "Donaciones" },
 ];
 
-const createNavItem = ( { href, text, className } ) => (
+const createNavItem = ({ href, text, className }) => (
   <NavItem>
-    <NavLink href = { href } className = { className } >
-      { text }
+    <NavLink href={href} className={className}>
+      {text}
     </NavLink>
   </NavItem>
 );
 
 export default class AppNav extends Component {
-  constructor( props ) {
-    super( props );
+  constructor(props) {
+    super(props);
 
     this.state = {
       isOpen: false,
     };
 
-    this.toggle = this.toggle.bind( this );
+    this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
-    this.setState( {
+    this.setState({
       isOpen: !this.state.isOpen,
-    } );
+    });
   }
 
   render() {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/"><img
-            src="/img/logo 1.png"
-            width="60"
-            height="40"
-            alt=""
-            loading="lazy"
-          /></NavbarBrand>
+          <NavbarBrand href="/">
+            <img
+              src="/img/logo 1.png"
+              width="60"
+              height="40"
+              alt=""
+              loading="lazy"
+            />
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -67,7 +70,6 @@ export default class AppNav extends Component {
     );
   }
 }
-
 
 // export const AppNav = () => {
 //     return (
@@ -109,7 +111,7 @@ export default class AppNav extends Component {
 //               </li>
 
 //               <li class="nav-item dropdown">
-               
+
 //                 <a
 //                   class="nav-link dropdown-toggle"
 //                   href="#"
@@ -120,60 +122,59 @@ export default class AppNav extends Component {
 //                   aria-expanded="false"
 //                 >
 //                   Adopta
-                
+
 //                 </a>
 
 //                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                
+
 //                   <a class="dropdown-item" href="#">
-                
+
 //                     Galeria
-                
+
 //                   </a>
 
 //                   <a class="dropdown-item" href="#">
-                
+
 //                     Formulario de Adopcion
-                
+
 //                   </a>
 
 //                   <div class="dropdown-divider"></div>
 
 //                   <a class="dropdown-item" href="#">
-                
+
 //                     Something else here
-                
+
 //                   </a>
 //                 </div>
 //               </li>
 
 //               <li class="nav-item">
-               
+
 //                 <a class="nav-link" href="#">
-               
+
 //                   Disabled
-               
+
 //                 </a>
-              
+
 //               </li>
-            
+
 //             </ul>
-            
+
 //               <button
 //                 class="btn btn-outline-success my-2 my-lg-0 my-2 my-sm-0"
 //                 type="submit"
 //               >
-               
+
 //                 Donaciones
-              
+
 //               </button>
-          
+
 //           </div>
-        
+
 //         </nav>
-      
+
 //       </div>
 //     );
 
-    
 // };
