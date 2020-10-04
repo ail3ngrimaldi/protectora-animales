@@ -1,0 +1,25 @@
+/* @import '../../main/vars.css'; */
+
+@media only screen and (max-width: 992px) {
+    .Navik{
+        background-color: black;
+    }
+}
+
+
+a.testing{
+    color: white;
+}
+
+.navLink:hover{
+    color: var(--hov-color);
+}
+
+:root {
+    --background-color: black ;
+    --text-color: #dddddd;
+    --text-font-family: Fira Sans,sans-serif;
+    --card-color: #0f0f0f;
+    --card-bgd-color:#0f0f0f;
+    --hov-color: #38B2AC;
+  }

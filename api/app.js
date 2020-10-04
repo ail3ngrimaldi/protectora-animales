@@ -1,20 +1,27 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const morgan = require('morgan');
+const exphbs = require('express-handlebars');
+const path = require('path');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
 
-var app = express();
+//settings
+app.set('port', process.env.PORT || 4000);
+app.set('views', path.join(__dirname + '../../client' , 'src'));
+app.engine('.js', exphbs({
+    defaultLayout: 'App',
+    extname: '.js'
+}));
+app.set('view engine', '.js');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+//middlewares
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: false}));
+
+//routes
+app.use(require('./routes/index.js'))
+
+//static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-module.exports = app;
+module.exports = app
