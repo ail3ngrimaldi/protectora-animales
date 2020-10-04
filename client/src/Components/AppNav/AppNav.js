@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { AboutUs } from "../AboutUs/AboutUs";
 import {
   Collapse,
   Navbar,
@@ -11,10 +12,10 @@ import {
 
 const links = [
   { href: "#home", text: "Inicio" },
-  { href: "#history", text: "¿Quienes somos?" },
+  { href: "AboutUs", text: "Historia" },
   { href: "#adoptions", text: "Adopciones" },
   { href: "#store", text: "Tienda" },
-  { href: "#voluntary", text: "Voluntarios" },
+  { href: "#voluntary", text: "Voluntariado" },
   { href: "#galery", text: "Galeria" },
   { href: "#others2", text: "Otros2", className: "btnadd" },
   { href: "/donations", text: "Donaciones" },
