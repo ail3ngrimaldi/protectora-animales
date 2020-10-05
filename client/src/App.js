@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from "react-redux";
+import CreateProject from './Components/projects/CreateProject'
 
 import { Home } from './Components/Home/Home'
 
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Switch>
            <Route exact path="/" component={Home} />
+           <Route exact path="/createproject" component={CreateProject} />
         
           {/* <Route component={NotFound} /> */}
         </Switch>
