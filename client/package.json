@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "connect": "^3.7.0",
     "firebase": "^7.22.0",
+    "jquery": "^3.5.1",
     "mdbreact": "^4.27.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
