@@ -1,0 +1,12 @@
+"use strict";
+
+module.exports = {
+  parse: {
+    prelude: function prelude() {
+      return this.createSingleNodeList(this.SelectorList());
+    },
+    block: function block() {
+      return this.Block(true);
+    }
+  }
+};
