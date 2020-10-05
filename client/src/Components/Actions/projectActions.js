@@ -1,4 +1,4 @@
-const createProject = project => {
+export const createProject = project => {
     return (dispatch, getState, {getFirestore, getFirebase}) => {
         
         const firestore = getFirestore();
@@ -8,7 +8,7 @@ const createProject = project => {
             Nombre:'José',
             Apellido: 'Cabrales',
             Comentario: 'Esto se subió a través del proyecto',
-            id: 1234566
+            id:123456
         }).then(() => {
             dispatch({type:'CREATE_PROJECT_SUCCESS', project})
         }).catch(error => {
@@ -16,5 +16,3 @@ const createProject = project => {
         })
     }
 }
-
-export default createProject

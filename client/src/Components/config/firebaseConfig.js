@@ -14,6 +14,6 @@ import 'firebase/auth';
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  //firebase.store();
+  firebase.firestore();
 
   export default firebase
