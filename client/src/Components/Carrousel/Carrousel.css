@@ -1,0 +1,8 @@
+.carousel {
+  padding: 1.8em;
+}
+
+.carousel-item img {
+  width: 10px;
+  height: 550px;
+}

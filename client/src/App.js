@@ -1,15 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import CreateProject from './Components/projects/CreateProject'
+import CreateProject from "./Components/projects/CreateProject";
 
-import { Home } from './Components/Home/Home'
-import { Gallery } from './Components/Gallery/Gallery'
-
+import { Home } from "./Components/Home/Home";
+import { AboutUs } from "./Components/AboutUs/AboutUs";
+import { Gallery } from "./Components/Gallery/Gallery";
 
 function App() {
-
-
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +15,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/createproject" component={CreateProject} />
+            {/* <Route exact path="/AboutUs" component={AboutUs} /> */}
             <Route exact path="/Gallery" component={Gallery} />
 
             {/* <Route component={NotFound} /> */}
@@ -27,7 +26,7 @@ function App() {
   );
 }
 
-export default App
+export default App;
 
 /* function mapStateToProps(state){
   return{

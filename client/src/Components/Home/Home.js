@@ -7,9 +7,9 @@ import { AboutUs } from "../AboutUs/AboutUs";
 export const Home = () => {
   return (
     <div>
-      <AppNav />      
+      <AppNav />
       <Carrousel />
-      <h2> Home Screen </h2>     
+
       <AboutUs />
       <Footer />
     </div>
