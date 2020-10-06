@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './Gallery.module.css'
 import AppNav from '../AppNav/AppNav'
-import Footer from '../Footer/Footer'
+import { Footer } from '../Footer/Footer'
+
 var $ = require("jquery");
 
 $(function () {
@@ -31,9 +32,9 @@ export const Gallery = () => {
 
             <div className={styles.gallery} id="gallery">
 
-                <div className="mb-3 pics animation all 2">
+                <div className="mb-3 pics animation all 1">
                     <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap"></img>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo1.jpg" alt="Card image cap"></img>
                         <div className={styles.memberInfo}>
                             <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
                             <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
@@ -43,17 +44,7 @@ export const Gallery = () => {
 
                 <div className="mb-3 pics animation all 1">
                     <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mb-3 pics animation all 1">
-                    <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap"></img>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo2.jpg" alt="Card image cap"></img>
                         <div className={styles.memberInfo}>
                             <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
                             <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
@@ -63,17 +54,7 @@ export const Gallery = () => {
 
                 <div className="mb-3 pics animation all 2">
                     <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mb-3 pics animation all 2">
-                    <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap"></img>
+                        <img className="img-fluid" src="/img/Gallery/Cats/cat1.jpg" alt="Card image cap"></img>
                         <div className={styles.memberInfo}>
                             <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
                             <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
@@ -83,7 +64,47 @@ export const Gallery = () => {
 
                 <div className="mb-3 pics animation all 1">
                     <div className={styles.imageInfo}>
-                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap"></img>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo3.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="/img/Gallery/Cats/cat2.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="/img/Gallery/Cats/cat3.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 1">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo4.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="/img/Gallery/Cats/cat4.jpg" alt="Card image cap"></img>
                         <div className={styles.memberInfo}>
                             <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
                             <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
@@ -93,6 +114,9 @@ export const Gallery = () => {
 
 
             </div>
+
+            <Footer />
+
         </div>
     )
 }
