@@ -5,7 +5,7 @@ import CreateProject from './Components/projects/CreateProject'
 
 import { Home } from './Components/Home/Home'
 import { Gallery } from './Components/Gallery/Gallery'
-
+import { Store } from './Components/Store/Store'
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/createproject" component={CreateProject} />
             <Route exact path="/Gallery" component={Gallery} />
+            <Route exact path="/Store" component={Store} />
 
             {/* <Route component={NotFound} /> */}
           </Switch>
