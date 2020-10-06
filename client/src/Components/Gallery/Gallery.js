@@ -2,6 +2,7 @@ import React from 'react'
 import './Gallery.css'
 import AppNav from '../AppNav/AppNav'
 import {Footer} from '../Footer/Footer'
+
 var $ = require("jquery");
 
 $(function () {
