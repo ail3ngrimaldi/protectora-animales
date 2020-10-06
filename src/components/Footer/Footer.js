@@ -21,13 +21,13 @@ export const Footer = () => {
             <ul>
               <li className="list-unstyled">
                 <a href="#!">
-                  <i class="fab fa-facebook fa-2x fa-lg"></i>
+                  <i className="fab fa-facebook fa-2x fa-lg"></i>
                 </a>
               </li>
               <br></br>
               <li className="list-unstyled">
                 <a href="#!">
-                  <i class="fab fa-instagram fa-2x fa-lg"></i>
+                  <i className="fab fa-instagram fa-2x fa-lg"></i>
                 </a>
               </li>
               {/* <li className="list-unstyled">
