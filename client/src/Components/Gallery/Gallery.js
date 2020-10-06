@@ -1,17 +1,17 @@
 import React from 'react'
-import './Gallery.css'
+import styles from './Gallery.module.css'
 import AppNav from '../AppNav/AppNav'
 import Footer from '../Footer/Footer'
 var $ = require("jquery");
 
 $(function () {
-    var selectedClass = "";
+    var selectedclassName = "";
     $(".filter").click(function () {
-        selectedClass = $(this).attr("data-rel");
+        selectedclassName = $(this).attr("data-rel");
         $("#gallery").fadeTo(100, 0.1);
-        $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+        $("#gallery div").not("." + selectedclassName).fadeOut().removeclassName('animation');
         setTimeout(function () {
-            $("." + selectedClass).fadeIn().addClass('animation');
+            $("." + selectedclassName).fadeIn().addclassName('animation');
             $("#gallery").fadeTo(300, 1);
         }, 300);
     });
@@ -21,47 +21,74 @@ export const Gallery = () => {
     return (
         <div>
             <AppNav></AppNav>
-
-            <div class="row">
-
-
-                <div class="col-md-12 d-flex justify-content-center mb-5">
-
-                    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">Todos</button>
-                    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Perros</button>
-                    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Gatos</button>
-
+            <div className="row">
+                <div className="col-md-12 d-flex justify-content-center mb-5">
+                    <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="all">Todos</button>
+                    <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="1">Perros</button>
+                    <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="2">Gatos</button>
                 </div>
-
-
             </div>
 
-            <div class="gallery" id="gallery">
+            <div className={styles.gallery} id="gallery">
 
-
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 1">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 1">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3 pics animation all 2">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 2">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
-
-                <div class="mb-3 pics animation all 1">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap"></img>
+                <div className="mb-3 pics animation all 1">
+                    <div className={styles.imageInfo}>
+                        <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap"></img>
+                        <div className={styles.memberInfo}>
+                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        </div>
+                    </div>
                 </div>
 
 
