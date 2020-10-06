@@ -17,7 +17,7 @@ const links = [
   { href: "Store", text: "Tienda" },
   { href: "#voluntary", text: "Voluntariado" },
   { href: "Gallery", text: "Galeria" },
-  { href: "#others2", text: "Otros2", className: "btnadd" },
+  { href: "#events", text: "Eventos", className: "btnadd" },
   { href: "/donations", text: "Donaciones" },
 ];
 
@@ -53,8 +53,8 @@ export default class AppNav extends Component {
           <NavbarBrand href="/">
             <img
               src="/img/logo 1.png"
-              width="60"
-              height="40"
+              width="100"
+              height="80"
               alt=""
               loading="lazy"
             />

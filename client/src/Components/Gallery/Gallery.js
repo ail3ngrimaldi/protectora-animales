@@ -1,8 +1,7 @@
-import React from 'react'
-import styles from './Gallery.module.css'
-import AppNav from '../AppNav/AppNav'
-import { Footer } from '../Footer/Footer'
-
+import React from "react";
+import "./Gallery.css";
+import AppNav from "../AppNav/AppNav";
+import Footer from "../Footer/Footer";
 var $ = require("jquery");
 
 $(function () {
@@ -113,10 +112,20 @@ export const Gallery = () => {
                 </div>
 
 
+       
+        <div class="mb-3 pics animation all 1">
+          <img
+            class="img-fluid"
+            src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+            alt="Card  cap"
+          ></img>
+
             </div>
 
             <Footer />
 
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
