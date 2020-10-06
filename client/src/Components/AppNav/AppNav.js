@@ -13,7 +13,7 @@ import {
 const links = [
   { href: "#home", text: "Inicio" },
   { href: "AboutUs", text: "Historia" },
-  { href: "#adoptions", text: "Adopciones" },
+  { href: "/Adoptions", text: "Adopciones" },
   { href: "#store", text: "Tienda" },
   { href: "#voluntary", text: "Voluntariado" },
   { href: "#galery", text: "Galeria" },

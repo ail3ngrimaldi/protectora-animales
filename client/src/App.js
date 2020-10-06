@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from "react-redux";
 import CreateProject from './Components/projects/CreateProject'
+import Adoptions from './Components/Adoptions/Adoptions'
+import Formulario from './Components/Adoptions/Formulario'
 
 import { Home } from './Components/Home/Home'
 
@@ -16,7 +18,8 @@ function App() {
         <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/createproject" component={CreateProject} />
-        
+           <Route exact path='/Adoptions' component={Adoptions}/>
+           <Route exact path='/Adoptions/Form/:id' component={Formulario}/>
           {/* <Route component={NotFound} /> */}
         </Switch>
       </Router>
