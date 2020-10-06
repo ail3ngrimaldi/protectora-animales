@@ -22,8 +22,8 @@ const Navbar2 = (props) => {
 const links = [
   { href: "#home", text: "Inicio" },
   { href: "AboutUs", text: "Historia" },
-  { href: "#adoptions", text: "Adopciones" },
-  { href: "#store", text: "Tienda" },
+  { href: "/Adoptions", text: "Adopciones" },
+  { href: "/Store", text: "Tienda" },
   { href: "#voluntary", text: "Voluntariado" },
   { href: "Gallery", text: "Galeria" },
   { href: "#others2", text: "Otros2", className: "btnadd" },

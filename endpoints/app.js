@@ -7,12 +7,12 @@ const app = express();
 
 //settings
 app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(__dirname + '../../client' , 'src'));
-app.engine('.js', exphbs({
-    defaultLayout: 'App',
-    extname: '.js'
+app.set('views', path.join(__dirname , 'views'));
+app.engine('.hbs', exphbs({
+    defaultLayout: 'main',
+    extname: '.hbs'
 }));
-app.set('view engine', '.js');
+app.set('view engine', '.hbs');
 
 //middlewares
 app.use(morgan('dev'));
