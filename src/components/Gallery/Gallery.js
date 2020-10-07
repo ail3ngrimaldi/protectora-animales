@@ -1,23 +1,10 @@
 import React from 'react'
-import styles from './Gallery.module.css'
+import styles from './Gallery.css'
 import AppNav from '../AppNav/AppNav'
 import createNavItem from '../AppNav/AppNavfix'
 import { Footer } from '../Footer/Footer'
+import Info from '../Info/Info'
 
-var $ = require("jquery");
-
-$(function () {
-    var selectedclassName = "";
-    $(".filter").click(function () {
-        selectedclassName = $(this).attr("data-rel");
-        $("#gallery").fadeTo(100, 0.1);
-        $("#gallery div").not("." + selectedclassName).fadeOut().removeClass('animation');
-        setTimeout(function () {
-            $("." + selectedclassName).fadeIn().addClass('animation');
-            $("#gallery").fadeTo(300, 1);
-        }, 300);
-    });
-});
 
 export const Gallery = () => {
     return (
@@ -32,84 +19,84 @@ export const Gallery = () => {
                 </div>
             </div>
 
-            <div className={styles.gallery} id="gallery">
+            <div className='gallery' id="gallery">
 
                 <div className="mb-3 pics animation all 1">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Dogs/Dogo1.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 1">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Dogs/Dogo2.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 2">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Cats/cat1.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 1">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Dogs/Dogo3.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 2">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Cats/cat2.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 2">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Cats/cat3.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 1">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Dogs/Dogo4.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mb-3 pics animation all 2">
-                    <div className={styles.imageInfo}>
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Cats/cat4.jpg" alt="Card image cap"></img>
-                        <div className={styles.memberInfo}>
-                            <h2 className="mb-2 font-weight-light h3 ">Proyecto</h2>
-                            <span className="d-block mb-2 text-white-opacity-05 h4">2020</span>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                         </div>
                     </div>
                 </div>
