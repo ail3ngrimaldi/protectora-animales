@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Gallery.module.css'
 import AppNav from '../AppNav/AppNav'
+import createNavItem from '../AppNav/AppNavfix'
 import { Footer } from '../Footer/Footer'
 
 var $ = require("jquery");
@@ -10,9 +11,9 @@ $(function () {
     $(".filter").click(function () {
         selectedclassName = $(this).attr("data-rel");
         $("#gallery").fadeTo(100, 0.1);
-        $("#gallery div").not("." + selectedclassName).fadeOut().removeclassName('animation');
+        $("#gallery div").not("." + selectedclassName).fadeOut().removeClass('animation');
         setTimeout(function () {
-            $("." + selectedclassName).fadeIn().addclassName('animation');
+            $("." + selectedclassName).fadeIn().addClass('animation');
             $("#gallery").fadeTo(300, 1);
         }, 300);
     });
@@ -22,6 +23,7 @@ export const Gallery = () => {
     return (
         <div>
             <AppNav></AppNav>
+            <createNavItem />
             <div className="row">
                 <div className="col-md-12 d-flex justify-content-center mb-5">
                     <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="all">Todos</button>
