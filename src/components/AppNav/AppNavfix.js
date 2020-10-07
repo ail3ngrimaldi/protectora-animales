@@ -11,12 +11,10 @@ import {
 } from "reactstrap";
 
 const links = [
-    { href: "/", text: "Inicio" },
     { href: "AboutUs", text: "Historia" },
-    { href: "#adoptions", text: "Adopciones" },
     { href: "Store", text: "Tienda" },
     { href: "#voluntary", text: "Voluntariado" },
-    { href: "Gallery", text: "Galeria" },
+    { href: "Gallery", text: "Mascotas" },
     { href: "#others2", text: "Otros2", className: "btnadd" },
     { href: "/donations", text: "Donaciones" },
 ];
