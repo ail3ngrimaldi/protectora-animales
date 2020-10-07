@@ -1,103 +1,75 @@
 import React, { Component } from "react";
 import { AboutUs } from "../AboutUs/AboutUs";
-import { Link } from 'react-router-dom';
-import SignedInLinks from '../layout/SignedInLinks'
-import SignedOutLinks from '../layout/SignedOutLinks'
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
 } from "reactstrap";
-import { connect } from 'react-redux';
 
-const Navbar2 = (props) => {
-  const { auth, profile } = props;
-  // console.log(auth);
-  const linkss = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
-
-  const links = [
-    { href: "#home", text: "Inicio" },
+const links = [
+    { href: "/", text: "Inicio" },
     { href: "AboutUs", text: "Historia" },
-    { href: "/Adoptions", text: "Adopciones" },
-    { href: "/Store", text: "Tienda" },
+    { href: "#adoptions", text: "Adopciones" },
+    { href: "Store", text: "Tienda" },
     { href: "#voluntary", text: "Voluntariado" },
     { href: "Gallery", text: "Galeria" },
     { href: "#others2", text: "Otros2", className: "btnadd" },
     { href: "/donations", text: "Donaciones" },
-  ];
+];
 
-  const createNavItem = ({ href, text, className }) => (
+const createNavItem = ({ href, text, className }) => (
     <NavItem>
-      <NavLink href={href} className={className}>
-        {text}
-      </NavLink>
+        <NavLink href={href} className={className}>
+            {text}
+        </NavLink>
     </NavItem>
-  );
+);
 
-  class AppNav extends Component {
+export default class AppNav extends Component {
     constructor(props) {
-      super(props);
+        super(props);
 
-      this.state = {
-        isOpen: false,
-      };
+        this.state = {
+            isOpen: false,
+        };
 
-      this.toggle = this.toggle.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-      this.setState({
-        isOpen: !this.state.isOpen,
-      });
+        this.setState({
+            isOpen: !this.state.isOpen,
+        });
     }
 
     render() {
-      return (
-        <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">
-              <img
-                src="/img/logo 1.png"
-                width="60"
-                height="40"
-                alt=""
-                loading="lazy"
-              />
-            </NavbarBrand>
-            <nav className="nav-wrapper grey darken-3">
-              <div className="container">
-                <Link to='/' className="brand-logo">Página Inicial</Link>
-                {links}
-                {linkss}
-              </div>
-            </nav>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                {links.map(createNavItem)}
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </div>
-      );
+        return (
+            <div>
+                <Navbar color="light" light expand="md">
+                    <NavbarBrand href="/">
+                        <img
+                            src="/img/logo 1.png"
+                            width="60"
+                            height="40"
+                            alt=""
+                            loading="lazy"
+                        />
+                    </NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            {links.map(createNavItem)}
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
+        );
     }
-  }
 }
-
-const mapStateToProps = (state) => {
-  // console.log(state);
-  return {
-    auth: state.firebase.auth,
-    profile: state.firebase.profile
-  }
-}
-
-export default connect(mapStateToProps)(Navbar)
-
 
 // export const AppNav = () => {
 //     return (

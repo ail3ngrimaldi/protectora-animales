@@ -20,14 +20,15 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path='/dash'component={Dashboard} />
+            <Route exact path='/dash' component={Dashboard} />
             <Route path='/project/:id' component={ProjectDetails} />
+            <Route path='/Gallery' component={Gallery} />
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/create' component={CreateProject} />
-            <Route exact path='/Adoptions' component={Adoptions}/>
-           <Route exact path='/Adoptions/Form/:id' component={Formulario}/>
-           <Route exact path="/Store" component={Store} />
+            <Route exact path='/Adoptions' component={Adoptions} />
+            <Route exact path='/Adoptions/Form/:id' component={Formulario} />
+            <Route exact path="/Store" component={Store} />
           </Switch>
         </div>
       </BrowserRouter>
