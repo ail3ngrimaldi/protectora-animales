@@ -108,6 +108,22 @@ export const Gallery = () => {
           </div>
         </div>
 
+        <div className="mb-3 pics animation all 1">
+          <div className="imageInfo">
+            <img
+              className="img-fluid"
+              src="/img/Gallery/Dogs/Dogo3.jpg"
+              alt="Card cap"
+            ></img>
+            <div className="memberInfo">
+              <h2 className="mb-2 font-weight-light h3 ">
+                <Info />
+              </h2>
+              <span className="d-block mb-2 text-white-opacity-05 h4"></span>
+            </div>
+          </div>
+        </div>
+
         <div className="mb-3 pics animation all 2">
           <div className="imageInfo">
             <img
@@ -129,6 +145,22 @@ export const Gallery = () => {
             <img
               className="img-fluid"
               src="/img/Gallery/Cats/cat3.jpg"
+              alt="Card cap"
+            ></img>
+            <div className="memberInfo">
+              <h2 className="mb-2 font-weight-light h3 ">
+                <Info />
+              </h2>
+              <span className="d-block mb-2 text-white-opacity-05 h4"></span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-3 pics animation all 2">
+          <div className="imageInfo">
+            <img
+              className="img-fluid"
+              src="/img/Gallery/Cats/cat2.jpg"
               alt="Card cap"
             ></img>
             <div className="memberInfo">

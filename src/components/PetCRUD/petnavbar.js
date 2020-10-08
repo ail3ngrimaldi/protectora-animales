@@ -1,19 +1,11 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 
-const AppNav = () => {
+const PetCrud = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">
-          <img
-            src="/img/logo 1.png"
-            width="60"
-            height="40"
-            alt=""
-            loading="lazy"
-          />{" "}
-        </Link>
+        <h1>CRUD PET</h1>
         <button
           class="navbar-toggler"
           type="button"
@@ -32,66 +24,44 @@ const AppNav = () => {
               <NavLink
                 exact
                 activeClassName="active"
-                to="/AboutUs"
+                to="/Admin/Createpet"
                 className="nav-item nav-link"
               >
                 {" "}
-                Historia{" "}
+                Crear{" "}
               </NavLink>
             </li>
             <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Store"
+                to="/Admin/ReadPet"
                 className="nav-item nav-link"
               >
                 {" "}
-                Tienda{" "}
+                Leer{" "}
               </NavLink>
             </li>
             <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Volunteering"
+                to="/Admin/UpdatePet"
                 className="nav-item nav-link"
               >
                 {" "}
-                Voluntariado{" "}
+                Actualizar{" "}
               </NavLink>
             </li>
             <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Gallery"
+                to="/Admin/DeletePet"
                 className="nav-item nav-link"
               >
                 {" "}
-                Galeria{" "}
-              </NavLink>
-            </li>
-            <li class="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/Donations"
-                className="nav-item nav-link"
-              >
-                {" "}
-                Donaciones{" "}
-              </NavLink>
-            </li>
-            <li class="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/Admin"
-                className="nav-item nav-link"
-              >
-                {" "}
-                Admin{" "}
+                Borrar{" "}
               </NavLink>
             </li>
           </ul>
@@ -103,4 +73,4 @@ const AppNav = () => {
   );
 };
 
-export default AppNav;
+export default PetCrud;
