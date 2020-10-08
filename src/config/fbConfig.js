@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 // Your web app's Firebase configuration
-var config = {
+const config = {
   apiKey: "AIzaSyAt59iskNq8lNrlngI_waNKdgi8t2cKgDU",
   authDomain: "protectoraanimales-9c9db.firebaseapp.com",
   databaseURL: "https://protectoraanimales-9c9db.firebaseio.com",

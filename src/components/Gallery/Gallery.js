@@ -1,16 +1,11 @@
 import React from 'react'
-import styles from './Gallery.css'
-import AppNav from '../AppNav/AppNav'
-import createNavItem from '../AppNav/AppNavfix'
-import { Footer } from '../Footer/Footer'
+// import styles from './Gallery.css'
 import Info from '../Info/Info'
 
 
 export const Gallery = () => {
     return (
         <div>
-            <AppNav></AppNav>
-            <createNavItem />
             <div className="row">
                 <div className="col-md-12 d-flex justify-content-center mb-5">
                     <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="all">Todos</button>
@@ -103,8 +98,6 @@ export const Gallery = () => {
 
 
             </div>
-
-            <Footer />
 
         </div>
     )
