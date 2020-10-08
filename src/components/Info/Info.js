@@ -1,6 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import "./Info.css"
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -12,11 +13,10 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
-          </Modal.Title>
+                    Milaneso
+            </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Pelusa</h4>
                 <p>
                     <ul>
                         <li>Alimentación: alimento balanceado</li>
@@ -33,7 +33,6 @@ function MyVerticallyCenteredModal(props) {
                 <Link to='/Adoptions/Form/1'>
                     <Button >Adoptar</Button>
                 </Link>
-                <Button onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     );

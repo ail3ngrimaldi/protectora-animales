@@ -1,0 +1,10 @@
+.modal{
+    background-color: transparent;
+}
+
+.modal .modal-footer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+}
