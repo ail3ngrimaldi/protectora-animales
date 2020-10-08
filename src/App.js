@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
+import PetCrud from "./components/PetCRUD/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";
@@ -11,6 +12,12 @@ import { Gallery } from "./components/Gallery/Gallery";
 import { Donations } from "./components/Donations/Donations";
 import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
+
+//CRUD
+import {CreatePet} from "./components/PetCRUD/createpet"
+import {ReadPet} from "./components/PetCRUD/readpet"
+import {UpdatePet} from "./components/PetCRUD/updatepet"
+import {DeletePet} from "./components/PetCRUD/deletepet"
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -27,6 +34,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <AppNav />
+          <Route path="/Admin" component={PetCrud} />
           <Switch>
 
             {/* COMPONENTES */}
@@ -40,7 +48,11 @@ class App extends Component {
             <Route exact path="/petInfo" component={Info} />
             <Route exact path="/Donations" component={Donations} />
 
-
+            {/* CRUD */}
+            <Route exact path="/Admin/Createpet" component={CreatePet} />
+            <Route exact path="/Admin/ReadPet" component={ReadPet} />
+            <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
+            <Route exact path="/Admin/DeletePet" component={DeletePet} />
 
             {/* RESTO DE COSAS */}
             <Route exact path="/dash" component={Dashboard} />
