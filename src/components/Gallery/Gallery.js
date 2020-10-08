@@ -28,6 +28,26 @@ export const Gallery = () => {
 
                 <div className="mb-3 pics animation all 1">
                     <div className='imageInfo'>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo1.jpg" alt="Card image cap"></img>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 1">
+                    <div className='imageInfo'>
+                        <img className="img-fluid" src="/img/Gallery/Dogs/Dogo1.jpg" alt="Card image cap"></img>
+                        <div className='memberInfo'>
+                            <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
+                            <span className="d-block mb-2 text-white-opacity-05 h4"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-3 pics animation all 1">
+                    <div className='imageInfo'>
                         <img className="img-fluid" src="/img/Gallery/Dogs/Dogo2.jpg" alt="Card image cap"></img>
                         <div className='memberInfo'>
                             <h2 className="mb-2 font-weight-light h3 "><Info /></h2>
