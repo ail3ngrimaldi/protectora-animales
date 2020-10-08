@@ -1,12 +1,7 @@
 import React, {Component, useState,useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import {arrayMascotas} from '../Constants/arrayMascotas'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import Mascotas from '../Mascotas/Mascotas'
-import AppNav from '../AppNav/AppNav'
 
 
 
@@ -179,7 +174,6 @@ const Adoptions = () => {
     
     return (
       <div>
-          <AppNav/>
           <div class="container">
                 <table class="table table-striped table-dark table-bordered">
                     <thead>
