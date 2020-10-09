@@ -1,0 +1,2 @@
+.gallery{-webkit-column-count:3;-webkit-column-width:33%;columns:33% 3}.gallery .pics{transition:all .35s ease}.gallery .animation{transform:scale(1)}@media (max-width:450px){.gallery{-webkit-column-count:1;-webkit-column-width:100%;columns:100% 1}}@media (max-width:400px){.btn.filter{padding-left:1.1rem;padding-right:1.1rem}}
+/*# sourceMappingURL=main.62b67af5.chunk.css.map */

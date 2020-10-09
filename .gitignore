@@ -4,6 +4,7 @@
 /endpoints/node_modules
 /functions/node_modules
 /node_modules
+node_modules
 /.pnp
 .pnp.js
 .package-lock.json
