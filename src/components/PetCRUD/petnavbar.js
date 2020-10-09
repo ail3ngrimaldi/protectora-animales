@@ -1,11 +1,12 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
+import './petnavbar.css'
 
 const PetCrud = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1>CRUD PET</h1>
+        <h1 className='title1'>CRUD PET</h1>
         <button
           class="navbar-toggler"
           type="button"
