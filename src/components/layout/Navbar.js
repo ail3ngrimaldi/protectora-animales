@@ -4,15 +4,15 @@ import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 
+
 const Navbar2 = (props) => {
   const { auth, profile } = props;
   // console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
 
   return (
-    <nav className="nav-wrapper grey darken-3">
-      <div className="container">
-        <Link to='/' className="brand-logo">Página Inicial</Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">        
         {links}
       </div>
     </nav>
