@@ -15,11 +15,17 @@ import { Footer } from "./components/Footer/Footer";
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
-import SignIn from "./components/auth/SignIn";
+/* import SignIn from "./components/auth/SignIn"; */
 import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
+
+//prueba back
+import PrivateRoute from "./UI/Components/PrivateRoute";
+import AppNav2 from "./components/layout/Navbar";
+import Todos from "./UI/Routes/Todos";
+import SignIn from "./UI/Routes/SignIn";
 
 class App extends Component {
   render() {
@@ -27,7 +33,13 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <AppNav />
+          <AppNav2 />
           <Switch>
+
+          {/* Prueba back */}
+          <PrivateRoute path = "/todos">
+          <Todos />
+        </PrivateRoute>
 
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
@@ -39,6 +51,8 @@ class App extends Component {
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
             <Route exact path="/petInfo" component={Info} />
             <Route exact path="/Donations" component={Donations} />
+            
+            <Route exact path="/Crear" component={SignUp} />
 
 
 

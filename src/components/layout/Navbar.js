@@ -4,7 +4,7 @@ import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 
-const Navbar = (props) => {
+const Navbar2 = (props) => {
   const { auth, profile } = props;
   // console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
@@ -27,4 +27,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar)
+export default connect(mapStateToProps)(Navbar2)

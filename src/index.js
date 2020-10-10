@@ -18,12 +18,12 @@ import { Provider } from 'react-redux'
 // Configuracion Firebase-React-Redux
 import { createFirestoreInstance } from 'redux-firestore';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from "./serviceWorker";
 
 // Index CSS
 import './index.css';
 
-const config = {
+const firebaseConfig = {
   apiKey: "AIzaSyAt59iskNq8lNrlngI_waNKdgi8t2cKgDU",
   authDomain: "protectoraanimales-9c9db.firebaseapp.com",
   databaseURL: "https://protectoraanimales-9c9db.firebaseio.com",
@@ -38,7 +38,7 @@ const rrfConfig = {
   useFirestoreForProfile: true,
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 
 const initialState = {};
@@ -47,28 +47,8 @@ const rrfProps = {
    firebase,	
    config: rrfConfig,
    dispatch: store.dispatch,
-   createFirestoreInstance
-};
-
-
-
-// const store = firebase.firestore()
-
-// export default () => {
-//   return createStore(
-//     rootReducer,
-//     initialState,
-//     compose(
-// 	    // applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
-// 	    reactReduxFirebase(fbConfig, {rrfConfig /*, useFirestoreForProfile: true, attachAuthIsReady: true*/})
-// 	)
-// )}
-
-
-
-
-// store.firebaseAuthIsReady.then(() => {
-	
+   createFirestoreInstance,
+};	
 	  ReactDOM.render(
 	  	<React.StrictMode>
 		  	<Provider store={store}>
@@ -80,6 +60,4 @@ const rrfProps = {
 		  	</Provider>
 	  	</React.StrictMode>, 
 	  document.getElementById('root'));
-	  registerServiceWorker();
-	
-// });
+    serviceWorker.unregister();
