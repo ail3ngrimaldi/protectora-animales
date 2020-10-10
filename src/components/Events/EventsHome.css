@@ -1,0 +1,16 @@
+.StylesEventHome {
+  background-color: rgb(209, 209, 113);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.9;
+}
+
+.StyleImg {
+  border-radius: 25%;
+  width: 250px;
+  height: 300px;
+  padding: 1em;
+  float: right;
+  opacity: 1;
+}
