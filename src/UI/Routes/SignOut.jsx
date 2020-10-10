@@ -16,7 +16,7 @@ const SignOut = () => {
   const history = useHistory();
   return (
     <div>
-      <h1>Logout</h1>
+      
 
       <button
         onClick={(event) => {
@@ -24,7 +24,7 @@ const SignOut = () => {
           signoutWithGoogle();
         }}
       >
-       Logout with Google
+       Logout
       </button>
     </div>
   );

@@ -34,6 +34,7 @@ import Todos from "./UI/Routes/Todos";
 import SignIn from "./UI/Routes/SignIn";
 import SignOut from "./UI/Routes/SignOut"
 import SignInmail from "./UI/Routes/SignInemail";
+import CrearUsuario from "./UI/Routes/CrearUsuario";
 
 class App extends Component {
   render() {
@@ -62,6 +63,7 @@ class App extends Component {
             <Route exact path="/Crear" component={SignUp} />
             <Route exact path="/salir" component={SignOut} />
             <Route exact path="/entrar" component={SignInmail} />
+            <Route exact path="/crearusuario" component={CrearUsuario} />
 
             {/* CRUD */}
             <Route exact path="/Admin/Createpet" component={CreatePet} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
+import SignIn from "./SignIn"
 
 const SignInmail = () => {
   const firebase = useFirebase();
@@ -32,7 +33,7 @@ const SignInmail = () => {
   const history = useHistory();
   return (
     <div>
-      <h1>Sign In</h1>
+      <h1>Loguearte</h1>
       <form id="formlogin">
           <div className="form-group col-md-12" id="contelogin2">
             <div className="input-group mb-3 id" id="contelogin3">
@@ -60,9 +61,12 @@ const SignInmail = () => {
       
           </div>
         </form>
+        
 
         <input type="submit" className="btn btn-outline-dark" onClick={signInWithmail} value='Iniciar Sesión'/>
        
+        <h1>Loguearte con Gmail</h1>
+        <div><SignIn/></div>
      
     </div>
   );
