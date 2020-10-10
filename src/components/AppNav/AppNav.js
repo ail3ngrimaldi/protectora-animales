@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
-import Nav2 from '../layout/Navbar'
+import Nav2 from './Navbarlogin'
 
 const AppNav = () => {
   return (
@@ -14,11 +14,7 @@ const AppNav = () => {
             alt=""
             loading="lazy"
           />{" "}
-        </Link>
-
-      {/* Nav de login */}
-
-      <Nav2 />
+        </Link>    
 
         <button
           class="navbar-toggler"
@@ -98,8 +94,11 @@ const AppNav = () => {
               >
                 {" "}
                 Admin{" "}
-              </NavLink>
+              </NavLink>             
             </li>
+              {/* Nav de login */}
+
+      <Nav2 />
           </ul>
           <br />
         </div>

@@ -32,6 +32,8 @@ import Info from "./components/Info/Info.js";
 import PrivateRoute from "./UI/Components/PrivateRoute";
 import Todos from "./UI/Routes/Todos";
 import SignIn from "./UI/Routes/SignIn";
+import SignOut from "./UI/Routes/SignOut"
+import SignInmail from "./UI/Routes/SignInemail";
 
 class App extends Component {
   render() {
@@ -58,6 +60,8 @@ class App extends Component {
             <Route exact path="/Donations" component={Donations} />
             
             <Route exact path="/Crear" component={SignUp} />
+            <Route exact path="/salir" component={SignOut} />
+            <Route exact path="/entrar" component={SignInmail} />
 
             {/* CRUD */}
             <Route exact path="/Admin/Createpet" component={CreatePet} />

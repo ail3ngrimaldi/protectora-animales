@@ -12,7 +12,7 @@ import App from './App';
 
 // Configuracion React-Redux
 import { createStore } from 'redux'
-import rootReducer from './store/reducers/rootReducer'
+import rootReducer from './Redux/store/reducers/rootReducer'
 import { Provider } from 'react-redux'
 
 // Configuracion Firebase-React-Redux
