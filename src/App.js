@@ -28,7 +28,7 @@ import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
 
-//prueba back
+//prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
 import Todos from "./UI/Routes/Todos";
 import SignIn from "./UI/Routes/SignIn";
