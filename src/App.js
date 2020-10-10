@@ -30,7 +30,6 @@ import Info from "./components/Info/Info.js";
 
 //prueba back
 import PrivateRoute from "./UI/Components/PrivateRoute";
-import AppNav2 from "./components/layout/Navbar";
 import Todos from "./UI/Routes/Todos";
 import SignIn from "./UI/Routes/SignIn";
 
@@ -39,8 +38,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <AppNav />
-          <AppNav2 />
+          <AppNav />         
           <Switch>
 
           {/* Prueba back */}
