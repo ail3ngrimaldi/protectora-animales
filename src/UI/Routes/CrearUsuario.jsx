@@ -30,8 +30,15 @@ const CrearUsuario = () => {
   const createEmail = () => {
     
     firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
-    .then(res => {
-        return firestore.collection('users').doc(res.user.uid).set({
+    .then(authData => {// You are forgetting this reference.
+      authData.user.sendEmailVerification();
+  }, function(error) {
+      // An error happened.
+  }) 
+
+
+    .then (res =>  {
+            firestore.collection('users').doc(res.user.uid).set({
             firstName: usuario.firstName,
             lastName: usuario.lastName,
             age: usuario.age,
@@ -39,10 +46,12 @@ const CrearUsuario = () => {
             location: usuario.location,
             address: usuario.address
         })
-    }) 
-    .then(() => {
+    },  function(error) {
+      // An error happened.
+  }) 
+    /* .then(() => {
       history.push("/")
-    })
+    }) */
     .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -163,7 +172,7 @@ const CrearUsuario = () => {
         </form>
 
         <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
-          e.preventDefault(); createEmail(); 
+          e.preventDefault(); createEmail(); history.push("/")
         }} value='Iniciar Sesión'/>
        
      
