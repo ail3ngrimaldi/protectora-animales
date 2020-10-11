@@ -74,16 +74,30 @@ const AppNav = () => {
                 Galeria{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Donativos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Donations"
+                to="/MoneyDonations"
                 className="nav-item nav-link"
               >
                 {" "}
-                Donaciones{" "}
+                Donaciones Monetario{" "}
               </NavLink>
+              <NavLink
+                exact
+                activeClassName="active"
+                to="/SuppliesDonations"
+                className="nav-item nav-link"
+              >
+                {" "}
+                Donaciones Insumos{" "}
+              </NavLink>
+              </div>
             </li>
             <li class="nav-item">
               <NavLink
