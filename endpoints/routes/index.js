@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const admin = require('firebase-admin');
 
-var serviceAccount = require('../protectoraanimales-9c9db-firebase-adminsdk-idqea-2bd481c31e.json');
+var serviceAccount = require('../protectoraanimales-9c9db-firebase-adminsdk-idqea-3df3aa7858.json');
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://protectoraanimales-9c9db.firebaseio.com/'

@@ -389,7 +389,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 // import './Formulario.css'
-import AppNav from '../AppNav/AppNav';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -407,8 +406,7 @@ const Formulario = (props) => {
 
   return (
 
-    <div>
-      <AppNav />
+    <div>      
       <Container fluid={true}>
         <h2 className='display-6 font-weight-light justify-content py-4 ml-5'>Datos de la Mascota</h2>
         <Row className='justify-content-center'>

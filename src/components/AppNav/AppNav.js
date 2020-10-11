@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
+import Nav2 from './Navbarlogin'
 
 const AppNav = () => {
   return (
@@ -7,13 +8,14 @@ const AppNav = () => {
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
           <img
-            src="/img/logo 1.png"
+            src="/img/Logo1.png"
             width="60"
             height="40"
             alt=""
             loading="lazy"
           />{" "}
-        </Link>
+        </Link>    
+
         <button
           class="navbar-toggler"
           type="button"
@@ -92,8 +94,11 @@ const AppNav = () => {
               >
                 {" "}
                 Admin{" "}
-              </NavLink>
+              </NavLink>             
             </li>
+              {/* Nav de login */}
+
+      <Nav2 />
           </ul>
           <br />
         </div>

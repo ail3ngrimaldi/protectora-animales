@@ -1,50 +1,53 @@
 import React from "react";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import "./Footer.css";
 
 export const Footer = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
-      <MDBContainer fluid className="text-center text-md-left">
-        <MDBRow>
-          <MDBCol md="6">
-            <h5 className="title">Protectora Sarmiento</h5>
-            <p>
-              Nuestra protectora rescata, cura y mantiene animales. Nos ocupamos
-              de esterilizar y proveer todas las vacunas. Nos sostenemos gracias
-              a las cuotas de los socios y al trabajo que aportamos hace años
-              los voluntarios.
-            </p>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">Redes</h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!">
-                  <i className="fab fa-facebook fa-2x fa-lg"></i>
-                </a>
-              </li>
-              <br></br>
-              <li className="list-unstyled">
-                <a href="#!">
-                  <i className="fab fa-instagram fa-2x fa-lg"></i>
-                </a>
-              </li>
-              {/* <li className="list-unstyled">
+    <div className="Styles">
+      <MDBFooter color="blue" className="font-small pt-4 mt-4">
+        <MDBContainer fluid className="text-center ">
+          <MDBRow className="text-left">
+            <MDBCol md="6" className="Fonts py-2">
+              <h5 className="title">Protectora Sarmiento</h5>
+              <p>Asociacion Civil sin fines de lucro</p>
+              <p>Cuit: 30-70152191-5</p>
+              <p>Telefono: +1 341-352-5559</p>
+
+              <p>Rosario - Argentina</p>
+            </MDBCol>
+            <MDBCol md="6" className="Fonts2 text-center ">
+              <h5 className="title">Contactanos</h5>
+              <br />
+              <ul>
+                <li className="list-unstyled">
+                  <a href="https://www.facebook.com/ProtectoraSarmiento.Rosario/about/?ref=page_internal">
+                    <i class="fab fa-facebook fa-2x fa-lg"></i>
+                  </a>
+                </li>
+                <br></br>
+                <li className="list-unstyled">
+                  <a href="https://www.instagram.com/protectorasarmiento/?hl=es-la">
+                    <i class="fab fa-instagram fa-2x fa-lg"></i>
+                  </a>
+                </li>
+                {/* <li className="list-unstyled">
                 <a href="#!">Link 3</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">Link 4</a>
               </li> */}
-            </ul>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
+              </ul>
+            </MDBCol>
+          </MDBRow>
         </MDBContainer>
-      </div>
-    </MDBFooter>
+        <div className="footer-copyright text-center py-3">
+          <MDBContainer fluid className="Fonts">
+            &copy; {new Date().getFullYear()} Copyright:{" "}
+          </MDBContainer>
+        </div>
+      </MDBFooter>
+    </div>
   );
 };
