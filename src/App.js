@@ -23,7 +23,7 @@ import {DeletePet} from "./components/PetCRUD/deletepet"
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
 /* import SignIn from "./components/auth/SignIn"; */
-import SignUp from "./components/auth/SignUp";
+
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
@@ -60,7 +60,7 @@ class App extends Component {
             <Route exact path="/petInfo" component={Info} />
             <Route exact path="/Donations" component={Donations} />
             
-            <Route exact path="/Crear" component={SignUp} />
+            
             <Route exact path="/salir" component={SignOut} />
             <Route exact path="/entrar" component={SignInmail} />
             <Route exact path="/crearusuario" component={CrearUsuario} />
@@ -74,8 +74,7 @@ class App extends Component {
             {/* RESTO DE COSAS */}
             <Route exact path="/dash" component={Dashboard} />
             <Route exact path="/project/:id" component={ProjectDetails} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
+
             <Route exact path="/create" component={CreateProject} />
           </Switch>
           <Footer />

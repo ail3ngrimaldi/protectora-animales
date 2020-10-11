@@ -20,7 +20,7 @@ const SignInmail = () => {
   };
   const signInWithmail = () => {
     
-    firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)
+    firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)    
     .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -64,8 +64,9 @@ const SignInmail = () => {
         
 
         <input type="submit" className="btn btn-outline-dark" onClick={signInWithmail} value='Iniciar Sesión'/>
-       
+        <br />
         <h1>Loguearte con Gmail</h1>
+        <br />
         <div><SignIn/></div>
      
     </div>

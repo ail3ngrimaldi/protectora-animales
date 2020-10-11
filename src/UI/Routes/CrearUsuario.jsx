@@ -40,6 +40,9 @@ const CrearUsuario = () => {
             address: usuario.address
         })
     }) 
+    .then(() => {
+      history.push("/")
+    })
     .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -52,7 +55,7 @@ const CrearUsuario = () => {
   const history = useHistory();
   return (
     <div>
-      <h1>Sign In</h1>
+      <h1>Crear un Usuario</h1>
       <form id="formlogin">
           <div className="form-group col-md-12" id="contelogin2">
             <div className="input-group mb-3 id" id="contelogin3">
@@ -159,7 +162,9 @@ const CrearUsuario = () => {
           </div>
         </form>
 
-        <input type="submit" className="btn btn-outline-dark" onClick={createEmail} value='Iniciar Sesión'/>
+        <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
+          e.preventDefault(); createEmail(); 
+        }} value='Iniciar Sesión'/>
        
      
     </div>

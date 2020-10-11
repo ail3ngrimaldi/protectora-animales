@@ -12,14 +12,14 @@ const SignIn = () => {
         type: "popup",
       })
       .then(() => {
-        history.push("/todos");
+        history.push("/");
       });
   };
 
   const history = useHistory();
   return (
     <div>
-      <h1>Sign In</h1>
+     
 
       <button
         onClick={(event) => {
@@ -27,7 +27,7 @@ const SignIn = () => {
           signInWithGoogle();
         }}
       >
-        Sign In with Google
+       Login con Google
       </button>
     </div>
   );
