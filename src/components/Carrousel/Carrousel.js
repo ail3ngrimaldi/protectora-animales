@@ -1,48 +1,83 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+//import { Carousel } from "react-responsive-carousel";
+import Foto1 from "../Carrousel/img/Foto1.jpg";
+import Foto2 from "../Carrousel/img/Foto2.jpg";
+import Foto3 from "../Carrousel/img/Foto7.jpg";
+//import Foto4 from "../Carrousel/img/Foto4.jpg";
+//import Foto5 from "../Carrousel/img/Foto6.jpg";
+//import Foto7 from "../Carrousel/img/Foto7.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Carrousel.css";
+import { Container } from "reactstrap";
 
 export const Carrousel = () => {
   return (
-    <div className="col">
-      <Carousel infiniteLoop useKeyboardArrows autoPlay>
-        <div>
-          <img
-            src="https://www.aljazeera.com/wp-content/uploads/2020/04/ecab8c7af42a439d9043b0ade6e1f05b_18.jpeg?fit=999%2C562"
-            alt="Card cap"
-          />
+    <div className="StyleCarouselOpacity">
+      <Container fluid className="StyleCarousel">
+        <div
+          id="carouselExampleCaptions"
+          className="carousel slide"
+          data-ride="carousel"
+        >
+          <ol className="carousel-indicators">
+            <li
+              data-target="#carouselExampleCaptions"
+              data-slide-to="0"
+              className="active"
+            ></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src={Foto1} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                <h5>ALAN</h5>
+                <p>Protectora Sarmiento</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={Foto2} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                <h5>ROBERT</h5>
+                <p>Protectora Sarmiento</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={Foto3} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                <h5>RAMBO</h5>
+                <p>Protectora Sarmiento</p>
+              </div>
+            </div>
+          </div>
+          <a
+            className="carousel-control-prev"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a
+            className="carousel-control-next"
+            href="#carouselExampleCaptions"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-        <div>
-          <img
-            src="https://cdnuploads.aa.com.tr/uploads/Contents/2020/05/14/thumbs_b_c_88bedbc66bb57f0e884555e8250ae5f9.jpg?v=140708"
-            alt="Card cap"
-          />
-        </div>
-        <div>
-          <img
-            src="https://shopjebo.com/wp-content/uploads/2020/02/1800x1200_cat_relaxing_on_patio_other.jpg"
-            alt="Card cap"
-          />
-        </div>
-        <div>
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/5ec67e952aa5c333297be103/1592919018404-4BQ4TFF0545CVNOGURLB/ke17ZwdGBToddI8pDm48kCPWu05VP8ypKjcH-TZGE2x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UTRU7SW6X068OhCa8hcoSzJI0JXaL6-mKFs9CoS6e6GtxGkUFhA8mMphtscgTPYcuA/ICD-cat-980x600.jpg?format=2500w"
-            alt="Card cap"
-          />
-        </div>
-        <div>
-          <img
-            src="https://www.trudellanimalhealth.com/sites/default/files/documents/tmdi-cat-athma-concern_2x.png"
-            alt="Card cap"
-          />
-        </div>
-        <div>
-          <img
-            src="https://static01.nyt.com/images/2019/09/04/business/04chinaclone-01/04chinaclone-01-videoSixteenByNineJumbo1600.jpg"
-            alt="Card cap"
-          />
-        </div>
-      </Carousel>
+      </Container>
     </div>
   );
 };

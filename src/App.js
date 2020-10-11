@@ -22,20 +22,32 @@ import {DeletePet} from "./components/PetCRUD/deletepet"
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from "./components/projects/ProjectDetails";
-import SignIn from "./components/auth/SignIn";
-import SignUp from "./components/auth/SignUp";
+/* import SignIn from "./components/auth/SignIn"; */
+
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
+
+//prueba backend
+import PrivateRoute from "./UI/Components/PrivateRoute";
+import Todos from "./UI/Routes/Todos";
+import SignIn from "./UI/Routes/SignIn";
+import SignOut from "./UI/Routes/SignOut"
+import SignInmail from "./UI/Routes/SignInemail";
+import CrearUsuario from "./UI/Routes/CrearUsuario";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <AppNav />
-          <Route path="/Admin" component={PetCrud} />
+          <AppNav />         
           <Switch>
+
+          {/* Prueba back */}
+          <PrivateRoute path = "/todos">
+          <Todos />
+        </PrivateRoute>
 
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
@@ -47,6 +59,11 @@ class App extends Component {
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
             <Route exact path="/petInfo" component={Info} />
             <Route exact path="/Donations" component={Donations} />
+            
+            
+            <Route exact path="/salir" component={SignOut} />
+            <Route exact path="/entrar" component={SignInmail} />
+            <Route exact path="/crearusuario" component={CrearUsuario} />
 
             {/* CRUD */}
             <Route exact path="/Admin/Createpet" component={CreatePet} />
@@ -57,8 +74,7 @@ class App extends Component {
             {/* RESTO DE COSAS */}
             <Route exact path="/dash" component={Dashboard} />
             <Route exact path="/project/:id" component={ProjectDetails} />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
+
             <Route exact path="/create" component={CreateProject} />
           </Switch>
           <Footer />

@@ -1,72 +1,101 @@
 import React from 'react'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 export const UpdatePet = () => {
     return (
         <div>
-        <h3>CREATE Screen</h3>
-        <div>
-            <input type="Nombre" class="form-control" id="inputNombre" placeholder="ID"></input>
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </div>
+            <Container fluid={true}>
+                <h2 className='display-6 font-weight-light justify-content py-4 ml-5'>UPDATE</h2>
+                <Form.Group>
 
-        <form>
+                    <Row>
+                        <Col md={6}>
+                            <Form.Control id='id' name='id' type='text' placeholder='ID' />
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="inputNombre">Nombre</label>
-            <input type="Nombre" class="form-control" id="inputNombre" placeholder="Nombre"></input>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEdad">Nombre</label>
-                <input type="Edad" class="form-control" id="inputEdad" placeholder="Edad"></input>
-            </div>
-        </div>
+                        </Col>
+                    </Row>
+                </Form.Group>
+                <button type="submit" class="btn btn-primary">BUSCAR</button>
 
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Genero</label>
-                <select id="inputState" class="form-control" placeholder="Genero">
-                    <option selected>...</option>
-                    <option>Macho</option>
-                    <option>Hembra</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-            <label for="inputState">Castrado</label>
-                <select id="inputState" class="form-control">
-                    <option selected>...</option>
-                    <option>SI</option>
-                    <option>NO</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-            <label for="inputState">Tipo de mascota</label>
-                <select id="inputState" class="form-control">
-                    <option selected>...</option>
-                    <option >Perro</option>
-                    <option >Gato</option>
-                </select>
-            </div>
-        </div>
+                <Row className='justify-content-center'>
+                    <Col md={8}>
+                        <Form>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="inputPersonalidad">Personalidad</label>
-            <input type="Nombre" class="form-control" id="inputPersonalidad" placeholder="Nombre"></input>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputTamaño">Tamaño</label>
-                <input type="Edad" class="form-control" id="inputTamaño" placeholder="Edad"></input>
-            </div>
-        </div>
 
-        <button type="submit" class="btn btn-primary">EDITAR</button>
+                            <Form.Group>
 
-        </form>
-    </div>
+                                <Row>
+
+                                    <Col md={6}>
+                                        <Form.Control id='name' name='name' type='text' placeholder='Nombre' />
+
+                                    </Col>
+                                    <Col md={6}>
+                                        <Form.Control id='age' name='age' type='text' placeholder='Edad' />
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Row>
+                                    <Col md={6}>
+                                        <label for="inputState">Genero</label>
+                                        <select id="inputState" class="form-control" placeholder="Genero">
+                                            <option selected>Seleccione una opción</option>
+                                            <option>Macho</option>
+                                            <option>Hembra</option>
+                                        </select>
+                                    </Col>
+                                    <Col md={6}>
+                                        <label for="inputState">Castrado</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Seleccione una opción</option>
+                                            <option>SI</option>
+                                            <option>NO</option>
+                                        </select>
+
+                                    </Col>
+                                    <Col md={6}>
+                                        <label for="inputState">Tipo de mascota</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Seleccione una opción</option>
+                                            <option >Perro</option>
+                                            <option >Gato</option>
+                                        </select>
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Row>
+
+                                    <Col md={6}>
+                                        <Form.Control id='personality' name='personality' type='text' placeholder='Personalidad' />
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Row>
+
+                                    <Col md={6}>
+                                        <Form.Control id='size' name='size' type='text' placeholder='Tamaño' />
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <button type="submit" class="btn btn-primary">CREAR</button>
+
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     )
 }
