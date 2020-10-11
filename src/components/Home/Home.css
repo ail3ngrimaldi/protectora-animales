@@ -1,0 +1,14 @@
+.StyleHome {
+  background-image: url("https://thumbs.dreamstime.com/z/modelo-incons-til-del-vector-de-los-objetos-espacio-fondo-blanco-y-negro-la-repetici%C3%B3n-con-el-planeta-estrella-nave-espacial-150257360.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.StyleImg {
+  border-radius: 25%;
+  width: 480px;
+  height: 480px;
+  padding: 4em;
+  float: right;
+}
