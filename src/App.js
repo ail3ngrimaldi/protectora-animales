@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
-import PetCrud from "./components/PetCRUD/petnavbar";
+//import PetCrud from "./components/PetCRUD/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";
@@ -32,7 +32,7 @@ import Info from "./components/Info/Info.js";
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
 import Todos from "./UI/Routes/Todos";
-import SignIn from "./UI/Routes/SignIn";
+//import SignIn from "./UI/Routes/SignIn";
 import SignOut from "./UI/Routes/SignOut"
 import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
