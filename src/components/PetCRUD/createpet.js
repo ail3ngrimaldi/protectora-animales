@@ -85,7 +85,6 @@ export const CreatePet = () => {
                                             <option value="SI">SI</option>
                                             <option value="NO">NO</option>
                                         </select>
-
                                     </Col>
                                     <Col md={6}>
                                         <label for="inputState">Tipo de mascota</label>
