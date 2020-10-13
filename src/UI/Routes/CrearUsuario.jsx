@@ -47,7 +47,8 @@ const CrearUsuario = () => {
                   birthdate: usuario.birthDate,
                   location: usuario.location,
                   address: usuario.address,
-                  isAdmin: false
+                  isAdmin: false,
+                  initials: usuario.firstName[0] + usuario.lastName[0]
       })
 
       result.user.sendEmailVerification(configuracion).catch(error =>{
