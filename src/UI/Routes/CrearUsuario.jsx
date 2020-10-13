@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const CrearUsuario = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
-  const { uid } = useSelector((state) => state.firebase.auth);
+  // const { uid } = useSelector((state) => state.firebase.auth);
 
   const initialState = {
     email: "",

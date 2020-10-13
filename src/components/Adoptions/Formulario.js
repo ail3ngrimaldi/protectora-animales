@@ -383,11 +383,11 @@
 // export default Formulario;
 
 
-import React, { useState } from 'react'
+import React from 'react'
 import { arrayMascotas } from '../Constants/arrayMascotas'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
+//import $ from 'jquery';
+//import Popper from 'popper.js';
 // import './Formulario.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -401,7 +401,7 @@ const Formulario = (props) => {
   const { id } = match.params
   console.log(id)
   const mascota = arrayMascotas.filter(a => {
-    return a.id == id
+    return a.id === id
   })[0]
 
   return (
