@@ -399,7 +399,7 @@ const Formulario = (props) => {
 
   const { match } = props
   const { id } = match.params
-  console.log(id)
+ // console.log(id)
   const mascota = arrayMascotas.filter(a => {
     return a.id === id
   })[0]
