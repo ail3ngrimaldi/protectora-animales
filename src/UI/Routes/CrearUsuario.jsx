@@ -27,30 +27,73 @@ const CrearUsuario = () => {
       [e.target.name]: e.target.value,
     });
   };
+  
   const createEmail = () => {
     
     firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
-    .then(res => {
-        return firestore.collection('users').doc(res.user.uid).set({
-            firstName: usuario.firstName,
-            lastName: usuario.lastName,
-            age: usuario.age,
-            birthdate: usuario.birthDate,
-            location: usuario.location,
-            address: usuario.address
-        })
-    }) 
-    .then(() => {
-      history.push("/")
+    .then(result => {
+      result.user.updateProfile({
+        displayName : usuario.firstName
+      })
+
+      const configuracion = {
+        url : 'http://localhost:3000'
+      }
+
+      firestore.collection('users').doc(result.user.uid).set({
+                  firstName: usuario.firstName,
+                  lastName: usuario.lastName,
+                  age: usuario.age,
+                  birthdate: usuario.birthDate,
+                  location: usuario.location,
+                  address: usuario.address,
+                  isAdmin: false,
+                  initials: usuario.firstName[0] + usuario.lastName[0]
+      })
+
+      result.user.sendEmailVerification(configuracion).catch(error =>{
+        console.error(error)
+       /*  Materialize.toast(error.message, 4000) */
+      })
+
     })
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
+    .catch(error => {
+      console.error(error)
+    /*   Materialize.tost(error.message, 4000) */
+    });
     
-  };
+    
+    
+  //   .then(authData => {// You are forgetting this reference.
+  //     authData.user.sendEmailVerification();
+  // }, function(error) {
+  //     // An error happened.
+  // }) 
+
+
+  //   .then (res =>  {
+  //           firestore.collection('users').doc(res.user.uid).set({
+  //           firstName: usuario.firstName,
+  //           lastName: usuario.lastName,
+  //           age: usuario.age,
+  //           birthdate: usuario.birthDate,
+  //           location: usuario.location,
+  //           address: usuario.address
+  //       })
+  //   },  function(error) {
+  //     // An error happened.
+  // }) 
+  //   /* .then(() => {
+  //     history.push("/")
+  //   }) */
+  //   .catch(function(error) {
+  //       // Handle Errors here.
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // ...
+  //     });
+    
+   };
 
   const history = useHistory();
   return (
@@ -163,7 +206,7 @@ const CrearUsuario = () => {
         </form>
 
         <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
-          e.preventDefault(); createEmail(); 
+          e.preventDefault(); createEmail(); history.push("/")
         }} value='Iniciar Sesión'/>
        
      
