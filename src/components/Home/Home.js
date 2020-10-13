@@ -2,7 +2,7 @@ import React from "react";
 import { Carrousel } from "../Carrousel/Carrousel";
 import { EventsHome } from "../Events/EventsHome";
 import { Link } from "react-router-dom";
-import { Modal, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 import "./Home.css";
 
