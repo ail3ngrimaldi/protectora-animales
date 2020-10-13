@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
-//import PetCrud from "./components/PetCRUD/petnavbar";
+import PetCrud from "./components/PetCRUD/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";

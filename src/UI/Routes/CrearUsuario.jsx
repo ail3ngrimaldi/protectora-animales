@@ -61,8 +61,7 @@ const CrearUsuario = () => {
       console.error(error)
     /*   Materialize.tost(error.message, 4000) */
     });
-    
-    
+   
     
   //   .then(authData => {// You are forgetting this reference.
   //     authData.user.sendEmailVerification();
