@@ -397,13 +397,14 @@ import Row from 'react-bootstrap/Row';
 
 const Formulario = (props) => {
 
+  
   const { match } = props
   const { id } = match.params
   console.log(id)
   const mascota = arrayMascotas.filter(a => {
-    return a.id === id
+    return a.id == id
   })[0]
-
+  
   return (
 
     <div>      
