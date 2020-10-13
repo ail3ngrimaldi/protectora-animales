@@ -13,47 +13,25 @@ export const CreatePet = () => {
     const firestore = useFirestore();
     const { uid } = useSelector((state) => state.firebase.auth);
 
-    const initialState = {
-        // name: animal.name,
-        // age: animal.age,
-        // genero: animal.genero,
-        // castrado: animal.castrado,
-        // tipo: animal.tipo,
-        // personality: animal.personality,
-        // size: animal.size
-    };
-
-    const [animal, setAnimal] = React.useState(initialState);
+    const [pet, setPet] = React.useState({});
     const updateField = (e) => {
-        setAnimal({
-            ...animal,
+        setPet({
+            ...pet,
             [e.target.name]: e.target.value
         });
-        console.log(animal)
     };
+
     const createAnimal = (e) => {
         e.preventDefault()
-        console.log(animal)
-        firestore.collection('animal').add({
-            name: animal.name,
-            age: animal.age,
-            genero: animal.genero,
-            castrado: animal.castrado,
-            tipo: animal.tipo,
-            personality: animal.personality,
-            size: animal.size
+        firestore.collection('pet').add({
+            name: pet.name,
+            age: pet.age,
+            gender: pet.gender,
+            castreted: pet.castreted,
+            kind: pet.kind,
+            personality: pet.personality,
+            size: pet.size
         })
-        // .then(() => {
-        //     setAnimal({ 
-        //         name: "",
-        //         age: 0,
-        //         genero: "",
-        //         castrado: "",
-        //         tipo: "",
-        //         personality: "",
-        //         size: 0,
-        //     });
-        // })
         .then(() => {
             window.location = '/'
             // history.push("/")
@@ -62,11 +40,7 @@ export const CreatePet = () => {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log('ACA HUBO ERROR')
-            console.log(error)
-            console.log(errorCode)
-            console.log(errorMessage)
-            // ...
+            return(error)
         });
     };
 
@@ -84,11 +58,11 @@ export const CreatePet = () => {
                                 <Row>
 
                                     <Col md={6}>
-                                        <Form.Control id='name' name='name' type='text' placeholder='Nombre' onChange={updateField} value={animal.name} />
+                                        <Form.Control id='name' name='name' type='text' placeholder='Nombre' onChange={updateField} value={pet.name} />
 
                                     </Col>
                                     <Col md={6}>
-                                        <Form.Control id='age' name='age' type='number' placeholder='Edad' onChange={updateField} value={animal.age} />
+                                        <Form.Control id='age' name='age' type='number' placeholder='Edad' onChange={updateField} value={pet.age} />
 
                                     </Col>
                                 </Row>
@@ -98,7 +72,7 @@ export const CreatePet = () => {
                                 <Row>
                                     <Col md={6}>
                                         <label for="inputState">Genero</label>
-                                        <select onChange={updateField} value={animal.genero} name='genero' id="inputState" class="form-control" placeholder="Genero">
+                                        <select onChange={updateField} value={pet.gender} name='gender' id="inputState" class="form-control" placeholder="Genero">
                                             <option defaultValue>Seleccione una opción</option>
                                             <option value="Macho">Macho</option>
                                             <option value="Hembra">Hembra</option>
@@ -106,7 +80,7 @@ export const CreatePet = () => {
                                     </Col>
                                     <Col md={6}>
                                         <label for="inputState">Castrado</label>
-                                        <select onChange={updateField} value={animal.castrado} name='castrado' id="inputState" class="form-control">
+                                        <select onChange={updateField} value={pet.castreted} name='castreted' id="inputState" class="form-control">
                                             <option defaultValue>Seleccione una opción</option>
                                             <option value="SI">SI</option>
                                             <option value="NO">NO</option>
@@ -115,7 +89,7 @@ export const CreatePet = () => {
                                     </Col>
                                     <Col md={6}>
                                         <label for="inputState">Tipo de mascota</label>
-                                        <select onChange={updateField} value={animal.tipo} name='tipo' id="inputState" class="form-control">
+                                        <select onChange={updateField} value={pet.kind} name='kind' id="inputState" class="form-control">
                                             <option defaultValue>Seleccione una opción</option>
                                             <option value="Perro">Perro</option>
                                             <option value="Gato">Gato</option>
@@ -129,7 +103,7 @@ export const CreatePet = () => {
                                 <Row>
 
                                     <Col md={6}>
-                                        <Form.Control onChange={updateField} value={animal.personality} id='personality' name='personality' type='text' placeholder='Personalidad' />
+                                        <Form.Control onChange={updateField} value={pet.personality} id='personality' name='personality' type='text' placeholder='Personalidad' />
 
                                     </Col>
                                 </Row>
@@ -138,7 +112,7 @@ export const CreatePet = () => {
                                 <Row>
 
                                     <Col md={6}>
-                                        <Form.Control onChange={updateField} value={animal.size} id='size' name='size' type='number' placeholder='Tamaño' />
+                                        <Form.Control onChange={updateField} value={pet.size} id='size' name='size' type='number' placeholder='Tamaño' />
 
                                     </Col>
                                 </Row>

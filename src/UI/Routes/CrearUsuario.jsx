@@ -44,7 +44,7 @@ const CrearUsuario = () => {
       history.push("/")
     })
     .catch(function(error) {
-        // Handle Errors here.
+        // Handle Errors here.  VER
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
