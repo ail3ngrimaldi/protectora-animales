@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const CrearUsuario = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
-  const { uid } = useSelector((state) => state.firebase.auth);
+  // const { uid } = useSelector((state) => state.firebase.auth);
 
   const initialState = {
     email: "",
@@ -61,8 +61,7 @@ const CrearUsuario = () => {
       console.error(error)
     /*   Materialize.tost(error.message, 4000) */
     });
-    
-    
+   
     
   //   .then(authData => {// You are forgetting this reference.
   //     authData.user.sendEmailVerification();

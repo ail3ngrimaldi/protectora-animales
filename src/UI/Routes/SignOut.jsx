@@ -16,8 +16,6 @@ const SignOut = () => {
   const history = useHistory();
   return (
     <div>
-      
-
       <button
         onClick={(event) => {
           event.preventDefault();

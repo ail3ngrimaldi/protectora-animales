@@ -8,9 +8,9 @@
 
 .StyleImg {
   border-radius: 25%;
-  width: 250px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   padding: 1em;
-  float: right;
+  float: left;
   opacity: 1;
 }
