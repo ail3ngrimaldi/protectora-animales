@@ -10,9 +10,11 @@ import { Store } from "./components/Store/Store";
 import { Volunteering } from "./components/Volunteering/Volunteering";
 import { Gallery } from "./components/Gallery/Gallery";
 import { MoneyDonations } from "./components/Donations/MoneyDonations";
-import { SuppliesDonations } from "./components/Donations/SuppliesDonations";
+import { Supplies } from "./components/Donations/SuppliesDonations";
 import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
+import { SuppliesBanner } from './components/Donations/SuppliesBanner'
+import { MoneyBanner } from './components/Donations/MoneyBanner'
 
 //CRUD
 import { CreatePet } from "./components/PetCRUD/createpet"
@@ -60,7 +62,12 @@ class App extends Component {
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
             <Route exact path="/petInfo" component={Info} />
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
-            <Route exact path="/SuppliesDonations" component={SuppliesDonations} />
+            <Route exact path="/MoneyBanner" component={MoneyBanner} />
+
+            <Route exact path="/SuppliesDonations" component={Supplies} />
+
+            <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
+
 
             <Route exact path="/salir" component={SignOut} />
             <Route exact path="/entrar" component={SignInmail} />
