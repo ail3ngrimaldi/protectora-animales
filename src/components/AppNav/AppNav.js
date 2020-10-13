@@ -14,7 +14,7 @@ const AppNav = () => {
             alt=""
             loading="lazy"
           />{" "}
-        </Link>    
+        </Link>
 
         <button
           class="navbar-toggler"
@@ -74,16 +74,30 @@ const AppNav = () => {
                 Galeria{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/Donations"
-                className="nav-item nav-link"
-              >
-                {" "}
-                Donaciones{" "}
-              </NavLink>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Donativos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <NavLink
+                  exact
+                  activeClassName="active"
+                  to="/MoneyBanner"
+                  className="nav-item nav-link"
+                >
+                  {" "}
+                Donaciones Monetario{" "}
+                </NavLink>
+                <NavLink
+                  exact
+                  activeClassName="active"
+                  to="/SuppliesBanner"
+                  className="nav-item nav-link"
+                >
+                  {" "}
+                Donaciones Insumos{" "}
+                </NavLink>
+              </div>
             </li>
             <li class="nav-item">
               <NavLink
@@ -94,11 +108,11 @@ const AppNav = () => {
               >
                 {" "}
                 Admin{" "}
-              </NavLink>             
+              </NavLink>
             </li>
-              {/* Nav de login */}
+            {/* Nav de login */}
 
-      <Nav2 />
+            <Nav2 />
           </ul>
           <br />
         </div>

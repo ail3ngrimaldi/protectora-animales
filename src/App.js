@@ -9,15 +9,18 @@ import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";
 import { Volunteering } from "./components/Volunteering/Volunteering";
 import { Gallery } from "./components/Gallery/Gallery";
-import { Donations } from "./components/Donations/Donations";
+import { MoneyDonations } from "./components/Donations/MoneyDonations";
+import { Supplies } from "./components/Donations/SuppliesDonations";
 import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
+import { SuppliesBanner } from './components/Donations/SuppliesBanner'
+import { MoneyBanner } from './components/Donations/MoneyBanner'
 
 //CRUD
-import {CreatePet} from "./components/PetCRUD/createpet"
-import {ReadPet} from "./components/PetCRUD/readpet"
-import {UpdatePet} from "./components/PetCRUD/updatepet"
-import {DeletePet} from "./components/PetCRUD/deletepet"
+import { CreatePet } from "./components/PetCRUD/createpet"
+import { ReadPet } from "./components/PetCRUD/readpet"
+import { UpdatePet } from "./components/PetCRUD/updatepet"
+import { DeletePet } from "./components/PetCRUD/deletepet"
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -41,13 +44,13 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <AppNav />         
+          <AppNav />
           <Switch>
 
-          {/* Prueba back */}
-          <PrivateRoute path = "/todos">
-          <Todos />
-        </PrivateRoute>
+            {/* Prueba back */}
+            <PrivateRoute path="/todos">
+              <Todos />
+            </PrivateRoute>
 
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
@@ -58,14 +61,20 @@ class App extends Component {
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
             <Route exact path="/petInfo" component={Info} />
-            <Route exact path="/Donations" component={Donations} />
-            
-            
+            <Route exact path="/MoneyDonations" component={MoneyDonations} />
+            <Route exact path="/MoneyBanner" component={MoneyBanner} />
+
+            <Route exact path="/SuppliesDonations" component={Supplies} />
+
+            <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
+
+
             <Route exact path="/salir" component={SignOut} />
             <Route exact path="/entrar" component={SignInmail} />
             <Route exact path="/crearusuario" component={CrearUsuario} />
 
             {/* CRUD */}
+            <Route exact path="/Admin" component={PetCrud} />
             <Route exact path="/Admin/Createpet" component={CreatePet} />
             <Route exact path="/Admin/ReadPet" component={ReadPet} />
             <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
@@ -78,7 +87,7 @@ class App extends Component {
             <Route exact path="/create" component={CreateProject} />
           </Switch>
           <Footer />
-          
+
         </div>
       </BrowserRouter>
     );
