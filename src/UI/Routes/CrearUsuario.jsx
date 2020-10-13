@@ -27,39 +27,72 @@ const CrearUsuario = () => {
       [e.target.name]: e.target.value,
     });
   };
+  
   const createEmail = () => {
     
     firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
-    .then(authData => {// You are forgetting this reference.
-      authData.user.sendEmailVerification();
-  }, function(error) {
-      // An error happened.
-  }) 
+    .then(result => {
+      result.user.updateProfile({
+        displayName : usuario.firstName
+      })
 
+      const configuracion = {
+        url : 'http://localhost:3000'
+      }
 
-    .then (res =>  {
-            firestore.collection('users').doc(res.user.uid).set({
-            firstName: usuario.firstName,
-            lastName: usuario.lastName,
-            age: usuario.age,
-            birthdate: usuario.birthDate,
-            location: usuario.location,
-            address: usuario.address
-        })
-    },  function(error) {
-      // An error happened.
-  }) 
-    /* .then(() => {
-      history.push("/")
-    }) */
-    .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
+      firestore.collection('users').doc(result.user.uid).set({
+                  firstName: usuario.firstName,
+                  lastName: usuario.lastName,
+                  age: usuario.age,
+                  birthdate: usuario.birthDate,
+                  location: usuario.location,
+                  address: usuario.address,
+                  isAdmin: false
+      })
+
+      result.user.sendEmailVerification(configuracion).catch(error =>{
+        console.error(error)
+       /*  Materialize.toast(error.message, 4000) */
+      })
+
+    })
+    .catch(error => {
+      console.error(error)
+    /*   Materialize.tost(error.message, 4000) */
+    });
     
-  };
+    
+    
+  //   .then(authData => {// You are forgetting this reference.
+  //     authData.user.sendEmailVerification();
+  // }, function(error) {
+  //     // An error happened.
+  // }) 
+
+
+  //   .then (res =>  {
+  //           firestore.collection('users').doc(res.user.uid).set({
+  //           firstName: usuario.firstName,
+  //           lastName: usuario.lastName,
+  //           age: usuario.age,
+  //           birthdate: usuario.birthDate,
+  //           location: usuario.location,
+  //           address: usuario.address
+  //       })
+  //   },  function(error) {
+  //     // An error happened.
+  // }) 
+  //   /* .then(() => {
+  //     history.push("/")
+  //   }) */
+  //   .catch(function(error) {
+  //       // Handle Errors here.
+  //       var errorCode = error.code;
+  //       var errorMessage = error.message;
+  //       // ...
+  //     });
+    
+   };
 
   const history = useHistory();
   return (
