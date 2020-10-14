@@ -20,12 +20,12 @@ const SignInmail = () => {
   };
   const signInWithmail = () => {
     
-    firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)    
+    firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)
+    .then(() => {
+      history.push("/");
+    })
     .catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
+       return error;
       });
     
   };
