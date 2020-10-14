@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { db } from  "../../index";
+import '@firebase/storage';
+import firebase from '@firebase/app';
+
 import { toast } from "react-toastify";
 
 const PetForm = (props) => {
@@ -12,17 +15,19 @@ const PetForm = (props) => {
     gender: '',
     castreted: ''
   };
+  var storage = firebase.storage();
+  const [image, setImage] = useState("");
 
   const [values, setValues] = useState(initialStateValues);
 
-  const subirImagen = (file, uid) => {
-    const refStorage = storage.ref(`imagenesMascotas/${uid}/${file.name}`);
-    const task = refStorage.put(file)
+  const subirImagen = (img, uid) => {
+    const refStorage = storage.ref(`imagenesMascotas/${uid}/${img}`);
+    const task = refStorage.put(image)
 
     task.on('state_changed',
     snapshot => {
       const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100;
-      $('.determinate').attr('style,', `width: ${porcentaje}%`)
+      ('.determinate').attr('style,', `width: ${porcentaje}%`)
     },
     err => {
       //Materialize.toast(`Error subiendo archivo = > ${err.message}`, 4000) 
