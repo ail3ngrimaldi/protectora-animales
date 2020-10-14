@@ -1,7 +1,7 @@
 .ProductCard{
     width: 230px;
-    border-width: 1px;
-    border-block-color: grey;
-    border-style: solid;
-    border-radius: 5px;
+}
+
+.card-body{
+    background-color: #f5f5dfd6;
 }
