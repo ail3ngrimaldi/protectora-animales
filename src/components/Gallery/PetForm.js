@@ -15,6 +15,29 @@ const PetForm = (props) => {
 
   const [values, setValues] = useState(initialStateValues);
 
+  const subirImagen = (file, uid) => {
+    const refStorage = storage.ref(`imagenesMascotas/${uid}/${file.name}`);
+    const task = refStorage.put(file)
+
+    task.on('state_changed',
+    snapshot => {
+      const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+      $('.determinate').attr('style,', `width: ${porcentaje}%`)
+    },
+    err => {
+      //Materialize.toast(`Error subiendo archivo = > ${err.message}`, 4000) 
+      console.log('Error subiendo un archivo')
+    },
+    () => {
+      task.snapshot.ref.getDownloadURL()
+      .then(url => {
+        console.log(url)
+        sessionStorage.setItem('imgNewPet', url)
+      }).catch(err => { console.log('Error subeidno el archivo') 
+    }) 
+  }) 
+}
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -24,7 +47,7 @@ const PetForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    subirImagen();
    
 
     props.addOrEditLink(values);
@@ -142,7 +165,15 @@ const PetForm = (props) => {
           onChange={handleInputChange}
         />
       </div>
+      <div>
+      <input
+          type="file"
+          name="img"
+          className="form-control"
+          onChange={handleInputChange}
+        />
 
+      </div>
       <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Save" : "Update"}
       </button>

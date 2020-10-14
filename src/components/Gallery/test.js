@@ -9,7 +9,7 @@ const Test = () => {
   const [links, setLinks] = useState([]);
   const [currentId, setCurrentId] = useState("");
 
-  subirImagen (file, uid) {
+  const subirImagen = (file, uid) => {
     const refStorage = storage.ref(`imagenesMascotas/${uid}/${file.name}`);
     const task = refStorage.put(file)
 
@@ -27,11 +27,10 @@ const Test = () => {
       .then(url => {
         console.log(url)
         sessionStorage.setItem('imgNewPet', url)
-      }).catch(err => { 
-        console.log('Error subeidno el archivo')
-      })
-    )
-  }
+      }).catch(err => { console.log('Error subeidno el archivo') 
+    }) 
+  }) 
+}
 
   const getLinks = async () => {
     db.collection("pet").onSnapshot((querySnapshot) => {
