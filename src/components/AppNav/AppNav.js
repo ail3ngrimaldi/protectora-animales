@@ -110,11 +110,7 @@ const AppNav = (props) => {
               >
                 {" "}
                 Admin{" "}
-<<<<<<< HEAD
               </NavLink> }               
-=======
-              </NavLink>
->>>>>>> e831dad0e909e5825555b6957bc28533e51c9284
             </li>
             {/* Nav de login */}
 
