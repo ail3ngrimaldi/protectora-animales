@@ -401,12 +401,12 @@ const Formulario = (props) => {
   const { id } = match.params
   console.log(id)
   const mascota = arrayMascotas.filter(a => {
-    return a.id === id
+    return a.id == id
   })[0]
 
   return (
 
-    <div>      
+    <div>
       <Container fluid={true}>
         <h2 className='display-6 font-weight-light justify-content py-4 ml-5'>Datos de la Mascota</h2>
         <Row className='justify-content-center'>
