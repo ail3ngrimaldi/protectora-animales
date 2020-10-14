@@ -39,7 +39,7 @@ const rrfConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.firestore();
+export const db = firebase.firestore();
 
 const initialState = {};
 const store = createStore(rootReducer, initialState);
