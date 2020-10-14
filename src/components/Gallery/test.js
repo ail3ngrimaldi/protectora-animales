@@ -74,13 +74,13 @@ const Test = () => {
                     className="material-icons text-danger"
                     onClick={() => onDeleteLink(link.id)}
                   >
-                    close
+                    Eliminar
                   </i>
                   <i
                     className="material-icons"
                     onClick={() => setCurrentId(link.id)}
                   >
-                    create
+                    Actualizar
                   </i>
                 </div>
               </div>
