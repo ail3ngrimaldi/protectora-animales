@@ -1,13 +1,37 @@
 import React, { useEffect, useState } from "react";
 import PetForm from "./PetForm"; 
 
-import { db } from "../../index";
+import { db, storage } from "../../index";
 import { toast } from "react-toastify";
 
 
 const Test = () => {
   const [links, setLinks] = useState([]);
   const [currentId, setCurrentId] = useState("");
+
+  subirImagen (file, uid) {
+    const refStorage = storage.ref(`imagenesMascotas/${uid}/${file.name}`);
+    const task = refStorage.put(file)
+
+    task.on('state_changed',
+    snapshot => {
+      const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100;
+      $('.determinate').attr('style,', `width: ${porcentaje}%`)
+    },
+    err => {
+      //Materialize.toast(`Error subiendo archivo = > ${err.message}`, 4000) 
+      console.log('Error subiendo un archivo')
+    },
+    () => {
+      task.snapshot.ref.getDownloadURL()
+      .then(url => {
+        console.log(url)
+        sessionStorage.setItem('imgNewPet', url)
+      }).catch(err => { 
+        console.log('Error subeidno el archivo')
+      })
+    )
+  }
 
   const getLinks = async () => {
     db.collection("pet").onSnapshot((querySnapshot) => {
