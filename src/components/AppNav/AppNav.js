@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Nav2 from './Navbarlogin'
+import { connect } from 'react-redux'
 
-const AppNav = () => {
+const AppNav = (props) => {
+  const { auth, profile } = props;
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -100,7 +102,7 @@ const AppNav = () => {
               </div>
             </li>
             <li class="nav-item">
-              <NavLink
+            {profile.isAdmin === true &&  <NavLink
                 exact
                 activeClassName="active"
                 to="/Admin"
@@ -108,7 +110,7 @@ const AppNav = () => {
               >
                 {" "}
                 Admin{" "}
-              </NavLink>
+              </NavLink> }               
             </li>
             {/* Nav de login */}
 
@@ -122,4 +124,12 @@ const AppNav = () => {
   );
 };
 
-export default AppNav;
+const mapStateToProps = (state) => {
+  // console.log(state);
+  return{
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  }
+}
+
+export default connect(mapStateToProps)(AppNav)

@@ -39,6 +39,8 @@ import SignOut from "./UI/Routes/SignOut"
 import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
 
+import Test from './components/Gallery/test'
+
 class App extends Component {
   render() {
     return (
@@ -85,6 +87,8 @@ class App extends Component {
             <Route exact path="/project/:id" component={ProjectDetails} />
 
             <Route exact path="/create" component={CreateProject} />
+
+            <Route exact path="/test" component={Test} />
           </Switch>
           <Footer />
 
