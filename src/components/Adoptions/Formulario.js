@@ -407,7 +407,7 @@ const Formulario = (props) => {
   
   return (
 
-    <div>      
+    <div>
       <Container fluid={true}>
         <h2 className='display-6 font-weight-light justify-content py-4 ml-5'>Datos de la Mascota</h2>
         <Row className='justify-content-center'>

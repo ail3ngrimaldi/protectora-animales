@@ -15,6 +15,7 @@ import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
+import  Petimage  from './components/Gallery/Petimage'
 
 //CRUD
 
@@ -40,6 +41,10 @@ import SignOut from "./UI/Routes/SignOut"
 import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
 
+import Test from './components/Gallery/test'
+import FileUpload from './components/Gallery/FileUpload'
+import Agregarpet from './components/Gallery/Agregarpet'
+
 class App extends Component {
   render() {
     return (
@@ -56,7 +61,7 @@ class App extends Component {
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
             <Route exact path="/AboutUs" component={AboutUs} />
-            <Route exact path="/Gallery" component={Gallery} />
+            <Route exact path="/Gallery" component={Petimage} />
             <Route exact path="/Volunteering" component={Volunteering} />
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
@@ -86,6 +91,11 @@ class App extends Component {
             <Route exact path="/project/:id" component={ProjectDetails} />
 
             <Route exact path="/create" component={CreateProject} />
+
+            <Route exact path="/test" component={Test} />
+            <Route exact path="/up" component={FileUpload} />
+            <Route exact path="/agregarpet" component={Agregarpet} />
+
           </Switch>
           <Footer />
 

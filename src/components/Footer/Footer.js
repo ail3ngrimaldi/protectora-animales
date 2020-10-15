@@ -12,8 +12,9 @@ export const Footer = () => {
             <MDBCol md="6" className="Fonts py-2">
               <h5 className="title">Protectora Sarmiento</h5>
               <p>Asociacion Civil sin fines de lucro</p>
+              <p>Personería jurídica 0599 / 70</p>
               <p>Cuit: 30-70152191-5</p>
-              <p>Telefono: +1 341-352-5559</p>
+              <p>Telefono: +54 9 3412 76-9534</p>
 
               <p>Rosario - Argentina</p>
             </MDBCol>

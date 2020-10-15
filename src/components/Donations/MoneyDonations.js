@@ -40,7 +40,11 @@ export const MoneyDonations = () => {
                     <h5 class="card-title">Mercado Pago</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary">Haz tu donativo</button>
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                        <button type="button" 
+                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                        </button>
+                    </a>     
                 </div>
                 <div className="MPCard">
                     <img
@@ -51,7 +55,11 @@ export const MoneyDonations = () => {
                     <h5 class="card-title">Mercado Pago 100 $ARG</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary">Haz tu donativo</button>
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                        <button type="button" 
+                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                        </button>
+                    </a>  
                 </div>
                 <div className="MPCard">
                     <img
@@ -62,7 +70,11 @@ export const MoneyDonations = () => {
                     <h5 class="card-title">Mercado Pago 200 $ARG</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary">Haz tu donativo</button>
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                        <button type="button" 
+                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                        </button>
+                    </a>  
                 </div>
                 <div className="MPCard">
                     <img
@@ -73,7 +85,11 @@ export const MoneyDonations = () => {
                     <h5 class="card-title">Mercado Pago 300 $ARG</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary">Haz tu donativo</button>
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                        <button type="button" 
+                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                        </button>
+                    </a>  
                 </div>
             </div>
      

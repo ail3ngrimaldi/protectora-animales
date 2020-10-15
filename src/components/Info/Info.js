@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 
+import { db } from "../../index";
+
 function MyVerticallyCenteredModal(props) {
+
+  const [links, setLinks] = useState([]);
+
+  const getLinks = async () => {
+    db.collection("pet").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setLinks(docs);
+    });
+  };
+
+  useEffect(() => {
+    getLinks();
+  }, []);
+
   return (
     <Modal
       {...props}
@@ -11,27 +30,33 @@ function MyVerticallyCenteredModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Milaneso</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>
-          <ul>
-            <li>Alimentación: alimento balanceado</li>
-            <li>Castrado: no</li>
-            <li>Edad: 7</li>
-            <li>Género: femenino</li>
-            <li>Personalidad: muy cariñosa</li>
-            <li>Tamaño: 20cm</li>
-            <li>Tipo de animal: gato</li>
-          </ul>
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Link to="/Adoptions/Form/1">
-          <Button>Adoptar</Button>
-        </Link>
-      </Modal.Footer>
+      <div className="col-md-8 p-2">
+        {links.map((pet) => (
+          <div className="card mb-1" key={pet.id}>
+            <div className="card-body">
+              <div className="d-flex justify-content-between">
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title-vcenter">{pet.name}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <img width="100" height="100" src={pet.avatar} alt={pet.name} />
+                  <h4>edad: {pet.age}</h4>
+                  <h4>tipo: {pet.kind}</h4>
+                  <h4>personalidad: {pet.personality}</h4>
+                  <h4>tamaño: {pet.size}</h4>
+                  <h4>género: {pet.gender}</h4>
+                  <h4>castrado: {pet.castreted}</h4>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Link to="/Adoptions/Form/1">
+                    <Button>Adoptar</Button>
+                  </Link>
+                </Modal.Footer>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </Modal>
   );
 }
