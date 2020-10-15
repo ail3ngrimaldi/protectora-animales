@@ -41,6 +41,8 @@ import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
 
 import Test from './components/Gallery/test'
+import FileUpload from './components/Gallery/FileUpload'
+import Agregarpet from './components/Gallery/Agregarpet'
 
 class App extends Component {
   render() {
@@ -90,6 +92,9 @@ class App extends Component {
             <Route exact path="/create" component={CreateProject} />
 
             <Route exact path="/test" component={Test} />
+            <Route exact path="/up" component={FileUpload} />
+            <Route exact path="/agregarpet" component={Agregarpet} />
+
           </Switch>
           <Footer />
 
