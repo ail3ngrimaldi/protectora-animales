@@ -10,9 +10,9 @@ const AppNav = (props) => {
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
           <img
-            src="/img/Logo1.png"
-            width="60"
-            height="40"
+            src="/img/Logo.png"
+            width="201px"
+            height="103px"
             alt=""
             loading="lazy"
           />{" "}
