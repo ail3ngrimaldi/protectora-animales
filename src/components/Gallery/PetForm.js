@@ -13,7 +13,8 @@ const PetForm = (props) => {
     personality: '',
     size: '',
     gender: '',
-    castreted: ''
+    castreted: '',
+    img:''
   };
   var storage = firebase.storage();
   const [image, setImage] = useState("");
@@ -44,14 +45,16 @@ const PetForm = (props) => {
 }
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setValues({ ...values, [name]: value });
+    setValues({[e.target.name]: e.target.value})
+    console.log(values);
+    console.log(values.img);
   };
 
  
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //console.log(values)
     subirImagen();
    
 
@@ -174,6 +177,7 @@ const PetForm = (props) => {
       <input
           type="file"
           name="img"
+          value={values.img}
           className="form-control"
           onChange={handleInputChange}
         />
