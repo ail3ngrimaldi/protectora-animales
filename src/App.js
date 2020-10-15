@@ -15,6 +15,7 @@ import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
+import  Petimage  from './components/Gallery/Petimage'
 
 //CRUD
 import { CreatePet } from "./components/PetCRUD/createpet"
@@ -59,7 +60,7 @@ class App extends Component {
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
             <Route exact path="/AboutUs" component={AboutUs} />
-            <Route exact path="/Gallery" component={Gallery} />
+            <Route exact path="/Gallery" component={Petimage} />
             <Route exact path="/Volunteering" component={Volunteering} />
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
