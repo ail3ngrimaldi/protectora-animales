@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { db } from  "../../index";
-import '@firebase/storage';
-import firebase from '@firebase/app';
-
 import { toast } from "react-toastify";
 
 const PetForm = (props) => {
@@ -13,49 +10,21 @@ const PetForm = (props) => {
     personality: '',
     size: '',
     gender: '',
-    castreted: '',
-    img:''
+    castreted: ''
   };
-  var storage = firebase.storage();
-  const [image, setImage] = useState("");
 
   const [values, setValues] = useState(initialStateValues);
 
-  const subirImagen = (img, uid) => {
-    const refStorage = storage.ref(`imagenesMascotas/${uid}/${img}`);
-    const task = refStorage.put(image)
-
-    task.on('state_changed',
-    snapshot => {
-      const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100;
-      ('.determinate').attr('style,', `width: ${porcentaje}%`)
-    },
-    err => {
-      //Materialize.toast(`Error subiendo archivo = > ${err.message}`, 4000) 
-      console.log('Error subiendo un archivo')
-    },
-    () => {
-      task.snapshot.ref.getDownloadURL()
-      .then(url => {
-        console.log(url)
-        sessionStorage.setItem('imgNewPet', url)
-      }).catch(err => { console.log('Error subeidno el archivo') 
-    }) 
-  }) 
-}
-
   const handleInputChange = (e) => {
-    setValues({[e.target.name]: e.target.value})
-    console.log(values);
-    console.log(values.img);
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
   };
 
  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(values)
-    subirImagen();
+
    
 
     props.addOrEditLink(values);
@@ -173,16 +142,7 @@ const PetForm = (props) => {
           onChange={handleInputChange}
         />
       </div>
-      <div>
-      <input
-          type="file"
-          name="img"
-          value={values.img}
-          className="form-control"
-          onChange={handleInputChange}
-        />
 
-      </div>
       <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Save" : "Update"}
       </button>
