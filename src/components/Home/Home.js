@@ -4,12 +4,14 @@ import { EventsHome } from "../Events/EventsHome";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
+
 import "./Home.css";
 
 export const Home = () => {
   return (
     <div className="StyleHome">
       <Carrousel />
+
       <div>
         <div className="container">
           <div className="row">
