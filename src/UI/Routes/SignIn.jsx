@@ -19,7 +19,6 @@ const SignIn = () => {
   const history = useHistory();
   return (
     <div>
-     
 
       <button
         onClick={(event) => {
