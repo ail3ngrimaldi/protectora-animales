@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Foto1 from "../Donations/imgD/Foto1.png";
 import Foto2 from "../Donations/imgD/Foto2.png";
