@@ -31,20 +31,21 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <div className="col-md-8 p-2">
-        {links.map((link) => (
-          <div className="card mb-1" key={link.id}>
+        {links.map((pet) => (
+          <div className="card mb-1" key={pet.id}>
             <div className="card-body">
               <div className="d-flex justify-content-between">
                 <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title-vcenter">{link.name}</Modal.Title>
+                  <Modal.Title id="contained-modal-title-vcenter">{pet.name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <h4>edad: {link.age}</h4>
-                  <h4>tipo: {link.kind}</h4>
-                  <h4>personalidad: {link.personality}</h4>
-                  <h4>tamaño: {link.size}</h4>
-                  <h4>género: {link.gender}</h4>
-                  <h4>castrado: {link.castreted}</h4>
+                <img width="100" height="100" src={pet.avatar} alt={pet.name} />
+                  <h4>edad: {pet.age}</h4>
+                  <h4>tipo: {pet.kind}</h4>
+                  <h4>personalidad: {pet.personality}</h4>
+                  <h4>tamaño: {pet.size}</h4>
+                  <h4>género: {pet.gender}</h4>
+                  <h4>castrado: {pet.castreted}</h4>
                 </Modal.Body>
                 <Modal.Footer>
                   <Link to="/Adoptions/Form/1">
