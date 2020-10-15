@@ -40,6 +40,7 @@ import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
 
 import Test from './components/Gallery/test'
+import FileUpload from './components/Gallery/FileUpload'
 
 class App extends Component {
   render() {
@@ -89,6 +90,7 @@ class App extends Component {
             <Route exact path="/create" component={CreateProject} />
 
             <Route exact path="/test" component={Test} />
+            <Route exact path="/up" component={FileUpload} />
           </Switch>
           <Footer />
 
