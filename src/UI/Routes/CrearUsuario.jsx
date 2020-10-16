@@ -15,7 +15,7 @@ const CrearUsuario = () => {
     firstName: "",
     lastName: "",
     age: "",
-    birthDate: "",
+    birthdate: "",
     location: "",
     address: ""
   };
@@ -44,7 +44,7 @@ const CrearUsuario = () => {
                   firstName: usuario.firstName,
                   lastName: usuario.lastName,
                   age: usuario.age,
-                  birthdate: usuario.birthDate,
+                  birthdate: usuario.birthdate,
                   location: usuario.location,
                   address: usuario.address,
                   isAdmin: false,
@@ -169,7 +169,7 @@ const CrearUsuario = () => {
               <input
                 type="date"
                 required
-                name="birthDate"                
+                name="birthdate"                
                 onChange={updateField}
                 className="form-control"
               />
