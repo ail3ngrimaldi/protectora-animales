@@ -47,6 +47,8 @@ import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
 import PetId from './components/Info/PetId'
+import UserProfile from './components/Users/UserProfile'
+import EditProfile from './components/Users/EditProfile'
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -62,8 +64,7 @@ function App() {
     return unmount;
   }, []);
   
-import UserProfile from './components/Users/UserProfile'
-import EditProfile from './components/Users/EditProfile'
+
 
     return (
       <BrowserRouter>
