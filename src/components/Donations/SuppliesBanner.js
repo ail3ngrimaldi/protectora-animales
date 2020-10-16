@@ -113,16 +113,16 @@ export const SuppliesBanner = () => {
       </Container>
                 <div className="SBannerCard">
                     <h4 class="card-title">Donativo Insumos</h4>
-                    <h5 class="card-title">Informacion</h5>
-                    <h5 class="card-title">Mensaje lindo</h5>
-                    <h6 class="card-title">Agradecimientos</h6>
+                    <h5 class="card-title">🐾 No nos suelten las patitas 🐾 </h5>
+                    <h5 class="card-title">Agradecemos las colaboraciones para los Sarmientitos. </h5>
+                    <h6 class="card-title">Necesitamos tu ayuda. Gracias.</h6>
                  
                     <NavLink
                         exact
                         activeClassName="active"
                         to="/SuppliesDonations"
                         className="nav-item nav-link">
-                        <button type="button" class="btn btn-primary">Dona aqui!</button>
+                        <button type="button" class="btn btn-primary">¡DONA AQUI!</button>
                     </NavLink>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
+import Container from 'react-bootstrap/Container'
+import Swal from 'sweetalert2';
 import SignIn from "./SignIn"
 
 const SignInmail = () => {
@@ -32,10 +34,11 @@ const SignInmail = () => {
 
   const history = useHistory();
   return (
-    <div>
-      <h1>Loguearte</h1>
+    <div>      
+      <Container>
+       <h4>Loguearte</h4> 
       <form id="formlogin">
-          <div className="form-group col-md-12" id="contelogin2">
+          <div className="form-group col-md" id="contelogin2">
             <div className="input-group mb-3 id" id="contelogin3">
               <input
                 type="text"
@@ -47,7 +50,7 @@ const SignInmail = () => {
               />
             </div>
           </div>
-          <div className="form-group col-md-12 " id="contelogin4">
+          <div className="form-group col-md " id="contelogin4">
             <div className="input-group mb-3" id="contelogin5">
               <input
                 type="password"
@@ -61,14 +64,12 @@ const SignInmail = () => {
       
           </div>
         </form>
-        
-
-        <input type="submit" className="btn btn-outline-dark" onClick={signInWithmail} value='Iniciar Sesión'/>
+        <input type="submit" className="btn btn-outline-dark" onClick={signInWithmail} value='Iniciar Sesión'/>                
         <br />
-        <h1>Loguearte con Gmail</h1>
         <br />
+        <h4>Con Gmail</h4>                
         <div><SignIn/></div>
-     
+        </Container>
     </div>
   );
 };
