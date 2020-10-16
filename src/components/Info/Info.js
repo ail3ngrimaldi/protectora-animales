@@ -22,7 +22,6 @@ export default function Info(props) {
 
   useEffect(() => {
     getPets();
-    console.log(getPets(), "ooooooooooooooooooooooooooo")
   }, []);
 
   return (

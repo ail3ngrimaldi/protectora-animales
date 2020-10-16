@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 
-import { db } from "../../index";
 
 export default function ModalDetalleMascota (props) {
+<<<<<<< HEAD:src/components/Info/ModalDetalleMascota.js
  
  
+=======
+  
+>>>>>>> c0a1d7b8fde400fc3058b6ddebe49f1f20fb2040:src/components/Info/MyVerticallyCenteredModal.js
     return (
       <Modal
         {...props}

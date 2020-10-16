@@ -42,7 +42,11 @@ const Petimage = () => {
                         {/* <h4>nombre: {pet.name}</h4> */}
                     <div className="memberInfo">
                         <h2 className="mb-2 font-weight-light h3 ">
+<<<<<<< HEAD
                         <Info petId={pet.id} key={pet.id}/>
+=======
+                            <Info petId={pet.id} key={pet.id}/>
+>>>>>>> c0a1d7b8fde400fc3058b6ddebe49f1f20fb2040
                         </h2>
                        
                     </div>
