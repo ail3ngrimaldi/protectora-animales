@@ -49,6 +49,7 @@ import Agregarpet from './components/Gallery/Agregarpet'
 import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
+import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -88,6 +89,7 @@ function App() {
             <Route exact path="/petInfo/:id" component={Info} />
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
+            <Route exact path="/Modal" component={ModalDetalleMascota} />
 
             <Route exact path="/SuppliesDonations" component={Supplies} />
 
