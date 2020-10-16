@@ -1,21 +1,31 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../Redux/store/actions/authActions'
 import "../AppNav/navbarlogin.css"
 import SignOut from "../../UI/Routes/SignOut"
 
 const SignedInLinks = (props) => {
+  const name = props.profile.initials ? props.profile.initials : props.profile.displayName
   return (
     <div>
-      <ul className="right">
+      {/* <ul className="right">
         {/* <li><NavLink to='/create'>Vacío</NavLink></li> */}
         {/* <li><a onClick={props.signOut}>Log Out</a></li> */}
-        <li><SignOut/></li>
+        {/*<li><SignOut/></li>
         <li><NavLink to='/' className="btn btn-floating">
           {props.profile.initials}
         </NavLink></li>
-      </ul>
+      </ul> */}
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         {name}
+      </a>
+
+      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <Link className="dropdown-item" to="/MiPerfil">Ver mi Perfil</Link>
+        <SignOut/>
+        
+      </div>
     </div>
   )
 }

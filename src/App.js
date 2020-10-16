@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect  } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {db , app} from './index'
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
@@ -18,6 +19,7 @@ import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  Petimage  from './components/Gallery/Petimage'
 
 //CRUD
+
 import { CreatePet } from "./components/PetCRUD/createpet"
 import { ReadPet } from "./components/PetCRUD/readpet"
 import { UpdatePet } from "./components/PetCRUD/updatepet"
@@ -39,13 +41,31 @@ import Todos from "./UI/Routes/Todos";
 import SignOut from "./UI/Routes/SignOut"
 import SignInmail from "./UI/Routes/SignInemail";
 import CrearUsuario from "./UI/Routes/CrearUsuario";
+import NotFound from './components/404/Notfound'
 
 import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
+import PetId from './components/Info/PetId'
+import UserProfile from './components/Users/UserProfile'
+import EditProfile from './components/Users/EditProfile'
 
-class App extends Component {
-  render() {
+function App() {
+  const [albums, setAlbums] = useState([]);
+
+  useEffect(() => {
+    const unmount = db.collection("pet").onSnapshot((snapshot) => {
+      const tempAlbums = [];
+      snapshot.forEach((doc) => {
+        tempAlbums.push({ ...doc.data(), id: doc.name });
+      });
+      setAlbums(tempAlbums);
+    });
+    return unmount;
+  }, []);
+  
+
+
     return (
       <BrowserRouter>
         <div className="App">
@@ -65,7 +85,7 @@ class App extends Component {
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo" component={Info} />
+            <Route exact path="/petInfo/:id" component={Info} />
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
 
@@ -94,7 +114,10 @@ class App extends Component {
             <Route exact path="/test" component={Test} />
             <Route exact path="/up" component={FileUpload} />
             <Route exact path="/agregarpet" component={Agregarpet} />
-
+            <Route exact path="/pet/:id" component={PetId} />
+            <Route exact path="/MiPerfil" component={UserProfile} />
+            <Route exact path="/EditarPerfil" component={EditProfile} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
 
@@ -102,6 +125,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-}
+
 
 export default App;

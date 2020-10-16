@@ -1,9 +1,9 @@
 import React from "react";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-const CrearUsuario = () => {
+const EditProfile = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
   // const { uid } = useSelector((state) => state.firebase.auth);
@@ -63,41 +63,14 @@ const CrearUsuario = () => {
     });
    
     
-  //   .then(authData => {// You are forgetting this reference.
-  //     authData.user.sendEmailVerification();
-  // }, function(error) {
-  //     // An error happened.
-  // }) 
-
-
-  //   .then (res =>  {
-  //           firestore.collection('users').doc(res.user.uid).set({
-  //           firstName: usuario.firstName,
-  //           lastName: usuario.lastName,
-  //           age: usuario.age,
-  //           birthdate: usuario.birthDate,
-  //           location: usuario.location,
-  //           address: usuario.address
-  //       })
-  //   },  function(error) {
-  //     // An error happened.
-  // }) 
-  //   /* .then(() => {
-  //     history.push("/")
-  //   }) */
-  //   .catch(function(error) {
-  //       // Handle Errors here.
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-  //       // ...
-  //     });
+  
     
    };
 
   const history = useHistory();
   return (
     <div>
-      <h1>Crear un Usuario</h1>
+      <h1>Editar mi Perfil</h1>
       <form id="formlogin">
           <div className="form-group col-md-12" id="contelogin2">
             <div className="input-group mb-3 id" id="contelogin3">
@@ -206,11 +179,11 @@ const CrearUsuario = () => {
 
         <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
           e.preventDefault(); createEmail(); history.push("/")
-        }} value='Iniciar Sesión'/>
+        }} value='Guardar Cambios'/>
        
      
     </div>
   );
 };
 
-export default CrearUsuario;
+export default EditProfile;

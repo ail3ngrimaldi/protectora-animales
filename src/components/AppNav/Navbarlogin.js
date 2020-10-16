@@ -9,7 +9,7 @@ import Admin from './Admin'
 
 const Navbar2 = (props) => {
   const { auth, profile } = props;
-  // console.log(auth);
+  //console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
   //console.log(profile, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
   return (
