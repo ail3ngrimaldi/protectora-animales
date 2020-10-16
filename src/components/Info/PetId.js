@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "./Info.css";
 
 
@@ -41,7 +42,10 @@ docRef.get().then(function(doc) {
                   <h4>personalidad: {pet.personality}</h4>
                   <h4>tamaño: {pet.size}</h4>
                   <h4>género: {pet.gender}</h4>
-                  <h4>castrado: {pet.castreted}</h4>        
+                  <h4>castrado: {pet.castreted}</h4>  
+                  <Link to={`/Adoptions/Form/1`}>
+                      <Button>Adoptar</Button>
+                    </Link>      
       </div>
     
   );
