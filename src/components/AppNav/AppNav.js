@@ -7,7 +7,7 @@ const AppNav = (props) => {
   const { auth, profile } = props;
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
           <img
             src="/img/Logo.png"
@@ -19,7 +19,7 @@ const AppNav = (props) => {
         </Link>
 
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -27,12 +27,12 @@ const AppNav = (props) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -43,7 +43,7 @@ const AppNav = (props) => {
                 Historia{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -54,7 +54,7 @@ const AppNav = (props) => {
                 Tienda{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -65,7 +65,7 @@ const AppNav = (props) => {
                 Voluntariado{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -73,14 +73,14 @@ const AppNav = (props) => {
                 className="nav-item nav-link"
               >
                 {" "}
-                Galeria{" "}
+                Mascotas{" "}
               </NavLink>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Donativos
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <NavLink
                   exact
                   activeClassName="active"
@@ -101,7 +101,7 @@ const AppNav = (props) => {
                 </NavLink>
               </div>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
             {profile.isAdmin === true &&  <NavLink
                 exact
                 activeClassName="active"

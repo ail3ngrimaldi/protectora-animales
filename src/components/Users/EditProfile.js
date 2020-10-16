@@ -3,7 +3,7 @@ import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const EditarUsuario = () => {
+const EditProfile = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
   // const { uid } = useSelector((state) => state.firebase.auth);
@@ -186,4 +186,4 @@ const EditarUsuario = () => {
   );
 };
 
-export default EditarUsuario;
+export default EditProfile;
