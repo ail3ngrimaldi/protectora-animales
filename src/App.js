@@ -18,6 +18,7 @@ import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  Petimage  from './components/Gallery/Petimage'
 
 //CRUD
+
 import { CreatePet } from "./components/PetCRUD/createpet"
 import { ReadPet } from "./components/PetCRUD/readpet"
 import { UpdatePet } from "./components/PetCRUD/updatepet"
@@ -43,6 +44,8 @@ import CrearUsuario from "./UI/Routes/CrearUsuario";
 import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
+import UserProfile from './components/Users/UserProfile'
+import EditProfile from './components/Users/EditProfile'
 
 class App extends Component {
   render() {
@@ -94,6 +97,8 @@ class App extends Component {
             <Route exact path="/test" component={Test} />
             <Route exact path="/up" component={FileUpload} />
             <Route exact path="/agregarpet" component={Agregarpet} />
+            <Route exact path="/MiPerfil" component={UserProfile} />
+            <Route exact path="/EditarPerfil" component={EditProfile} />
 
           </Switch>
           <Footer />
