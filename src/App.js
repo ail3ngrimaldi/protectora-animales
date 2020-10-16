@@ -65,7 +65,7 @@ class App extends Component {
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo" component={Info} />
+            {/* <Route exact path="/petInfo/:id" component={({ match }) => <Info match={match} />} /> */}
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
 
