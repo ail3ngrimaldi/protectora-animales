@@ -98,14 +98,14 @@ const Preguntas = ({formData, setForm, navigation} ) => {
            className='mr-4'
            onClick={()=> navigation.previous()}
            >
-               Back
+               Anterior
            </Button>
            <Button 
            variant='contained' 
            color='primary' 
            onClick={() => navigation.next()}
            >
-            Next
+            Siguiente
             </Button>
 
            </div>

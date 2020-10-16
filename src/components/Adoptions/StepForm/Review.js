@@ -88,7 +88,7 @@ const Review = ({formData, navigation}) => {
                 className='mt-4'
                 onClick={()=> go('submit')}
             > 
-                Submit
+                Enviar
             </Button>
         </Container>
     )
