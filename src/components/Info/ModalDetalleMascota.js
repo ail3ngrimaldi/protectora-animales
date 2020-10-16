@@ -5,12 +5,8 @@ import "./Info.css";
 
 
 export default function ModalDetalleMascota (props) {
-<<<<<<< HEAD:src/components/Info/ModalDetalleMascota.js
  
  
-=======
-  
->>>>>>> c0a1d7b8fde400fc3058b6ddebe49f1f20fb2040:src/components/Info/MyVerticallyCenteredModal.js
     return (
       <Modal
         {...props}
