@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Info from "../Info/Info";
+import styles from './Gallery.css'
 
 import { db } from "../../index";
 
@@ -23,23 +24,33 @@ const Petimage = () => {
 
   return (
     <div>
-        <div className="col-md-8 p-2">
+     <div>
+        <div className="col-md-12 d-flex justify-content-center     mb-5">
+          <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="all">Todos</button>
+          <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="1">Perros</button>
+          <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="2">Gatos</button>
+         </div>
+       </div>
+      
+      <div>
+          <div className="gallery" id="gallery">
             {links.map((pet) => (
-            <div className="card mb-1" key={pet.id}>
-                <div className="card-body">
-                    <div className="d-flex justify-content-between">
-                    <img width="100" height="100" src={pet.avatar} alt={pet.name} />
-                        <h4>nombre: {pet.name}</h4>
-                    </div>
+            <div  key={pet.id}>
+                
+                    <div className="imageInfo">
+                    <img className="img-fluid" src={pet.avatar} alt={pet.name} />
+                        {/* <h4>nombre: {pet.name}</h4> */}
                     <div className="memberInfo">
                         <h2 className="mb-2 font-weight-light h3 ">
                             <Info />
                         </h2>
-                        <span className="d-block mb-2 text-white-opacity-05 h4"></span>
+                       
                     </div>
-                </div>
+                    </div>
+               
             </div>
             ))}
+        </div>
         </div>
     </div>
   );
