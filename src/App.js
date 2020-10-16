@@ -19,6 +19,7 @@ import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  Petimage  from './components/Gallery/Petimage'
 
 //CRUD
+
 import { CreatePet } from "./components/PetCRUD/createpet"
 import { ReadPet } from "./components/PetCRUD/readpet"
 import { UpdatePet } from "./components/PetCRUD/updatepet"
@@ -61,6 +62,8 @@ function App() {
     return unmount;
   }, []);
   
+import UserProfile from './components/Users/UserProfile'
+import EditProfile from './components/Users/EditProfile'
 
     return (
       <BrowserRouter>
@@ -112,6 +115,8 @@ function App() {
             <Route exact path="/agregarpet" component={Agregarpet} />
             <Route exact path="/pet/:id" component={PetId} />
             <Route component={NotFound} />
+            <Route exact path="/MiPerfil" component={UserProfile} />
+            <Route exact path="/EditarPerfil" component={EditProfile} />
 
           </Switch>
           <Footer />

@@ -3,10 +3,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 //import { Carousel } from "react-responsive-carousel";
 import Foto1 from "../Carrousel/img/Foto1.jpg";
 import Foto2 from "../Carrousel/img/Foto2.jpg";
-import Foto3 from "../Carrousel/img/Foto7.jpg";
-//import Foto4 from "../Carrousel/img/Foto4.jpg";
-//import Foto5 from "../Carrousel/img/Foto6.jpg";
-//import Foto7 from "../Carrousel/img/Foto7.jpg";
+import Foto3 from "../Carrousel/img/Foto3.png";
+import Foto4 from "../Carrousel/img/Foto4.jpg";
+import Foto5 from "../Carrousel/img/Foto5.png";
+import Foto6 from "../Carrousel/img/Foto6.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Carrousel.css";
 import { Container } from "reactstrap";
@@ -28,27 +28,45 @@ export const Carrousel = () => {
             ></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
           </ol>
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img src={Foto1} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
-                <h5>ALAN</h5>
-                <p>Protectora Sarmiento</p>
+                
               </div>
             </div>
             <div className="carousel-item">
               <img src={Foto2} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
-                <h5>ROBERT</h5>
-                <p>Protectora Sarmiento</p>
+                
               </div>
             </div>
             <div className="carousel-item">
               <img src={Foto3} className="d-block w-100" alt="..." />
               <div className="carousel-caption d-none d-md-block">
-                <h5>RAMBO</h5>
-                <p>Protectora Sarmiento</p>
+                
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={Foto4} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={Foto5} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img src={Foto6} className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
+                
               </div>
             </div>
           </div>
