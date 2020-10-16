@@ -25,11 +25,11 @@ const Petimage = () => {
     <div>
         <div className="col-md-8 p-2">
             {links.map((pet) => (
-            <div className="card mb-1" key={pet.id}>
+            <div className="card mb-1" key={pet.id[0]}>
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
                     <img width="100" height="100" src={pet.avatar} alt={pet.name} />
-                        <h4>nombre: {pet.name}</h4>
+                       
                     </div>
                     <div className="memberInfo">
                         <h2 className="mb-2 font-weight-light h3 ">

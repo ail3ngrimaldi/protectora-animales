@@ -4,65 +4,27 @@ import { Link } from "react-router-dom";
 import "./Info.css";
 
 import { db } from "../../index";
+import ModalDetalleMascota from './MyVerticallyCenteredModal'
 
-function MyVerticallyCenteredModal(props) {
 
-  const [links, setLinks] = useState([]);
-
-  const getLinks = async () => {
+export default function Info(props) {
+  const [modalShow, setModalShow] = React.useState(false);
+  const [pets, setPets] = useState([]);
+  
+  const getPets = async () => {
     db.collection("pet").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
       });
-      setLinks(docs);
+      setPets(docs);
     });
   };
 
   useEffect(() => {
-    getLinks();
+    getPets();
+    console.log(getPets(), "ooooooooooooooooooooooooooo")
   }, []);
-
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <div className="col-md-8 p-2">
-        {links.map((pet) => (
-          <div className="card mb-1" key={pet.id}>
-            <div className="card-body">
-              <div className="d-flex justify-content-between">
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title-vcenter">{pet.name}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                <img width="100" height="100" src={pet.avatar} alt={pet.name} />
-                  <h4>edad: {pet.age}</h4>
-                  <h4>tipo: {pet.kind}</h4>
-                  <h4>personalidad: {pet.personality}</h4>
-                  <h4>tamaño: {pet.size}</h4>
-                  <h4>género: {pet.gender}</h4>
-                  <h4>castrado: {pet.castreted}</h4>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Link to="/Adoptions/Form/1">
-                    <Button>Adoptar</Button>
-                  </Link>
-                </Modal.Footer>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Modal>
-  );
-}
-
-export default function Info() {
-  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <div>
@@ -70,7 +32,7 @@ export default function Info() {
         Ver Más
       </Button>
 
-      <MyVerticallyCenteredModal
+      <ModalDetalleMascota
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
