@@ -115,10 +115,9 @@ function App() {
             <Route exact path="/up" component={FileUpload} />
             <Route exact path="/agregarpet" component={Agregarpet} />
             <Route exact path="/pet/:id" component={PetId} />
-            <Route component={NotFound} />
             <Route exact path="/MiPerfil" component={UserProfile} />
             <Route exact path="/EditarPerfil" component={EditProfile} />
-
+            <Route component={NotFound} />
           </Switch>
           <Footer />
 
