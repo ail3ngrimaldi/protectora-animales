@@ -37,6 +37,7 @@ docRef.get().then(function(doc) {
     
       <div className="col-md-8 p-2"> 
       <img width="100" height="100" src={pet.avatar} alt={pet.name} />
+                  <h2>nombre: {pet.name}</h2>
                   <h4>edad: {pet.age}</h4>
                   <h4>tipo: {pet.kind}</h4>
                   <h4>personalidad: {pet.personality}</h4>
