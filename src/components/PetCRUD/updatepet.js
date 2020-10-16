@@ -11,7 +11,6 @@ export const UpdatePet = () => {
             <Container fluid={true}>
                 <h2 className='display-6 font-weight-light justify-content py-4 ml-5'>UPDATE</h2>
                 <Form.Group>
-
                     <Row>
                         <Col md={6}>
                             <Form.Control id='id' name='id' type='text' placeholder='ID' />
@@ -20,7 +19,6 @@ export const UpdatePet = () => {
                     </Row>
                 </Form.Group>
                 <button type="submit" class="btn btn-primary">BUSCAR</button>
-
                 <Row className='justify-content-center'>
                     <Col md={8}>
                         <Form>
@@ -51,7 +49,6 @@ export const UpdatePet = () => {
                                             <option>SI</option>
                                             <option>NO</option>
                                         </select>
-
                                     </Col>
                                     <Col md={6}>
                                         <label for="inputState">Tipo de mascota</label>
