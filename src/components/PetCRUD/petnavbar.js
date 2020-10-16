@@ -32,7 +32,7 @@ const PetCrud = () => {
                 Crear{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -42,19 +42,19 @@ const PetCrud = () => {
                 {" "}
                 Leer{" "}
               </NavLink>
-            </li>
+            </li> */}
             <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Admin/UpdatePet"
+                to="/npmtest"
                 className="nav-item nav-link"
               >
                 {" "}
                 Actualizar{" "}
               </NavLink>
             </li>
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -64,7 +64,7 @@ const PetCrud = () => {
                 {" "}
                 Borrar{" "}
               </NavLink>
-            </li>
+            </li> */}
           </ul>
           <br />
         </div>
