@@ -33,7 +33,7 @@ const Petimage = () => {
                     </div>
                     <div className="memberInfo">
                         <h2 className="mb-2 font-weight-light h3 ">
-                            <Info />
+                            <Info petId={pet.id} key={pet.id}/>
                         </h2>
                         <span className="d-block mb-2 text-white-opacity-05 h4"></span>
                     </div>

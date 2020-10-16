@@ -1,7 +1,7 @@
 import React from "react";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const CrearUsuario = () => {
   const firebase = useFirebase();

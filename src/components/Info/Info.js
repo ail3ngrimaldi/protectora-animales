@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Info.css";
 
 import { db } from "../../index";
-import ModalDetalleMascota from './MyVerticallyCenteredModal'
+import ModalDetalleMascota from './ModalDetalleMascota'
 
 
 export default function Info(props) {
@@ -23,19 +23,23 @@ export default function Info(props) {
 
   useEffect(() => {
     getPets();
-    console.log(getPets(), "ooooooooooooooooooooooooooo")
   }, []);
 
   return (
     <div>
+    {pets ? <Link to={`/pet/${props.petId}`}>
       <Button variant="warning" onClick={() => setModalShow(true)}>
-        Ver Más
+         Ver mas...
       </Button>
+      </Link>
 
-      <ModalDetalleMascota
+       : <div>Cargando</div>}
+       <ModalDetalleMascota
         show={modalShow}
         onHide={() => setModalShow(false)}
+        state={pets}
       />
+    
     </div>
   );
 }
