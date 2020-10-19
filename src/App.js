@@ -49,6 +49,7 @@ import Agregarpet from './components/Gallery/Agregarpet'
 import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
+import ResetPassword from './UI/Routes/ResetPassword.jsx'
 import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
 function App() {
@@ -119,6 +120,7 @@ function App() {
             <Route exact path="/pet/:id" component={PetId} />
             <Route exact path="/MiPerfil" component={UserProfile} />
             <Route exact path="/EditarPerfil" component={EditProfile} />
+            <Route exact path="/ResetPassword" component={ResetPassword} />
             <Route component={NotFound} />
           </Switch>
           <Footer />
