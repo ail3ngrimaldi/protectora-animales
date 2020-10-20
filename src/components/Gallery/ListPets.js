@@ -42,7 +42,7 @@ const ListPets = () => {
                         {/* <h4>nombre: {pet.name}</h4> */}
                     <div className="memberInfo">
                         <h2 className="mb-2 font-weight-light h3 ">
-                        <Info petId={pet.id} key={pet.id}/>
+                        <Info petId={pet.id} key={pet.id}/>  {/* no termino de entender que tiene este componente */}
                         </h2>
                        
                     </div>

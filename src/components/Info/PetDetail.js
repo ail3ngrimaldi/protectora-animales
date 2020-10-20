@@ -8,12 +8,13 @@ import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
 
 import { db } from "../../index";
 
-export default function PetId(props) {
+export default function PetDetail(props) {
 
   const [pet, setPet] = useState([]);
 
   const getPet = async () => {
      
+      
     var docRef = db.collection("pet").doc(props.match.params.id);
 
 docRef.get().then(function(doc) {

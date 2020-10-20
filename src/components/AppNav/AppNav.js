@@ -69,7 +69,7 @@ const AppNav = (props) => {
               <NavLink
                 exact
                 activeClassName="active"
-                to="/Gallery"
+                to="/ListPets"
                 className="nav-item nav-link"
               >
                 {" "}

@@ -46,10 +46,9 @@ import NotFound from './components/404/Notfound'
 import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
-import PetId from './components/Info/PetId'
+import PetDetail from './components/Info/PetDetail'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
-import ModalPetDetail from "./components/Info/ModalPetDetail";
 import { MoodBadOutlined } from "@material-ui/icons";
 
 function App() {
@@ -82,19 +81,15 @@ function App() {
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
             <Route exact path="/AboutUs" component={AboutUs} />
-            <Route exact path="/Gallery" component={ListPets} />
+            <Route exact path="/ListPets" component={ListPets} />
             <Route exact path="/Volunteering" component={Volunteering} />
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo/:id" component={ModalPetDetail} />
-            {/* <Route exact path="/petInfo/:id" component={({ match }) => <CardPet match={match} />} />  COPIE DE UN COMMIT DE RODRI PARA PROBAR EL MODAL*/}
+            <Route exact path="/pet/:id" component={PetDetail} />
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
-            <Route exact path="/Modal" component={ModalPetDetail} />
-
             <Route exact path="/SuppliesDonations" component={Supplies} />
-
             <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
 
 
@@ -118,7 +113,6 @@ function App() {
             <Route exact path="/test" component={Test} />
             <Route exact path="/up" component={FileUpload} />
             <Route exact path="/agregarpet" component={Agregarpet} />
-            <Route exact path="/pet/:id" component={ModalPetDetail} />
             <Route exact path="/MiPerfil" component={UserProfile} />
             <Route exact path="/EditarPerfil" component={EditProfile} />
             <Route component={NotFound} />
