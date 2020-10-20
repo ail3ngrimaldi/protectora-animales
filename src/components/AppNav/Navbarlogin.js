@@ -9,9 +9,7 @@ import Admin from './Admin'
 
 const Navbar2 = (props) => {
   const { auth, profile } = props;
-  //console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
-  //console.log(profile, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container"> 
@@ -23,7 +21,6 @@ const Navbar2 = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   return{
     auth: state.firebase.auth,
     profile: state.firebase.profile

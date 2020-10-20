@@ -16,7 +16,7 @@ import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
-import  Petimage  from './components/Gallery/Petimage'
+import  ListPets  from './components/Gallery/ListPets'
 
 //CRUD
 
@@ -32,7 +32,7 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
-import Info from "./components/Info/Info.js";
+import CardPet from "./components/Info/CardPet.js";
 
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
@@ -49,7 +49,7 @@ import Agregarpet from './components/Gallery/Agregarpet'
 import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
-import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
+import ModalPetDetail from "./components/Info/ModalPetDetail";
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -81,15 +81,16 @@ function App() {
             {/* COMPONENTES */}
             <Route exact path="/" component={Home} />
             <Route exact path="/AboutUs" component={AboutUs} />
-            <Route exact path="/Gallery" component={Petimage} />
+            <Route exact path="/Gallery" component={ListPets} />
             <Route exact path="/Volunteering" component={Volunteering} />
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo/:id" component={Info} />
+            <Route exact path="/petInfo/:id" component={PetId} />
+            {/* <Route exact path="/petInfo/:id" component={({ match }) => <CardPet match={match} />} />  COPIE DE UN COMMIT DE RODRI PARA PROBAR EL MODAL*/}
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
-            <Route exact path="/Modal" component={ModalDetalleMascota} />
+            <Route exact path="/Modal" component={ModalPetDetail} />
 
             <Route exact path="/SuppliesDonations" component={Supplies} />
 

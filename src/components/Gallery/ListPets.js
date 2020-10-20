@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Info from "../Info/Info";
+import Info from "../Info/CardPet";
 import styles from './Gallery.css'
 
 import { db } from "../../index";
 
-const Petimage = () => {
+const ListPets = () => {
   const [links, setLinks] = useState([]);
   const [currentId, setCurrentId] = useState("");
 
@@ -56,4 +56,4 @@ const Petimage = () => {
   );
 };
 
-export default Petimage;
+export default ListPets;

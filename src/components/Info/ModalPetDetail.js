@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 
+// FacebookShareButton permitirá compartir cualquier tipo de contenido a través de sus props
+import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
+  
+import { db } from "../../index";
 
-export default function ModalDetalleMascota (props) {
- 
- 
+export default function ModalPetDetail (props) {
+  //   console.log(props)
+  //   const [pet, setPet] = useState([]);
+  
+  //   const getPet = async () => {
+        
+  //     var docRef = db.collection("pet").doc(props.match.params.id);
+  
+  // docRef.get().then(function(doc) {
+  //     if (doc.exists) {
+  //         console.log("Document data:", doc.data());
+  //         setPet(doc.data())
+  //     } else {
+  //         // doc.data() will be undefined in this case
+  //         console.log("No such document!");
+  //     }
+  // }).catch(function(error) {
+  //     console.log("Error getting document:", error);
+  // });
+  //   };
+  
+  //   useEffect(() => {
+  //     getPet();
+      
+  //   }, []);
+
+
     return (
       <Modal
         {...props}
@@ -16,6 +44,7 @@ export default function ModalDetalleMascota (props) {
       >
         <div className="col-md-8 p-2">
           {props.state ? props.state.map((pet) => (
+
             <div className="card mb-1" key={pet.id}>
               <div className="card-body">
                 <div className="d-flex justify-content-between">
@@ -27,7 +56,7 @@ export default function ModalDetalleMascota (props) {
                     <h4>edad: {pet.age}</h4>
                     <h4>tipo: {pet.kind}</h4>
                     <h4>personalidad: {pet.personality}</h4>
-                    <h4>tamaño: {pet.size} RE GORDO</h4>
+                    <h4>tamaño: {pet.size}</h4>
                     <h4>género: {pet.gender}</h4>
                     <h4>castrado: {pet.castreted}</h4>
                   </Modal.Body>
@@ -41,6 +70,12 @@ export default function ModalDetalleMascota (props) {
             </div>
           )) : <div>CARGANDO</div>}
         </div>
+                     {/* Agrego botoncito para compartir en Facebook 
+             Los atributos se condiderarán una vez esté deployada la web :)
+          - Lean */}   
+                   <FacebookShareButton
+                     url = "https://www.facebook.com/ProtectoraSarmiento.Rosario"
+                  />
       </Modal>
     );
   }

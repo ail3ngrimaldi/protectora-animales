@@ -14,7 +14,6 @@ export default function PetId(props) {
 
   const getPet = async () => {
      
-      
     var docRef = db.collection("pet").doc(props.match.params.id);
 
 docRef.get().then(function(doc) {
@@ -59,5 +58,3 @@ docRef.get().then(function(doc) {
     
   );
 }
-
-
