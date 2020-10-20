@@ -1,24 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { connect } from 'react-redux'
+import firebase from 'firebase/app'
+import {db} from '../../index'
 
-const EditProfile = () => {
-  const firebase = useFirebase();
-  const firestore = useFirestore();
+
+const EditProfile = (props) => {
+  const {auth, profile} = props
+  
   // const { uid } = useSelector((state) => state.firebase.auth);
 
   const initialState = {
-    email: "",
-    password: "",
-    initials: "",
-    firstName: "",
-    lastName: "",
-    age: "",
-    birthDate: "",
-    location: "",
-    address: ""
+    email: auth.email,
+    firstName: profile.firstName,
+    lastName: profile.lastName,
+    age: profile.age,
+    birthdate: profile.birthdate,
+    location: profile.location,
+    address: profile.address
   };
+
+  
 
   const [usuario, setUsuario] = React.useState(initialState);
   const updateField = (e) => {
@@ -26,46 +30,58 @@ const EditProfile = () => {
       ...usuario,
       [e.target.name]: e.target.value,
     });
+  }; 
+  
+
+  const firestore = useFirestore();
+  var user = firebase.auth().currentUser;
+  const getUser = async () => {
+    firestore.collection("users").doc(user.uid).set({         
+})
   };
+
+  useEffect(() => {
+    console.log(getUser(), "eeeeeeeeeeeeeeeeeeeGettttt")
+    getUser();
+  }, [])
   
   const createEmail = () => {
+    var user = firebase.auth().currentUser;
+    var userDocRef = firestore.collection('users').doc(user.uid);
+    userDocRef.set({
+      firstName: usuario.firstName,
+      lastName: usuario.lastName,
+      age: usuario.age,
+      birthdate: usuario.birthdate,
+      location: usuario.location,
+      address: usuario.address,      
+      initials: usuario.firstName[0] + usuario.lastName[0]
     
-    firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
-    .then(result => {
-      result.user.updateProfile({
-        displayName : usuario.firstName
-      })
-
-      const configuracion = {
-        url : 'http://localhost:3000'
-      }
-
-      firestore.collection('users').doc(result.user.uid).set({
-                  firstName: usuario.firstName,
-                  lastName: usuario.lastName,
-                  age: usuario.age,
-                  birthdate: usuario.birthDate,
-                  location: usuario.location,
-                  address: usuario.address,
-                  isAdmin: false,
-                  initials: usuario.firstName[0] + usuario.lastName[0]
-      })
-
-      result.user.sendEmailVerification(configuracion).catch(error =>{
-        console.error(error)
-       /*  Materialize.toast(error.message, 4000) */
-      })
-
+});
+    console.log(usuario.email)
+    user.updateEmail(usuario.email).then(result => {
+        result.firestore.collection("users").doc(result.user.uid).update({
+        firstName: usuario.firstName,
+      lastName: usuario.lastName,
+      age: usuario.age,
+      birthdate: usuario.birthdate,
+      location: usuario.location,
+      address: usuario.address,      
+      initials: usuario.firstName[0] + usuario.lastName[0]
+        
     })
-    .catch(error => {
+    result.sendEmailVerification().catch(error =>{
       console.error(error)
-    /*   Materialize.tost(error.message, 4000) */
+     /*  Materialize.toast(error.message, 4000) */
+    })
+    .then(function() {
+        console.log("Document successfully updated!");
     });
-   
-    
-  
-    
-   };
+      // Update successful.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  } 
 
   const history = useHistory();
   return (
@@ -73,12 +89,13 @@ const EditProfile = () => {
       <h1>Editar mi Perfil</h1>
       <form id="formlogin">
           <div className="form-group col-md-12" id="contelogin2">
-            <div className="input-group mb-3 id" id="contelogin3">
+            <div className="input-group mb-3 id" id="contelogin3">            
               <input
                 type="text"
                 required
                 name="email"
                 onChange={updateField}
+                value={auth.email}
                 className="form-control"
                 placeholder="E-mail"
               />
@@ -91,6 +108,7 @@ const EditProfile = () => {
                 required
                 name="password"                
                 onChange={updateField}
+                
                 className="form-control"
                 placeholder="Contraseña"
               />
@@ -104,6 +122,7 @@ const EditProfile = () => {
                 required
                 name="firstName"                
                 onChange={updateField}
+                value={profile.firstName}
                 className="form-control"
                 placeholder="Nombre"
               />
@@ -117,6 +136,7 @@ const EditProfile = () => {
                 required
                 name="lastName"                
                 onChange={updateField}
+                value={profile.lastName}
                 className="form-control"
                 placeholder="Apellido"
               />
@@ -130,6 +150,7 @@ const EditProfile = () => {
                 required
                 name="age"                
                 onChange={updateField}
+                value={profile.age}
                 className="form-control"
                 placeholder="Edad"
               />
@@ -142,8 +163,9 @@ const EditProfile = () => {
               <input
                 type="date"
                 required
-                name="birthDate"                
+                name="birthdate"                
                 onChange={updateField}
+                value={profile.birthdate}
                 className="form-control"
               />
             </div>
@@ -156,6 +178,7 @@ const EditProfile = () => {
                 required
                 name="location"                
                 onChange={updateField}
+                value={profile.location}
                 className="form-control"
                 placeholder="Localidad"
               />
@@ -169,6 +192,7 @@ const EditProfile = () => {
                 required
                 name="address"                
                 onChange={updateField}
+                value={profile.address}
                 className="form-control"
                 placeholder="Dirección"
               />
@@ -186,4 +210,13 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+const mapStateToProps = (state) => {
+  // console.log(state);
+  return{
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  }
+}
+
+export default connect(mapStateToProps)(EditProfile)
+

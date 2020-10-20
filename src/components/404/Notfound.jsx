@@ -1,14 +1,13 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Foto1 from "../404/pata404.png";
+import Foto1 from "../404/image.png";
 import { Link } from "react-router-dom";
-
 const NotFound = () => {
   return (
     <Container id="noexiste">
-      <div className="text-center">   
-      <img src={Foto1}  alt="..." />  
-      </div> 
+      <div className="text-center">
+      <img src={Foto1}  alt="..." />
+      </div>
       <Link to={"/"}>
       <div class="col-md-12 text-center mt-5">
         <button type="button" class="btn btn-danger btn-lg">Volver al Inicio</button>

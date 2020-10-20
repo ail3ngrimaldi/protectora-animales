@@ -5,9 +5,9 @@ import "../AppNav/navbarlogin.css"
 const SignedOutLinks = () => {
   return (
     <div>
-      <ul className="right">
-        <li><NavLink to='/crearusuario'>Registrarse</NavLink></li>
-        <li><NavLink to='/entrar'>Login</NavLink></li>
+      <ul className="right container">
+        <ul><NavLink to='/crearusuario'>Registrarse</NavLink></ul>
+        <ul><NavLink to='/entrar'>Login</NavLink></ul>
       </ul>
     </div>
   )
