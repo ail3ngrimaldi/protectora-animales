@@ -9,30 +9,35 @@ import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
 import { db } from "../../index";
 
 export default function ModalPetDetail (props) {
-  //   console.log(props)
-  //   const [pet, setPet] = useState([]);
+
+    const [pet, setPet] = useState([]);
   
-  //   const getPet = async () => {
+    const getPet = async () => {
         
-  //     var docRef = db.collection("pet").doc(props.match.params.id);
+      var docRef = db.collection("pet").doc(props.match.params.id);
+
+  var petData;
+
+  docRef.get().then(function(doc, petData) {
+      if (doc.exists) {
+          petData = doc.data();
+          console.log("Document data:", doc.data());
+          setPet(doc.data())
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+  }).catch(function(error) {
+      console.log("Error getting document:", error);
+  });
+    };
+    console.log(setPet);
+    console.log('holis')
   
-  // docRef.get().then(function(doc) {
-  //     if (doc.exists) {
-  //         console.log("Document data:", doc.data());
-  //         setPet(doc.data())
-  //     } else {
-  //         // doc.data() will be undefined in this case
-  //         console.log("No such document!");
-  //     }
-  // }).catch(function(error) {
-  //     console.log("Error getting document:", error);
-  // });
-  //   };
-  
-  //   useEffect(() => {
-  //     getPet();
+    useEffect(() => {
+      getPet();
       
-  //   }, []);
+    }, []);
 
 
     return (
@@ -42,6 +47,8 @@ export default function ModalPetDetail (props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
+
+        <button>hola</button>
         <div className="col-md-8 p-2">
           {props.state ? props.state.map((pet) => (
 

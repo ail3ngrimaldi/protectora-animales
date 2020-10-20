@@ -50,6 +50,7 @@ import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
 import ModalPetDetail from "./components/Info/ModalPetDetail";
+import { MoodBadOutlined } from "@material-ui/icons";
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -86,7 +87,7 @@ function App() {
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo/:id" component={PetId} />
+            <Route exact path="/petInfo/:id" component={ModalPetDetail} />
             {/* <Route exact path="/petInfo/:id" component={({ match }) => <CardPet match={match} />} />  COPIE DE UN COMMIT DE RODRI PARA PROBAR EL MODAL*/}
             <Route exact path="/MoneyDonations" component={MoneyDonations} />
             <Route exact path="/MoneyBanner" component={MoneyBanner} />
@@ -117,7 +118,7 @@ function App() {
             <Route exact path="/test" component={Test} />
             <Route exact path="/up" component={FileUpload} />
             <Route exact path="/agregarpet" component={Agregarpet} />
-            <Route exact path="/pet/:id" component={PetId} />
+            <Route exact path="/pet/:id" component={ModalPetDetail} />
             <Route exact path="/MiPerfil" component={UserProfile} />
             <Route exact path="/EditarPerfil" component={EditProfile} />
             <Route component={NotFound} />

@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 import { db } from "../../index";
-import ModalDetalleMascota from './ModalPetDetail'
+// import ModalDetalleMascota from './ModalPetDetail'
 
 // FacebookShareButton permitirá compartir cualquier tipo de contenido a través de sus props
 import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
@@ -44,11 +44,11 @@ export default function CardPet(props) {
         </div>
 
        : <div>Por el momento no hay mascotas en adopción</div>}
-       <ModalDetalleMascota
+       {/* <ModalDetalleMascota
         show={modalShow}
         onHide={() => setModalShow(false)}
         state={pets}
-      />
+      /> */}
     
     </div>
   );
