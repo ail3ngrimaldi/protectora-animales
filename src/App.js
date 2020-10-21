@@ -17,6 +17,7 @@ import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  ListPets  from './components/Gallery/ListPets'
+import AdminScreen from './components/Administrator/ButtonsAdmin'
 
 //CRUD
 
@@ -99,6 +100,7 @@ function App() {
 
             {/* CRUD */}
             <Route exact path="/Admin" component={PetCrud} />
+            <Route exact path="/Admin/principalscreen" component={AdminScreen}/>
             <Route exact path="/Admin/Createpet" component={CreatePet} />
             <Route exact path="/Admin/ReadPet" component={ReadPet} />
             <Route exact path="/Admin/UpdatePet" component={UpdatePet} />

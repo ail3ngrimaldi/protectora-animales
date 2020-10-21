@@ -4,9 +4,9 @@ import './petnavbar.css'
 
 const PetCrud = () => {
   return (
-    <div>
+    <div className='divPrincipal'>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 className='title1'>CRUD PET</h1>
+        <h1 className='title1'>¿Qué vas a hacer hoy?</h1>
         <button
           class="navbar-toggler"
           type="button"
