@@ -10,7 +10,7 @@
     "@testing-library/react": "^11.0.4",
     "@testing-library/user-event": "^12.1.7",
     "axios": "^0.20.0",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.5.3",
     "firebase": "^7.23.0",
     "grpc": "^1.24.3",
     "jquery": "^3.5.1",
