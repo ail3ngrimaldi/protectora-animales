@@ -37,10 +37,10 @@ const SignInmail = () => {
   return (
     <div>      
       <Container>
-        <div className="text-center">
-        <img class="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
-       <h4>Ingresar</h4> 
-      <form id="formlogin" class="form-signin">
+        <div className="text-center ">
+      <form id="formlogin" class="form-signin justify-content-center">
+      <img class="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
+      <h4>Ingresar</h4>
             <label for="inputEmail" class="sr-only">Dirección de Correo</label>
               <input
               id="inputEmail"
@@ -63,7 +63,7 @@ const SignInmail = () => {
               />
               
         </form>
-        <div class="form-signin">
+        <div class="form-signin ">
         <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={signInWithmail} value='Ingresar'/>  
         </div>            
         <div><SignIn/></div>

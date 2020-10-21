@@ -99,7 +99,7 @@ const CrearUsuario = () => {
   return (
     <div className="text-center">
       <h1>Crear un Usuario</h1>
-      <form id="formlogin" class="form-signin">
+      <form id="formlogin" class="form-signin justify-content-center">
               <input
                 type="text"
                 required
