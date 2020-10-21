@@ -18,14 +18,16 @@ const ResetPassword = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
+		const configuracion = {
+	        url : 'http://localhost:3000'
+	      }
 		if(userList.some(user => user.email === pass.email)){
-			// firebase.auth().sendPasswordResetEmail(pass.email)---------------- DESCOMENTAR AL FINAL
-			// .then(result => {------------------------------------------------- DESCOMENTAR AL FINAL
-			console.log('EL MAIL EXISTE') //------------------------------------- BORRAR 
-			modal = false;
-			// })---------------------------------------------------------------- DESCOMENTAR AL FINAL
-			// .catch(err => console.Error(`Ocurrió un error: ` + err))---------- DESCOMENTAR AL FINAL
+			firebase.auth().sendPasswordResetEmail(pass.email, configuracion)//---------------- DESCOMENTAR AL FINAL
+			.then(result => {//------------------------------------------------- DESCOMENTAR AL FINAL
+				console.log('EL MAIL EXISTE') //------------------------------------- BORRAR 
+				modal = false;
+			})//---------------------------------------------------------------- DESCOMENTAR AL FINAL
+			.catch(err => console.Error(`Ocurrió un error: ` + err))//---------- DESCOMENTAR AL FINAL
 		} else {
 			console.log('EL MAIL NO EXISTE') //---------------------------------- BORRAR 
 			modal = true;
