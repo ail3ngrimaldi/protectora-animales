@@ -1,0 +1,24 @@
+
+
+.StyleCarousel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .carousel-item img {
+    width: 10px;
+   
+  }
+  
+
+  @media (max-width: 600px) {
+    .carrusel {
+      background-color: blue;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .carousel{
+      height: auto;
+    }
+  }

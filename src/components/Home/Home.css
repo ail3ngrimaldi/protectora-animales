@@ -12,3 +12,8 @@
   padding: 4em;
   float: right;
 }
+
+.arreglarcarrusel {
+  display: flex;
+  position: relative;
+}
