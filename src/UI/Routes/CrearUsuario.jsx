@@ -1,6 +1,7 @@
 import React from "react";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
+import './Style.css'
 // import { useSelector } from "react-redux";
 
 const CrearUsuario = () => {
@@ -96,11 +97,9 @@ const CrearUsuario = () => {
 
   const history = useHistory();
   return (
-    <div>
+    <div className="text-center">
       <h1>Crear un Usuario</h1>
-      <form id="formlogin">
-          <div className="form-group col-md-12" id="contelogin2">
-            <div className="input-group mb-3 id" id="contelogin3">
+      <form id="formlogin" class="form-signin">
               <input
                 type="text"
                 required
@@ -109,10 +108,6 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="E-mail"
               />
-            </div>
-          </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
               <input
                 type="password"
                 required
@@ -121,11 +116,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Contraseña"
               />
-            </div>
-      
-          </div>
           <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
+            <div className="input-group" id="contelogin5">
               <input
                 type="text"
                 required
@@ -134,11 +126,6 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Nombre"
               />
-            </div>
-      
-          </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
               <input
                 type="text"
                 required
@@ -147,11 +134,6 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Apellido"
               />
-            </div>
-      
-          </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
               <input
                 type="number"
                 required
@@ -164,7 +146,7 @@ const CrearUsuario = () => {
       
           </div>
           <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
+            <div className="input-group" id="contelogin5">
             <h3>Fecha de nacimiento</h3>
               <input
                 type="date"
@@ -176,8 +158,6 @@ const CrearUsuario = () => {
             </div>
       
           </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
               <input
                 type="text"
                 required
@@ -186,11 +166,6 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Localidad"
               />
-            </div>
-      
-          </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group mb-3" id="contelogin5">
               <input
                 type="text"
                 required
@@ -199,15 +174,13 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Dirección"
               />
-            </div>
-      
-          </div>
         </form>
 
-        <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
+        <div className="form-signin">
+        <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={(e) => {
           e.preventDefault(); createEmail(); history.push("/")
-        }} value='Iniciar Sesión'/>
-       
+        }} value='Ingresar'/>
+       </div>
      
     </div>
   );
