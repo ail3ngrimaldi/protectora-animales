@@ -18,6 +18,7 @@ import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  ListPets  from './components/Gallery/ListPets';
 import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
+import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
 
 //CRUD
 
@@ -101,6 +102,7 @@ function App() {
             {/* ADMIN */}
             <Route exact path="/Admin" component={PetCrud} />
             <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
+            <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
 
             {/* CRUD */}       
             <Route exact path="/Admin/Createpet" component={CreatePet} />
