@@ -19,7 +19,8 @@ const EditProfile = (props) => {
     age: profile.age,
     birthdate: profile.birthdate,
     location: profile.location,
-    address: profile.address
+    address: profile.address,
+    isAdmin: profile.isAdmin
   };
 
   
@@ -41,7 +42,7 @@ const EditProfile = (props) => {
   };
 
   useEffect(() => {
-    console.log(getUser(), "eeeeeeeeeeeeeeeeeeeGettttt")
+    
     getUser();
   }, [])
   
@@ -55,7 +56,10 @@ const EditProfile = (props) => {
       birthdate: usuario.birthdate,
       location: usuario.location,
       address: usuario.address,      
-      initials: usuario.firstName[0] + usuario.lastName[0]
+      initials: usuario.firstName + " " + usuario.lastName,
+      isAdmin: usuario.isAdmin,
+      email:usuario.email
+      
     
 });
     console.log(usuario.email)
@@ -67,7 +71,9 @@ const EditProfile = (props) => {
       birthdate: usuario.birthdate,
       location: usuario.location,
       address: usuario.address,      
-      initials: usuario.firstName[0] + usuario.lastName[0]
+      initials: usuario.firstName + usuario.lastName,
+      isAdmin: profile.isAdmin,
+      email: usuario.email
         
     })
     result.sendEmailVerification().catch(error =>{
@@ -195,6 +201,23 @@ const EditProfile = (props) => {
                 value={profile.address}
                 className="form-control"
                 placeholder="Dirección"
+              />
+            </div>
+      
+          </div>
+
+          <div className="form-group col-md-12 " id="contelogin4">
+            <div className="input-group mb-3" id="contelogin5">
+              <input
+              style= {{display: "none"}}
+                type="text"
+                required
+                name="isAdmin"                
+                onChange={updateField}
+                value={profile.isAdmin}
+                className="form-control"
+                readOnly="true"
+                placeholder="Es Admin"
               />
             </div>
       
