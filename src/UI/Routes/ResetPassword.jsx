@@ -16,34 +16,66 @@ const ResetPassword = () => {
 		});
 	};
 
+	/* const reset = (e) => {
+	firebase.auth().sendPasswordResetEmail(pass.email).then(function() {
+		// Email sent.
+	  }).catch(function(error) {
+		// An error happened.
+	  });
+	}  */
+
+	
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		
+		var actionCodeSettings = {
+			url: 'https://www.uol.com.br',
+			iOS: {
+			  bundleId: 'com.example.ios'
+			},
+			android: {
+			  packageName: 'com.example.android',
+			  installApp: true,
+			  minimumVersion: '12'
+			},
+			handleCodeInApp: true
+		  };
+		  firebase.auth().sendPasswordResetEmail(
+			  pass.email, actionCodeSettings)
+			  .then(function() {
+				// Password reset email sent.
+			  })
+			  .catch(function(error) {
+				// Error occurred. Inspect error.code.
+			  });
+			}
 
-		if(userList.some(user => user.email === pass.email)){
-			// firebase.auth().sendPasswordResetEmail(pass.email)---------------- DESCOMENTAR AL FINAL
-			// .then(result => {------------------------------------------------- DESCOMENTAR AL FINAL
-			console.log('EL MAIL EXISTE') //------------------------------------- BORRAR 
-			modal = false;
-			// })---------------------------------------------------------------- DESCOMENTAR AL FINAL
-			// .catch(err => console.Error(`Ocurrió un error: ` + err))---------- DESCOMENTAR AL FINAL
-		} else {
-			console.log('EL MAIL NO EXISTE') //---------------------------------- BORRAR 
-			modal = true;
-		}
-		//userList.includes(pass.email).......................Esto está porque queria saber como se puede hacer un .includes() a un JSON
-	}
+	// 	if(userList.some(user => user.email === pass.email)){
+	// 		firebase.auth().sendPasswordResetEmail(pass.email)
+	// 		// .then(result => {------------------------------------------------- DESCOMENTAR AL FINAL
+	// 		console.log('EL MAIL EXISTE') //------------------------------------- BORRAR 
+	// 		modal = false;
+	// 		// })---------------------------------------------------------------- DESCOMENTAR AL FINAL
+	// 		// .catch(err => console.Error(`Ocurrió un error: ` + err))---------- DESCOMENTAR AL FINAL
+	// 	} else {
+	// 		console.log('EL MAIL NO EXISTE') //---------------------------------- BORRAR 
+	// 		modal = true;
+	// 	}
+	// 	//userList.includes(pass.email).......................Esto está porque queria saber como se puede hacer un .includes() a un JSON */
+	// }
 
-	useEffect(() => {
-		const fetchUsers = async () => {
-			const userDB = await db.collection("users").get();
-			setUserList(
-				userDB.docs.map((doc) => {
-					return doc.data();
-				})
-			);
-		};
-		fetchUsers();
-	}, []);
+	// useEffect(() => {
+	// 	const fetchUsers = async () => {
+	// 		const userDB = await db.collection("users").get();
+	// 		setUserList(
+	// 			userDB.docs.map((doc) => {
+	// 				return doc.data();
+	// 			})
+	// 		);
+	// 	};
+	// 	fetchUsers();
+	// }, []);
 
   return(
   	<div>
@@ -56,4 +88,4 @@ const ResetPassword = () => {
   )
 }
 
-export default ResetPassword;
+export default ResetPassword; 
