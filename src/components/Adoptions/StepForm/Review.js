@@ -11,11 +11,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
+import {db} from '../../../index'
+import { useFirebase, useFirestore } from "react-redux-firebase";
+import { useSelector } from "react-redux";
 
-const Review = ({formData, navigation}) => {
-
+const Review = (props) => {
+    const {formData, navigation} = props
+    const firebase = useFirebase();
+    const firestore = useFirestore();
+    const { uid } = useSelector((state) => state.firebase.auth);
     const {go} = navigation;
-
+    console.log(props, "porpssssssssssssssssssssssssssssssss revie")
     const {
         nombreCompleto,
         edad,
@@ -43,6 +49,42 @@ const Review = ({formData, navigation}) => {
         pregunta17,
         pregunta18,
     } = formData;
+    
+    const onSubmit = () => {
+        console.log(nombreCompleto, "nombreeeeeeeeeeee")
+        db.collection("adoptions").doc(uid).set({
+            nombreCompleto : nombreCompleto,
+            edad : edad,
+            profesion : profesion,
+            direccion : direccion,
+            celular : celular,
+            email : email,
+            redesSociales : redesSociales,
+            pregunta1 : pregunta1,
+            pregunta2 : pregunta2,
+            pregunta3 :  pregunta3,
+            pregunta4 : pregunta4,
+            pregunta5 : pregunta5,
+            pregunta6 : pregunta6,
+            pregunta7 : pregunta7,
+            pregunta8 : pregunta8,
+            pregunta9 : pregunta9,
+            pregunta10 : pregunta10,
+            pregunta11 : pregunta11,
+            pregunta12 : pregunta12,
+            pregunta13 : pregunta13,
+            pregunta14 : pregunta14,
+            pregunta15 : pregunta15,
+            pregunta16 : pregunta16,
+            pregunta17 : pregunta17,
+            pregunta18 : pregunta18,
+            nombrepet: props.location.state.name,
+            tipopet:props.location.state.kind
+                });
+       
+       
+         
+      };
 
     return (
         <Container maxWidth='sm'>
@@ -82,14 +124,18 @@ const Review = ({formData, navigation}) => {
 
 
             ]}/>
-            <Button
+           {/*  <Button
                 color='primary'
                 variant = 'contained'
                 className='mt-4'
-                onClick={()=> go('submit')}
+              
+                onSubmit={onSubmit}
             > 
                 Enviar
-            </Button>
+            </Button> */}
+            <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
+          e.preventDefault(); onSubmit();
+        }} value='Enviar'/>
         </Container>
     )
 };

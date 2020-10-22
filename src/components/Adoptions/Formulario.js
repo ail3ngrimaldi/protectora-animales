@@ -77,8 +77,8 @@ const Formulario = (props) => {
     case 'preguntas': return <Preguntas {...prop}/>;
     case 'preguntas2': return <PreguntasDos {...prop}/>;
     case 'preguntas3': return <PreguntasTres {...prop}/>;
-    case 'review': return <Review {...prop}/>;
-    case 'submit': return <Submit {...prop}/>;
+    case 'review': return <Review {...prop} {...props}/>;
+    case 'submit': return <Submit {...prop} {...props}/>;
   }
 
   return (

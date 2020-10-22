@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./Info.css";
+import Formulario from "../Adoptions/Formulario"
 
 // FacebookShareButton permitirá compartir cualquier tipo de contenido a través de sus props
 import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
@@ -46,15 +47,14 @@ docRef.get().then(function(doc) {
                   <h4>tamaño: {pet.size}</h4>
                   <h4>género: {pet.gender}</h4>
                   <h4>castrado: {pet.castreted}</h4>  
-                  <Link to={`/Adoptions/Form/1`}>
-                      <Button>Adoptar</Button>
-                    </Link>   
+                  <Link to={{pathname:`/Adoptions/Form/${pet.name}/`, state:pet}}>Adoptar</Link>
                     {/* Agrego botoncito para compartir en Facebook 
             Los atributos se condiderarán una vez esté deployada la web :)
          - Lean */}   
                   <FacebookShareButton
                     url = "https://www.facebook.com/ProtectoraSarmiento.Rosario"
                   />
+                  
                      </div>
     
   );
