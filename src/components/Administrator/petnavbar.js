@@ -6,8 +6,10 @@ import ButtonsAdmin from './ButtonsAdmin';
 const PetCrud = () => {
   return (
     <div className='divPrincipal'>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg  navbar-light bg-light">
+        <div className="container bg-light d-flex justify-content-center">
         <h1 className='title1 bg-light'>¿Qué vas a hacer hoy?</h1>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
