@@ -98,8 +98,11 @@ const CrearUsuario = () => {
   const history = useHistory();
   return (
     <div className="text-center">
+      
       <h1>Crear un Usuario</h1>
       <form id="formlogin" class="form-signin justify-content-center">
+        <div className="form-row">
+        <div className="form-group col-md-6">
               <input
                 type="text"
                 required
@@ -108,6 +111,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="E-mail"
               />
+              </div>
+              <div className="form-group col-md-6">
               <input
                 type="password"
                 required
@@ -116,8 +121,10 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Contraseña"
               />
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group" id="contelogin5">
+              </div>
+              </div>
+              <div className="form-row">
+        <div className="form-group col-md-4">
               <input
                 type="text"
                 required
@@ -126,6 +133,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Nombre"
               />
+              </div>
+               <div className="form-group col-md-4">
               <input
                 type="text"
                 required
@@ -134,6 +143,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Apellido"
               />
+              </div>
+               <div className="form-group col-md-4">
               <input
                 type="number"
                 required
@@ -142,12 +153,11 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Edad"
               />
+              </div>
             </div>
-      
-          </div>
-          <div className="form-group col-md-12 " id="contelogin4">
-            <div className="input-group" id="contelogin5">
-            <h3>Fecha de nacimiento</h3>
+            <p>Fecha de nacimiento</p>
+            <div className="form-row">
+          <div className="form-group col-md-12 ">
               <input
                 type="date"
                 required
@@ -156,8 +166,9 @@ const CrearUsuario = () => {
                 className="form-control"
               />
             </div>
-      
-          </div>
+            </div>
+            <div className="form-row">
+          <div className="form-group col-md-6">
               <input
                 type="text"
                 required
@@ -166,6 +177,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Localidad"
               />
+              </div>
+              <div className="form-group col-md-6">
               <input
                 type="text"
                 required
@@ -174,6 +187,8 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Dirección"
               />
+              </div>
+              </div>
         </form>
 
         <div className="form-signin">
