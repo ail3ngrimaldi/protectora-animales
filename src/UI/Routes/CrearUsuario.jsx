@@ -1,7 +1,6 @@
 import React from "react";
 import { useFirebase, useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import './Style.css'
 // import { useSelector } from "react-redux";
 
 const CrearUsuario = () => {
@@ -49,7 +48,8 @@ const CrearUsuario = () => {
                   location: usuario.location,
                   address: usuario.address,
                   isAdmin: false,
-                  initials: usuario.firstName[0] + usuario.lastName[0]
+                  initials: usuario.firstName +" " + usuario.lastName,                  
+                  email: usuario.email
       })
 
       result.user.sendEmailVerification(configuracion).catch(error =>{
@@ -133,6 +133,7 @@ const CrearUsuario = () => {
                 className="form-control"
                 placeholder="Nombre"
               />
+
               </div>
                <div className="form-group col-md-4">
               <input
@@ -191,11 +192,10 @@ const CrearUsuario = () => {
               </div>
         </form>
 
-        <div className="form-signin">
-        <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={(e) => {
+        <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
           e.preventDefault(); createEmail(); history.push("/")
-        }} value='Ingresar'/>
-       </div>
+        }} value='Iniciar Sesión'/>
+       
      
     </div>
   );

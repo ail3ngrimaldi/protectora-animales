@@ -4,9 +4,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 
-const Address = ({formData, setForm, navigation} ) => {
+const Address = (props ) => {
     // console.log(navigation.previous())
-
+    const {formData, setForm, navigation} = props
+    console.log(props, "propssssss contac")
     const {direccion, celular, email, redesSociales } = formData;
 
     return (
