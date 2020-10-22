@@ -1,14 +1,15 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import './petnavbar.css'
+import ButtonsAdmin from './ButtonsAdmin';
 
 const PetCrud = () => {
   return (
     <div className='divPrincipal'>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 className='title1'>¿Qué vas a hacer hoy?</h1>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <h1 className='title1 bg-light'>¿Qué vas a hacer hoy?</h1>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -16,12 +17,12 @@ const PetCrud = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
               <NavLink
                 exact
                 activeClassName="active"
@@ -70,6 +71,7 @@ const PetCrud = () => {
         </div>
       </nav>
       <br />
+      <ButtonsAdmin/>
     </div>
   );
 };

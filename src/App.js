@@ -4,7 +4,7 @@ import {db , app} from './index'
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
-import PetCrud from "./components/PetCRUD/petnavbar";
+import PetCrud from "./components/Administrator/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";
@@ -17,7 +17,6 @@ import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
 import  ListPets  from './components/Gallery/ListPets'
-import AdminScreen from './components/Administrator/ButtonsAdmin'
 
 //CRUD
 
@@ -98,9 +97,10 @@ function App() {
             <Route exact path="/entrar" component={SignInmail} />
             <Route exact path="/crearusuario" component={CrearUsuario} />
 
-            {/* CRUD */}
+            {/* ADMIN */}
             <Route exact path="/Admin" component={PetCrud} />
-            <Route exact path="/Admin/principalscreen" component={AdminScreen}/>
+
+            {/* CRUD */}       
             <Route exact path="/Admin/Createpet" component={CreatePet} />
             <Route exact path="/Admin/ReadPet" component={ReadPet} />
             <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
