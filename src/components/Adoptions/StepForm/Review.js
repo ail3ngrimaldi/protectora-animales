@@ -134,7 +134,7 @@ const Review = (props) => {
                 Enviar
             </Button> */}
             <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
-          e.preventDefault(); onSubmit();
+          e.preventDefault(); onSubmit(); go('submit')
         }} value='Enviar'/>
         </Container>
     )
