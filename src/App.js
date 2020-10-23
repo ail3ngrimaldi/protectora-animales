@@ -7,7 +7,6 @@ import AppNav from "./components/AppNav/AppNav";
 import PetCrud from "./components/PetCRUD/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
-import { Store } from "./components/Store/Store";
 import { Volunteering } from "./components/Volunteering/Volunteering";
 import { Gallery } from "./components/Gallery/Gallery";
 import { MoneyDonations } from "./components/Donations/MoneyDonations";
@@ -84,7 +83,6 @@ function App() {
             <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/Gallery" component={Petimage} />
             <Route exact path="/Volunteering" component={Volunteering} />
-            <Route exact path="/Store" component={Store} />
             <Route exact path="/Adoptions" component={Adoptions} />
             <Route exact path="/Adoptions/Form/:id" component={Formulario} />
             <Route exact path="/petInfo/:id" component={Info} />
