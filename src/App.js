@@ -1,10 +1,10 @@
-import React, { Component, useState, useEffect  } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {db , app} from './index'
+import { db, app } from './index'
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
-import PetCrud from "./components/PetCRUD/petnavbar";
+import PetCrud from "./components/Administrator/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Store } from "./components/Store/Store";
@@ -16,8 +16,9 @@ import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
-import  Petimage  from './components/Gallery/Petimage'
-
+import Petimage from './components/Gallery/Petimage'
+import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
+import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
 //CRUD
 
 import { CreatePet } from "./components/PetCRUD/createpet"
@@ -64,69 +65,71 @@ function App() {
     });
     return unmount;
   }, []);
-  
 
 
-    return (
-      <BrowserRouter>
-        <div className="App">
-          <AppNav />
-          <Switch>
 
-            {/* Prueba back */}
-            <PrivateRoute path="/todos">
-              <Todos />
-            </PrivateRoute>
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <AppNav />
+        <Switch>
 
-            {/* COMPONENTES */}
-            <Route exact path="/" component={Home} />
-            <Route exact path="/AboutUs" component={AboutUs} />
-            <Route exact path="/Gallery" component={Petimage} />
-            <Route exact path="/Volunteering" component={Volunteering} />
-            <Route exact path="/Store" component={Store} />
-            <Route exact path="/Adoptions" component={Adoptions} />
-            <Route exact path="/Adoptions/Form/:id" component={Formulario} />
-            <Route exact path="/petInfo/:id" component={Info} />
-            <Route exact path="/MoneyDonations" component={MoneyDonations} />
-            <Route exact path="/MoneyBanner" component={MoneyBanner} />
-            <Route exact path="/Modal" component={ModalDetalleMascota} />
+          {/* Prueba back */}
+          <PrivateRoute path="/todos">
+            <Todos />
+          </PrivateRoute>
 
-            <Route exact path="/SuppliesDonations" component={Supplies} />
+          {/* COMPONENTES */}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/AboutUs" component={AboutUs} />
+          <Route exact path="/Gallery" component={Petimage} />
+          <Route exact path="/Volunteering" component={Volunteering} />
+          <Route exact path="/Store" component={Store} />
+          <Route exact path="/Adoptions" component={Adoptions} />
+          <Route exact path="/Adoptions/Form/:id" component={Formulario} />
+          <Route exact path="/petInfo/:id" component={Info} />
+          <Route exact path="/MoneyDonations" component={MoneyDonations} />
+          <Route exact path="/MoneyBanner" component={MoneyBanner} />
+          <Route exact path="/Modal" component={ModalDetalleMascota} />
 
-            <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
+          <Route exact path="/SuppliesDonations" component={Supplies} />
+
+          <Route exact path="/SuppliesBanner" component={SuppliesBanner} />
 
 
-            <Route exact path="/salir" component={SignOut} />
-            <Route exact path="/entrar" component={SignInmail} />
-            <Route exact path="/crearusuario" component={CrearUsuario} />
+          <Route exact path="/salir" component={SignOut} />
+          <Route exact path="/entrar" component={SignInmail} />
+          <Route exact path="/crearusuario" component={CrearUsuario} />
 
-            {/* CRUD */}
-            <Route exact path="/Admin" component={PetCrud} />
-            <Route exact path="/Admin/Createpet" component={CreatePet} />
-            <Route exact path="/Admin/ReadPet" component={ReadPet} />
-            <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
-            <Route exact path="/Admin/DeletePet" component={DeletePet} />
+          {/* CRUD */}
+          <Route exact path="/Admin" component={PetCrud} />
+          <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
+          <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
+          <Route exact path="/Admin/Createpet" component={CreatePet} />
+          <Route exact path="/Admin/ReadPet" component={ReadPet} />
+          <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
+          <Route exact path="/Admin/DeletePet" component={DeletePet} />
 
-            {/* RESTO DE COSAS */}
-            <Route exact path="/dash" component={Dashboard} />
-            <Route exact path="/project/:id" component={ProjectDetails} />
+          {/* RESTO DE COSAS */}
+          <Route exact path="/dash" component={Dashboard} />
+          <Route exact path="/project/:id" component={ProjectDetails} />
 
-            <Route exact path="/create" component={CreateProject} />
+          <Route exact path="/create" component={CreateProject} />
 
-            <Route exact path="/test" component={Test} />
-            <Route exact path="/up" component={FileUpload} />
-            <Route exact path="/agregarpet" component={Agregarpet} />
-            <Route exact path="/pet/:id" component={PetId} />
-            <Route exact path="/MiPerfil" component={UserProfile} />
-            <Route exact path="/EditarPerfil" component={EditProfile} />
-            <Route component={NotFound} />
-          </Switch>
-          <Footer />
+          <Route exact path="/test" component={Test} />
+          <Route exact path="/up" component={FileUpload} />
+          <Route exact path="/agregarpet" component={Agregarpet} />
+          <Route exact path="/pet/:id" component={PetId} />
+          <Route exact path="/MiPerfil" component={UserProfile} />
+          <Route exact path="/EditarPerfil" component={EditProfile} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
 
-        </div>
-      </BrowserRouter>
-    );
-  }
+      </div>
+    </BrowserRouter>
+  );
+}
 
 
 export default App;
