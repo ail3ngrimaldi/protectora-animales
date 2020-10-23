@@ -29,7 +29,7 @@ export default function CardPet(props) {
 
   return (
     <div>
-    {pets ? <div> <Link to={`/ListPets/${props.petId}`}>
+    {pets ? <div> <Link to={`/pet/${props.petId}`}>
                       <Button variant="warning" onClick={() => setModalShow(true)}>
                       VER
                       </Button>

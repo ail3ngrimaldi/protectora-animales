@@ -56,7 +56,11 @@ docRef.get().then(function(doc) {
                   </div>
                   <p className="card-text"><strong>Personalidad</strong> {pet.personality}</p>
                   <p className="card-text"><strong>Historia: </strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic t</p>
-                  <a href="#" className="btn btn-primary">Adoptar</a>
+                  <Link to={{pathname:`/Adoptions/Form/${pet.name}/`, state:pet}}>
+                    <button className='btn btn-info'>
+                    Adoptar
+                    </button>
+                    </Link>
                   <FacebookShareButton
                     url = "https://www.facebook.com/ProtectoraSarmiento.Rosario"
                   />
