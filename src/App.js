@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { db, app } from './index'
+import "./App.css"
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
@@ -65,8 +66,6 @@ function App() {
     });
     return unmount;
   }, []);
-
-
 
   return (
     <BrowserRouter>
