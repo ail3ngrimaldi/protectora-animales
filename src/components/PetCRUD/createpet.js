@@ -35,7 +35,6 @@ export const CreatePet = () => {
       const castreted = e.target.castreted.value;
       if (!name || !fileUrl) {
         return;
-        console.log(name, "naaaaaaaaaaaaaaaaaaaaaa")
       }
       await db.collection("pet").doc(name).set({
         name: name,

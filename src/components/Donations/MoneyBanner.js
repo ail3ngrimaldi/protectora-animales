@@ -115,6 +115,8 @@ export const MoneyBanner = () => {
                 <div className="MBannerCard">
                     <h4 class="card-title">Donativo monetario</h4>
                     <h5 class="card-title">🐾 No nos suelten las patitas 🐾 </h5>
+                    <h5 class="card-title">Los aportes económicos son importantes para pagar tratamientos, estudios médicos y honorarios veterinarios, comprar insumos y alimento, financiar 
+                    castraciónes, imprimir material de difusión entre otros.</h5>
                     <h5 class="card-title">Agradecemos las colaboraciones para los Sarmientitos.</h5>
                     <h6 class="card-title">Necesitamos tu ayuda. Gracias.</h6>
                  

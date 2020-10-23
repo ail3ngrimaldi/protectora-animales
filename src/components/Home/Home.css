@@ -12,3 +12,29 @@
   padding: 4em;
   float: right;
 }
+
+.arreglarcarrusel {
+  display: flex;
+  position: relative;
+}
+
+.conocenos {
+  display: flex;
+  
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.aboutus {
+
+  display: flex;
+  align-items: center;
+  background-color:#e1e1a39c;
+  width: 100%;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}

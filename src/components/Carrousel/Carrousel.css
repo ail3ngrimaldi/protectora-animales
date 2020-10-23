@@ -1,20 +1,24 @@
-.StyleCarouselOpacity {
-  background-color: #d5d57ec9;
+.carousel{
+  height: 350px;
+}
+.texto{
+ 
+  padding: 1%;
+}
+.carru{
+  
+  display: flex;
+  align-items: center;
+  padding: 1%;
 }
 
-.StyleCarousel {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-.carousel {
-  padding: 1.8em;
-  padding-left: 6em;
-  padding-right: 6em;
-}
-
-.carousel-item img {
-  width: 10px;
-  height: 550px;
+@media (max-width: 600px) {
+  .carru {
+    
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .carousel{
+    height: auto;
+  }
 }

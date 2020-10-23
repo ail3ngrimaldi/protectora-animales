@@ -1,3 +1,4 @@
+  
 import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Nav2 from './Navbarlogin'
@@ -41,17 +42,6 @@ const AppNav = (props) => {
               >
                 {" "}
                 Historia{" "}
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/Store"
-                className="nav-item nav-link"
-              >
-                {" "}
-                Tienda{" "}
               </NavLink>
             </li>
             <li className="nav-item">

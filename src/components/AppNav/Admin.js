@@ -23,18 +23,7 @@ const Admin = () => {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
     
-            <li class="nav-item">
-              <NavLink
-                exact
-                activeClassName="active"
-                to="/Admin"
-                className="nav-item nav-link"
-              >
-                {" "}
-                Admin{" "}
-              </NavLink>             
-            </li>
-              {/* Nav de login */}
+            
 
      
           </ul>
