@@ -5,40 +5,22 @@ import Button from '@material-ui/core/Button';
 import { arrayMascotas } from '../../Constants/arrayMascotas';
 
 
-const Names = ({match, formData, setForm, navigation} ) => {
-    
-    // const { match } = props
+const Names = (props ) => {
+    const {match, formData, setForm, navigation} = props
+  
+    /* const { match } = props */
     const { id } = match.params
-    const mascota = arrayMascotas.filter(a => {
-        return a.id == id
-    })[0]
-
-    console.log({formData})
+  
+    const pet = props.location.state
+    
 
     const {nombreCompleto, edad, profesion } = formData;
-
+    
     return (
        <Container maxWidth='xs' style={{backgroundColor: 'white'}} >
             <h3>Datos de la Mascota</h3>
-           <TextField
-            label = 'Nombre Mascota'
-            name= 'nombreMascota'
-            id='mascota'
-            value = {mascota.Nombre}
-            margin='normal'
-            variant ='outlined'
-            autoComplete='off'
-            fullWidth
-           />
-           <TextField
-            label = 'Tipo Mascota'
-            name= 'tipoMascota'
-            value = {mascota.Tipo}
-            margin='normal'
-            variant ='outlined'
-            autoComplete='off'
-            fullWidth
-           />
+            <h4>Nombre: {pet.name} <br />
+            Tipo: {pet.kind} </h4>
            <h3>Datos del Interesado</h3>
            <TextField
             label = 'Nombre Completo'
@@ -88,6 +70,7 @@ const Names = ({match, formData, setForm, navigation} ) => {
             Siguiente
             </Button>
             </div>
+            
        </Container>
     )
 }
