@@ -16,27 +16,25 @@ export const Home = () => {
 
           <Carrousel2 />
           <div className="row">
-            <div
-              className="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft"
-              data-wow-delay="0.3s"
-            >
-
-              <h1 className="h1-responsive font-weight-bold mt-sm-5">
-                PROTECTORA DE ANIMALES DOMINGO FAUSTINO SARMIENTO{" "}
-              </h1>
-              <div className="col-md-12 d-flex justify-content-left mb-5">
-                <Link to="/AboutUs">
-                  <Button>¡Conocenos!</Button>
-                </Link>
+            <div className="aboutus" data-wow-delay="0.3s">
+              <div className="title">
+                <h1 className="h1-responsive font-weight-bold mt-sm-5">
+                  PROTECTORA DE ANIMALES DOMINGO FAUSTINO SARMIENTO{" "}
+                </h1>
+                <div >
+                  <Link to="/AboutUs">
+                    <Button>¡Conocenos!</Button>
+                  </Link>
+                </div>
               </div>
+              <img className="StyleImg"
+
+                src="/img/Gallery/Dogs/Dogo4.jpg"
+                alt=""
+              />
             </div>
-            <img
-              className="StyleImg"
-              src="/img/Gallery/Dogs/Dogo4.jpg"
-              alt=""
-            />
-            <Carrousel />
           </div>
+          <Carrousel />
         </div>
 
       </div>
