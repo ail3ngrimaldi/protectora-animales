@@ -29,7 +29,6 @@ const AppNav = (props) => {
         <Navbar.Collapse>
           <Nav className="mr-auto">
             <Nav.Link href="/AboutUs">Historia</Nav.Link>
-            <Nav.Link href="/Store">Tienda</Nav.Link>
             <Nav.Link href="/Volunteering">Voluntariado</Nav.Link>
             <Nav.Link href="/Gallery">Mascotas</Nav.Link>
             <NavDropdown title="Donativos">
