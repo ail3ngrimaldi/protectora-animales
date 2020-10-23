@@ -19,6 +19,8 @@ import { MoneyBanner } from './components/Donations/MoneyBanner'
 import Petimage from './components/Gallery/Petimage'
 import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
 import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
+import PetDetail from './components/Info/PetDetail'
+
 //CRUD
 
 import { CreatePet } from "./components/PetCRUD/createpet"
@@ -34,6 +36,7 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
+import CardPet from "./components/Info/CardPet.js";
 
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
@@ -47,11 +50,11 @@ import NotFound from './components/404/Notfound'
 import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
-import PetId from './components/Info/PetId'
+// import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
-import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
+// import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
 function App() {
   const [albums, setAlbums] = useState([]);
@@ -88,7 +91,8 @@ function App() {
           <Route exact path="/petInfo/:id" component={Info} />
           <Route exact path="/MoneyDonations" component={MoneyDonations} />
           <Route exact path="/MoneyBanner" component={MoneyBanner} />
-          <Route exact path="/Modal" component={ModalDetalleMascota} />
+          {/* <Route exact path="/Modal" component={ModalDetalleMascota} /> */}
+          <Route exact path="/pet/:id" component={PetDetail} />
 
           <Route exact path="/SuppliesDonations" component={Supplies} />
 
@@ -117,7 +121,7 @@ function App() {
           <Route exact path="/test" component={Test} />
           <Route exact path="/up" component={FileUpload} />
           <Route exact path="/agregarpet" component={Agregarpet} />
-          <Route exact path="/pet/:id" component={PetId} />
+          {/* <Route exact path="/pet/:id" component={PetId} /> */}
           <Route exact path="/MiPerfil" component={UserProfile} />
           <Route exact path="/EditarPerfil" component={EditProfile} />
           <Route component={NotFound} />
