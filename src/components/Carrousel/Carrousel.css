@@ -6,7 +6,7 @@
   padding: 1%;
 }
 .carru{
-  background-color: green;
+  
   display: flex;
   align-items: center;
   padding: 1%;
@@ -14,7 +14,7 @@
 
 @media (max-width: 600px) {
   .carru {
-    background-color: green;
+    
     display: flex;
     flex-direction: column-reverse;
   }
