@@ -13,7 +13,6 @@ import { db } from "../../../index";
 
 const ListPets = () => {
     const [links, setLinks] = useState([]);
-    const [currentId, setCurrentId] = useState("");
   
     const getLinks = async () => {
       db.collection("pet").onSnapshot((querySnapshot) => {
