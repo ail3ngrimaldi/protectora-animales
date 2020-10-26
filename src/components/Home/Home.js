@@ -17,13 +17,16 @@ export const Home = () => {
           <Carrousel2 />
           <div className="row">
             <div className="aboutus" data-wow-delay="0.3s">
-              <div className="title">
-                <h1 className="h1-responsive font-weight-bold mt-sm-5">
+              <div className="title container text-center h-100 bg-white d-flex justify-content-center align-items-center">
+                <h1 className="h1-responsive font-weight-bold mt-sm-5 text-center">
                   PROTECTORA DE ANIMALES DOMINGO FAUSTINO SARMIENTO{" "}
                 </h1>
                 <div >
                   <Link to="/AboutUs">
-                    <Button>¡Conocenos!</Button>
+                    <Button variant="outline-info" size="lg">
+                    ¡Conocenos!
+                    </Button>{' '}
+                    {/* <Button className="aling-items">¡Conocenos!2</Button> */}
                   </Link>
                 </div>
               </div>

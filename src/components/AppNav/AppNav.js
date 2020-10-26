@@ -3,6 +3,7 @@ import React from "react";
 import { Link, NavLink } from 'react-router-dom';
 import Nav2 from './Navbarlogin'
 import { connect } from 'react-redux'
+import Alert from '../Alert/Alert'
 
 const AppNav = (props) => {
   const { auth, profile } = props;
@@ -110,6 +111,7 @@ const AppNav = (props) => {
         </div>
       </nav>
       <br />
+      <Alert/>
     </div>
   );
 };

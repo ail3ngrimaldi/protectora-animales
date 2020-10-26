@@ -25,7 +25,7 @@ export const History = () => {
                   PROTECTORA DE ANIMALES DOMINGO FAUSTINO SARMIENTO{" "}
                 </h1>
                 <hr className="hr-light" />
-                <h6 className="mb-4">
+                <h6 className="mb-4 text-justify">
                   La “Protectora de Animales Domingo Faustino Sarmiento” se
                   fundó en 1969 en nuestra ciudad, Rosario • Nuestra protectora
                   rescata, cura y mantiene animales que quizás de otra manera no
@@ -44,14 +44,14 @@ export const History = () => {
       <div class="container">
         <div class="row py-5">
           <div class="col-md-12 text-center">
-            <p>
+            {/* <p>
               DIFUNDIR!! Es muy útil que nos ayudes difundiendo mensajes de
               nuestra página web y nuestros animales en internet, mandándonos
               artículos interesantes o fotos, anunciando nuestros animales en
               adopción en las clínicas veterinarias y sobre todo comentando a
               tus amigos, compañeros de trabajo y amigos que antes de comprar un
               animal de compañía pueden adoptarlo.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

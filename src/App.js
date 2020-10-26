@@ -5,6 +5,7 @@ import "./App.css"
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
+import Alert from "./components/Alert/Alert";
 import PetCrud from "./components/Administrator/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
@@ -74,6 +75,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <AppNav />
+        
         <Switch>
 
           {/* Prueba back */}
@@ -83,6 +85,7 @@ function App() {
 
           {/* COMPONENTES */}
           <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Alert} />
           <Route exact path="/AboutUs" component={AboutUs} />
           <Route exact path="/Gallery" component={Petimage} />
           <Route exact path="/Volunteering" component={Volunteering} />
