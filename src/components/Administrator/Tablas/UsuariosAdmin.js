@@ -11,21 +11,20 @@ import Paper from '@material-ui/core/Paper';
 import { db } from "../../../index";
 
 const ListUsers = () => {
-  const [links, setLinks] = useState([]);
-  const [currentId, setCurrentId] = useState("");
+  const [users, setUsers] = useState([]);
 
-  const getLinks = async () => {
+  const getUsers = async () => {
     db.collection("users").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
       });
-      setLinks(docs);
+      setUsers(docs);
     });
   };
 
   useEffect(() => {
-    getLinks();
+    getUsers();
   }, []);
 
 const useStyles = makeStyles({
@@ -44,20 +43,21 @@ const useStyles = makeStyles({
             <TableCell>Nombre</TableCell>
             <TableCell >Apellido</TableCell>
             <TableCell >Email</TableCell>
-            <TableCell >Celular</TableCell>
+            <TableCell >ID</TableCell>
             <TableCell >Acciones</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {links.map((user) => (
+          {console.log(users)}
+          {users.map((user) => (
             <TableRow key={user.id}>
               <TableCell component="th" scope="row">
-                {user.name}
+                {user.firstName}
               </TableCell>
-              <TableCell component="th" scope="row" >{user.age}</TableCell>
-              <TableCell component="th" scope="row" >{user.mail}</TableCell>
-              <TableCell component="th" scope="row" >{user.name}</TableCell>
-              <TableCell component="th" scope="row" >{user.name}</TableCell>
+              <TableCell component="th" scope="row" >{user.lastName}</TableCell>
+              <TableCell component="th" scope="row" >{user.email}</TableCell>
+              <TableCell component="th" scope="row" >{user.id}</TableCell>
+              <TableCell component="th" scope="row" > Cosas que puede hacer admin</TableCell>
             </TableRow>
           ))}
         </TableBody>
