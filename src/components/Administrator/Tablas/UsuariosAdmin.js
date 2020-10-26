@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   table: {
@@ -55,6 +56,12 @@ export default function BasicTable() {
           ))}
         </TableBody>
       </Table>
+      <div>
+      <Link to="/Admin">
+      <button type="button" className="btn btn-info btn-rounded btn-block">Volver</button>
+      </Link>    
+      </div>
     </TableContainer>
+    
   );
 }
