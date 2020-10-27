@@ -30,8 +30,7 @@ const Petimage = () => {
           <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="1">Perros</button>
           <button type="button" className="btn btn-outline-black waves-effect filter" data-rel="2">Gatos</button>
          </div>
-       </div>
-      
+       </div>             
       <div>
           <div className="gallery" id="gallery">
             {links.map((pet) => (
