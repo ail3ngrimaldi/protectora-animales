@@ -58,7 +58,9 @@ const useStyles = makeStyles({
               <TableCell component="th" scope="row" >{user.lastName}</TableCell>
               <TableCell component="th" scope="row" >{user.email}</TableCell>
               <TableCell component="th" scope="row" >{user.id}</TableCell>
-              <TableCell component="th" scope="row" > Cosas que puede hacer admin</TableCell>
+              <TableCell component="th" scope="row" > Cosas que puede hacer admin
+              <button className='btn btn-info'>X</button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
