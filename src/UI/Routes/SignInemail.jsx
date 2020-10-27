@@ -67,16 +67,22 @@ const SignInmail = () => {
               </div>
               
         </form>
-        <div class="form-signin ">
-        <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={signInWithmail} value='Ingresa con tu cuenta'/>  
-        </div>  
-        <div className="form-group">
-                  
-        <div><SignIn/></div>
-        <div className="form-signin">
-        <NavLink to='/crearusuario'><button className="btn btn-lg btn-info btn-block">No tenes cuenta? <span>Registrarse</span></button></NavLink>
-        </div>
-        </div>
+          <div class="form-signin ">
+            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={signInWithmail} value='Ingresa con tu cuenta'/>  
+          </div> 
+
+          <div className="form-group">       
+            <div><SignIn/></div>
+            <div className="form-signin">
+              <NavLink to='/crearusuario'><button className="btn btn-lg btn-info btn-block">¿No tenes cuenta? <span>Registrarse</span></button></NavLink>
+            </div>
+          </div>
+
+          <div className="form-password">       
+            <div className="form-signin">                   
+              <NavLink to='/resetpassword'><button className="btn btn-lg btn-light btn-block"><span>¿Olvidaste tu contraseña?</span></button></NavLink>
+            </div>
+          </div>
         </div>
         </Container>
     </div>

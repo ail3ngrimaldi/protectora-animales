@@ -115,6 +115,7 @@ function App() {
           {/* RESTO DE COSAS */}
           <Route exact path="/dash" component={Dashboard} />
           <Route exact path="/project/:id" component={ProjectDetails} />
+          <Route exact path="/resetpassword" component={ResetPassword} />
 
           <Route exact path="/create" component={CreateProject} />
 
