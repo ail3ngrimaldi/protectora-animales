@@ -130,7 +130,7 @@ const CrearUsuario = () => {
        
       }else if(usuario.location.length < 5 || usuario.location.length > 100){
           countError ++;
-          errorMessages.push('Ha ingresado una localidad o cuidad invalida!')
+          errorMessages.push('Ha ingresado una localidad o ciudad invalida!')
           setShowError(errorMessages)
             
       }
