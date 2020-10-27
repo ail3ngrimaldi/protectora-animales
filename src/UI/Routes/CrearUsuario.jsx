@@ -72,6 +72,9 @@ const CrearUsuario = () => {
           setShowError(errorMessages)
           
         
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
       if(usuario.password === ''){
         emptyFields ++
@@ -82,6 +85,9 @@ const CrearUsuario = () => {
           setShowError(errorMessages)
           
         
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
       if(usuario.firstName === ''){
         emptyFields ++
@@ -93,6 +99,9 @@ const CrearUsuario = () => {
           setShowError(errorMessages)
           
         
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
       if(usuario.lastName === ''){
         emptyFields ++
@@ -104,6 +113,9 @@ const CrearUsuario = () => {
           setShowError(errorMessages)
           
         
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
       
       if(usuario.age === ''){
@@ -121,6 +133,10 @@ const CrearUsuario = () => {
         setShowError(errorMessages)
            
       }
+      else{
+        errorMessages.push('')
+        setShowError(errorMessages)
+      }
       if(usuario.birthdate === ''){
         emptyFields++
        
@@ -133,6 +149,9 @@ const CrearUsuario = () => {
           errorMessages.push('Ha ingresado una localidad o ciudad invalida!')
           setShowError(errorMessages)
             
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
       if(usuario.address === ''){
         emptyFields++
@@ -142,6 +161,9 @@ const CrearUsuario = () => {
           errorMessages.push('Ha ingesado una dirección invalida!')
           setShowError(errorMessages)
             
+      }else{
+        errorMessages.push('')
+        setShowError(errorMessages)
       }
 
       if(emptyFields !== 0){
