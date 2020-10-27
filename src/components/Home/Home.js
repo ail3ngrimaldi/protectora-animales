@@ -4,8 +4,6 @@ import { Carrousel2 } from "../Carrousel/Carrousel2";
 import { EventsHome } from "../Events/EventsHome";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-
-
 import "./Home.css";
 
 export const Home = () => {
@@ -25,13 +23,15 @@ export const Home = () => {
           <Carrousel2 />
           <div className="row">
             <div className="aboutus" data-wow-delay="0.3s">
-              <div className="title">
-                <h1 className="h1-responsive font-weight-bold mt-sm-5">
+              <div className="title container text-center h-100 bg-white d-flex justify-content-center align-items-center">
+                <h1 className="h1-responsive font-weight-bold mt-sm-5 text-center">
                   PROTECTORA DE ANIMALES DOMINGO FAUSTINO SARMIENTO{" "}
                 </h1>
                 <div >
                   <Link to="/AboutUs">
-                    <Button>¡Conocenos!</Button>
+                  <Button variant="info" size="lg">
+                    ¡Conocenos!
+                    </Button>{' '}
                   </Link>
                 </div>
               </div>

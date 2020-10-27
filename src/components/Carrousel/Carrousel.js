@@ -15,16 +15,15 @@ export const Carrousel = () => {
     <div className="carru">
 
       <div className="texto">
-        <h1>perritos bellos</h1>
-        <p>Somos un Cat Café-Restaurante ubicado en la ciudad de Bogotá, en donde podras disfrutar de nuestro delicioso menú y
-          vivir una experiencia gatuna. Tenemos 14 gaticos con quienes podrás interactuar ¡Visítanos!</p>
+        <h1>Acá no sé que info poner</h1>
+        <p>¿Qué info ponemos? AYUDA</p>
 
         <NavLink
           exact
           activeClassName="active"
           to="/Gallery"
           className="nav-item nav-link">
-          <button type="button" class="btn btn-primary">Conoce mas</button>
+          <button type="button" class="btn btn-info">Conoce más</button>
         </NavLink>
       </div>
 
@@ -60,11 +59,11 @@ export const Carrousel = () => {
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Anterior</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Siguiente</span>
         </a>
       </div>
     </div>

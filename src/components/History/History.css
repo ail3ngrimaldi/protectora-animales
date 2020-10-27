@@ -6,3 +6,7 @@
   background-position: center center;
   opacity: 0.9;
 }
+
+.textResponsive { /* creo que ya es responsive por bootstrap, ver si hace falta esta parte o no*/
+  font-size: calc(100% + 1vw + 1vh); 
+}
