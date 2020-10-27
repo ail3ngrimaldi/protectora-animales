@@ -1,14 +1,14 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { NavLink } from 'react-router-dom';
 import Foto1 from "../Carrousel/img/Foto1.jpg";
 import Foto2 from "../Carrousel/img/Foto2.jpg";
 import Foto3 from "../Carrousel/img/Foto3.png";
 import Foto4 from "../Carrousel/img/Foto4.jpg";
 import Foto5 from "../Carrousel/img/Foto5.png";
 import Foto6 from "../Carrousel/img/Foto6.png";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Carrousel.css";
-import { NavLink } from 'react-router-dom';
 
 export const Carrousel = () => {
   return (

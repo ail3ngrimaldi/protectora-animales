@@ -29,7 +29,6 @@ export const EventsHome = () => {
                   <ul> ♥ Transportando Sarmientos de un lugar a otro </ul>
                  </p>
               </div>
-              {/* <img className="StyleImg" src="/img/Home/Personas.jpg" alt="" /> */}
             </div>
           </div>
         </div>
