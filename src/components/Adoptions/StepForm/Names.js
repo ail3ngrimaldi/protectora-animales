@@ -33,7 +33,7 @@ const Names = (props ) => {
                     
                 }
                 else if(nombreCompleto.split(' ').length < 2 || nombreCompleto.split(' ')[1] === ''){
-                    setErrNombreCompleto('Debes ingresar al un nombre y apellido')
+                    setErrNombreCompleto('Debes ingresar al menos un nombre y apellido')
                     countError++
                    
                 }
