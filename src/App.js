@@ -52,6 +52,9 @@ import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
 import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
+import Contactus from './components/sendemail'
+import ContactUs from "./components/sendemail";
+
 function App() {
   const [albums, setAlbums] = useState([]);
 
@@ -121,6 +124,8 @@ function App() {
             <Route exact path="/MiPerfil" component={UserProfile} />
             <Route exact path="/EditarPerfil" component={EditProfile} />
             <Route exact path="/ResetPassword" component={ResetPassword} />
+
+            <Route exact path="/mail" component={ContactUs} />
             <Route component={NotFound} />
           </Switch>
           <Footer />

@@ -1,43 +1,55 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-admin.initializeApp(functions.config().firebase);
+const nodemailer = require('nodemailer');
+const cors = require('cors')({origin: true});
+admin.initializeApp();
 
-const createNotification = ((notification) => {
-  return admin.firestore().collection('notifications')
-    .add(notification)
-    .then(doc => console.log('notification added', doc));
-});
-
-
-exports.projectCreated = functions.firestore
-  .document('projects/{projectId}')
-  .onCreate(doc => {
-
-    const project = doc.data();
-    const notification = {
-      content: 'Added a new project',
-      user: `${project.authorFirstName} ${project.authorLastName}`,
-      time: admin.firestore.FieldValue.serverTimestamp()
+/**
+* Here we're using Gmail to send 
+*/
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'yourgmailaccount@gmail.com',
+        pass: 'yourgmailaccpassword'
     }
-
-    return createNotification(notification);
-
 });
 
-exports.userJoined = functions.auth.user()
-  .onCreate(user => {
+// let transporter = nodemailer.createTransport(req => {
+//     const id = req.query.id;    
     
-    return admin.firestore().collection('users')
-      .doc(user.uid).get().then(doc => {
+    
+//     const res = {service: 'gmail',
+//     auth: {
+//         user: 'haroldognjunior@gmail.com',
+//         pass: id
+//     }
+// }
+// });
 
-        const newUser = doc.data();
-        const notification = {
-          content: 'Joined the party',
-          user: `${newUser.firstName} ${newUser.lastName}`,
-          time: admin.firestore.FieldValue.serverTimestamp()
+
+exports.sendMail = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {
+      
+        // getting dest email by query string
+        const dest = req.query.dest;
+
+        const mailOptions = {
+            from: 'Your Account Name <yourgmailaccount@gmail.com>', // Something like: Jane Doe <janedoe@gmail.com>
+            to: dest,
+            subject: 'I\'M A PICKLE!!!', // email subject
+            html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
+                <br />
+                <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
+            ` // email content in HTML
         };
-
-        return createNotification(notification);
-
-      });
+  
+        // returning result
+        return transporter.sendMail(mailOptions, (erro, info) => {
+            if(erro){
+                return res.send(erro.toString());
+            }
+            return res.send('Sended');
+        });
+    });    
 });

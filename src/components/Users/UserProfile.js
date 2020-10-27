@@ -14,7 +14,7 @@ const UserProfile = (props) => {
             <h1>Mi Perfil</h1>
             {
             profile.hasOwnProperty('displayName') ?
-                    <p>{profile.displayName}</p>
+                    <p>{profile.displayName}, necesitas registrar tus datos</p>
                     :
                     <div>
                     <Container>
