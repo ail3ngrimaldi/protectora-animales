@@ -1,6 +1,6 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-//import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
 import Foto1 from "../Carrousel/img/Foto1.jpg";
 import Foto2 from "../Carrousel/img/Foto2.jpg";
 import Foto3 from "../Carrousel/img/Foto3.png";
@@ -36,40 +36,52 @@ export const Carrousel2 = () => {
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src={Foto1} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/Gallery">
+                                <img src={Foto1} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="carousel-item">
-                            <img src={Foto2} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/MoneyBanner">
+                                <img src={Foto2} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="carousel-item">
-                            <img src={Foto3} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/SuppliesBanner">
+                                <img src={Foto3} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="carousel-item">
-                            <img src={Foto4} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/Aboutus">
+                                <img src={Foto4} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="carousel-item">
-                            <img src={Foto5} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/Volunteering">
+                                <img src={Foto5} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="carousel-item">
-                            <img src={Foto6} className="d-block w-100" alt="..." />
-                            <div className="carousel-caption d-none d-md-block">
+                            <Link to="/MiPerfil">
+                                <img src={Foto6} className="d-block w-100" alt="..." />
+                                <div className="carousel-caption d-none d-md-block">
 
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <a
