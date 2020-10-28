@@ -1,12 +1,9 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from "react-router-dom";
-import Foto1 from "../Carrousel/img/Foto1.jpg";
-import Foto2 from "../Carrousel/img/Foto2.jpg";
-import Foto3 from "../Carrousel/img/Foto3.png";
-import Foto4 from "../Carrousel/img/Foto4.jpg";
-import Foto5 from "../Carrousel/img/Foto5.png";
-import Foto6 from "../Carrousel/img/Foto6.png";
+import Foto1 from "../Carrousel/img/Carrousel1.jpg";
+import Foto2 from "../Carrousel/img/Carrousel2.jpg";
+import Foto3 from "../Carrousel/img/Carrousel3.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Carrousel2.css";
 
@@ -31,8 +28,6 @@ export const Carrousel2 = () => {
                         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                         <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                         <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
@@ -52,37 +47,13 @@ export const Carrousel2 = () => {
                             </Link>
                         </div>
                         <div className="carousel-item">
-                            <Link to="/SuppliesBanner">
+                            <Link to="/Volunteering">
                                 <img src={Foto3} className="d-block w-100" alt="..." />
                                 <div className="carousel-caption d-none d-md-block">
 
                                 </div>
                             </Link>
-                        </div>
-                        <div className="carousel-item">
-                            <Link to="/Aboutus">
-                                <img src={Foto4} className="d-block w-100" alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
-
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="carousel-item">
-                            <Link to="/Volunteering">
-                                <img src={Foto5} className="d-block w-100" alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
-
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="carousel-item">
-                            <Link to="/MiPerfil">
-                                <img src={Foto6} className="d-block w-100" alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
-
-                                </div>
-                            </Link>
-                        </div>
+                        </div>                                                  
                     </div>
                     <a
                         className="carousel-control-prev"

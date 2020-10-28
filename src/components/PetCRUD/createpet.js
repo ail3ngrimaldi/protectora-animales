@@ -133,9 +133,18 @@ export const CreatePet = () => {
                                     </Col>
                                 </Row>
                             </Form.Group>
+                            <Form.Group>
+                                <Row>
 
-                            <input type="file" onChange={onFileChange} />
-                            <button type="submit" class="btn btn-primary">CREAR</button>
+                                    <Col md={6}>
+                                        <input type="file" onChange={onFileChange} />
+                                    </Col>
+                                    <Col md={6}>
+                                        <button type="submit" class="btn btn-primary">INGRESAR MASCOTA</button>
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
 
                         </Form>
                     </Col>

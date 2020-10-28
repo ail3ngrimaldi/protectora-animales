@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PetForm from "./VoluntarioForm"; 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,16 +7,17 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
+import { toast } from "react-toastify";
 
-const ListPets = () => {
+const Test = () => {
   const [links, setLinks] = useState([]);
+  const [currentId, setCurrentId] = useState("");
 
   const getLinks = async () => {
-    db.collection("pet").onSnapshot((querySnapshot) => {
+    db.collection("voluntary").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });
@@ -35,7 +37,7 @@ const ListPets = () => {
       confirmButtonText: '¡Si, borrarlo!'
     }).then((result) => {
       if (result.value) {
-        db.collection("pet").doc(id).delete();
+        db.collection("voluntary").doc(id).delete();
         Swal.fire(
           '¡Borrado!',
           '¡Su mascota ha sido borrada correctamente!',
@@ -49,58 +51,70 @@ const ListPets = () => {
     getLinks();
   }, []);
 
+  
+
+  const addOrEditLink = async (linkObject) => {
+    try {
+      if (currentId === "") {
+        await db.collection("voluntary").doc().set(linkObject);
+        Swal.fire({
+            icon: 'success',
+            title: 'Perfecto',
+            text: '¡Voluntario agregado con exito!'
+          })
+      } else {
+        await db.collection("voluntary").doc(currentId).update(linkObject);
+        Swal.fire({
+            icon: 'success',
+            title: 'Perfecto',
+            text: '¡Voluntario editado con exito!'
+          })
+        setCurrentId("");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div>
-      <div className="text-center">
-        <Link to="/Admin/Createpet">
-          <button type="button" className=" btn-info p-2 mt-3 rounded">Ingresar Mascota</button>
-        </Link>
-        <Link to="/Admin">
-          <button type="button" className="btn-danger p-2 mt-3 rounded">Volver</button>
-        </Link>
+    <div className="text-center">
+      <div className="col-md-4 p-2">
+       <PetForm {...{ addOrEditLink, currentId, links }} /> 
       </div>
       <TableContainer className='pl-3 pr-3' component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Acciones</TableCell>
-              <TableCell>Foto</TableCell>
               <TableCell>Nombre</TableCell>
               <TableCell>Edad</TableCell>
-              <TableCell>Sexo</TableCell>
-              <TableCell>Tamaño</TableCell>
-              <TableCell>Castrado</TableCell>
-              <TableCell>Personalidad</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Dirección</TableCell>
+              <TableCell>Contribucion</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {links.map((pet) => (
+            {links.map((link) => (
 
-              <TableRow key={pet.id}>
+              <TableRow key={link.id}>
                 <TableCell component="th" scope="row">
-                  <button className="btn btn-warning"><i class="fas fa-edit"></i></button>
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(pet.id)} class="fas fa-trash-alt"></i></button>
+                  <button className="btn btn-warning"><i onClick={() => setCurrentId(link.id)} class="fas fa-edit"></i></button>
+                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(link.id)} class="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  <img src={pet.avatar} alt={pet.name} class="img-fluid" width='70' height='70' />
+                  {link.name}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {pet.name}
+                  {link.age}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {pet.age}
+                  {link.email}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {pet.gender}
+                  {link.address}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {pet.size}
-                </TableCell>
-                <TableCell component="th" scope="row">
-                  {pet.castreted}
-                </TableCell>
-                <TableCell component="th" scope="row">
-                  {pet.personality}
+                  {link.contribution}
                 </TableCell>
               </TableRow>
             ))}
@@ -110,7 +124,7 @@ const ListPets = () => {
         </div>
       </TableContainer>
     </div>
-  )
+  );
 };
 
-export default ListPets;
+export default Test;
