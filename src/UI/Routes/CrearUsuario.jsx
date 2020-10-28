@@ -266,6 +266,7 @@ const CrearUsuario = () => {
                 onChange={updateField}
                 className="form-control"
                 placeholder="E-mail"
+                autofocus="autofocus"
               />
               
               </div>
@@ -354,7 +355,7 @@ const CrearUsuario = () => {
               </div>
               </div>
               <Error classError={classError} classInfo={classInfo} showError={showError} requiredFields={requiredFields}/>
-              <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
+              <input type="submit" className="btn btn-dark" onClick={(e) => {
                 e.preventDefault(); createEmail(); 
               }} value='Registrarse'/>
               <br/>

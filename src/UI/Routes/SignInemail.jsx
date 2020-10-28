@@ -50,6 +50,7 @@ const SignInmail = () => {
                 onChange={updateField}
                 className="form-control"
                 placeholder="E-mail"
+                autofocus="autofocus"
               />
               </div>
               
