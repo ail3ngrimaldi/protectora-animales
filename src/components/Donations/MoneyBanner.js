@@ -40,7 +40,7 @@ export const MoneyBanner = () => {
               />
               <div class="overlay">
                 {/* <h2>Hover effect 1v2</h2> */}
-                <a class="info" href="/MoneyDonations">Doná insumos </a>
+                <a class="info" href="/SuppliesDonations">Doná insumos </a>
               </div>
           </div>
 
