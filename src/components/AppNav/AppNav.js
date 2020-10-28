@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Nav2 from './Navbarlogin'
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
-import NavBar from 'react-bootstrap/NavBar';
+import NavBar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 const AppNav = (props) => {
@@ -54,7 +54,8 @@ const AppNav = (props) => {
                 </NavLink>
               </div>
             </li>
-            <Link className='nav-link' to='/Admin'>Admin</Link>
+            {profile.isAdmin === true && 
+            <Link className='nav-link' to='/Admin'>Admin</Link>}
         
         </Nav>
 
