@@ -1,13 +1,13 @@
-import React, { Component, useState, useEffect  } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import {db , app} from './index'
+import { db, app } from './index'
+import "./App.css"
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
-import PetCrud from "./components/PetCRUD/petnavbar";
+import PetCrud from "./components/Administrator/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
-import { Store } from "./components/Store/Store";
 import { Volunteering } from "./components/Volunteering/Volunteering";
 import { Gallery } from "./components/Gallery/Gallery";
 import { MoneyDonations } from "./components/Donations/MoneyDonations";
@@ -16,7 +16,11 @@ import Adoptions from "./components/Adoptions/Adoptions";
 import { Footer } from "./components/Footer/Footer";
 import { SuppliesBanner } from './components/Donations/SuppliesBanner'
 import { MoneyBanner } from './components/Donations/MoneyBanner'
-import  Petimage  from './components/Gallery/Petimage'
+import Petimage from './components/Gallery/Petimage'
+import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
+import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
+import VoluntariosAdmin from './components/Administrator/Tablas/VoluntariosAdmin';
+import PetDetail from './components/Info/PetDetail'
 
 //CRUD
 
@@ -33,6 +37,7 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
+import CardPet from "./components/Info/CardPet.js";
 
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
@@ -46,11 +51,11 @@ import NotFound from './components/404/Notfound'
 import Test from './components/Gallery/test'
 import FileUpload from './components/Gallery/FileUpload'
 import Agregarpet from './components/Gallery/Agregarpet'
-import PetId from './components/Info/PetId'
+// import PetId from './components/Info/PetId'
 import UserProfile from './components/Users/UserProfile'
 import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
-import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
+// import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
 import Contactus from './components/sendemail'
 import ContactUs from "./components/sendemail";

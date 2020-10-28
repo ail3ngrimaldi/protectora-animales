@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import {db, app} from '../../index'
 import { useFirebase, useFirestore } from "react-redux-firebase";
-import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Container from 'react-bootstrap/Container'
 import Form from "react-bootstrap/Form";
-//import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
@@ -30,6 +28,7 @@ export const CreatePet = () => {
       const age = e.target.age.value;
       const kind = e.target.kind.value;
       const personality = e.target.personality.value;
+      const history = e.target.history.value;
       const size = e.target.size.value;
       const gender = e.target.gender.value;
       const castreted = e.target.castreted.value;
@@ -42,6 +41,7 @@ export const CreatePet = () => {
         avatar: fileUrl,        
         kind: kind,
         personality: personality,
+        history: history,
         size: size,
         gender: gender,
         castreted: castreted
@@ -64,7 +64,7 @@ export const CreatePet = () => {
     return (
         <div>
             <Container fluid={true}>
-                <h3 className="display-6 font-weight-light justify-content py-4 ml-5">CREAR MASCOTA</h3>
+                <h3 className="display-6 font-weight-light justify-content py-4 ml-5">AGREGAR MASCOTA</h3>
                 <Row className='justify-content-center'>
                     <Col md={8}>
                         <Form onSubmit={onSubmit}>
@@ -88,7 +88,7 @@ export const CreatePet = () => {
                             <Form.Group>
                                 <Row>
                                     <Col md={6}>
-                                        <label for="inputState">Genero</label>
+                                        <label for="inputState">Género</label>
                                         <select input name='gender' id="inputState" class="form-control" placeholder="Genero">
                                             <option defaultValue>Seleccione una opción</option>
                                             <option value="Macho">Macho</option>
@@ -99,8 +99,8 @@ export const CreatePet = () => {
                                         <label for="inputState">Castrado</label>
                                         <select input name='castreted' id="inputState" class="form-control">
                                             <option defaultValue>Seleccione una opción</option>
-                                            <option value="SI">SI</option>
-                                            <option value="NO">NO</option>
+                                            <option value="SI">Sí</option>
+                                            <option value="NO">No</option>
                                         </select>
                                     </Col>
                                     <Col md={6}>
@@ -119,6 +119,7 @@ export const CreatePet = () => {
                                 <Row>
 
                                     <Col md={6}>
+                                        
                                         <Form.Control input id='personality' name='personality' type='text' placeholder='Personalidad' />
 
                                     </Col>
@@ -128,14 +129,41 @@ export const CreatePet = () => {
                                 <Row>
 
                                     <Col md={6}>
-                                        <Form.Control input id='size' name='size' type='number' placeholder='Tamaño' />
+                                        
+                                        <Form.Control input id='history' name='history' type='text' placeholder='Historia' />
 
                                     </Col>
                                 </Row>
                             </Form.Group>
+                            <Form.Group>
+                                <Row>
 
-                            <input type="file" onChange={onFileChange} />
-                            <button type="submit" class="btn btn-primary">CREAR</button>
+                                    <Col md={6}>
+                                       { /* Cambie de numero a texto predeterminado*/}
+                                    <label for="inputState">Tamaño</label>
+                                    <select input name='size' id="inputState" class="form-control">
+                                            <option defaultValue>Seleccione una opción</option>
+                                            <option value="Pequeño">Pequeño</option>
+                                            <option value="Mediano">Mediano</option>
+                                            <option value="Mediano">Grande</option>
+                                        </select>
+                                        {/* <Form.Control input id='size' name='size' type='text' placeholder='Tamaño' /> */}
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Row>
+
+                                    <Col md={6}>
+                                        <input type="file" onChange={onFileChange} />
+                                    </Col>
+                                    <Col md={6}>
+                                        <button type="submit" class="btn btn-primary">INGRESAR MASCOTA</button>
+
+                                    </Col>
+                                </Row>
+                            </Form.Group>
 
                         </Form>
                     </Col>

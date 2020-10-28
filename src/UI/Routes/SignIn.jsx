@@ -1,7 +1,6 @@
 import React from "react";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import './Style.css'
 
 const SignIn = () => {
   const firebase = useFirebase();
@@ -22,7 +21,7 @@ const SignIn = () => {
     <div class="form-signin">
 
       <button
-      class="btn btn-lg btn-primary btn-block"
+      class="btn btn-lg btn-danger btn-block"
         onClick={(event) => {
           event.preventDefault();
           signInWithGoogle();
