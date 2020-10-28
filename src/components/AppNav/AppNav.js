@@ -29,8 +29,9 @@ const AppNav = (props) => {
           <Link className='nav-link' to='/AboutUs'>Historia</Link>
           <Link className='nav-link' to='/Volunteering'>Voluntariado</Link>
           <Link className='nav-link' to='/Gallery'>Mascotas</Link>
-          
-          <li className="nav-item dropdown">
+          <Link className='nav-link' to='MoneyBanner'>Donaciones</Link>
+          {/* <li className="nav-item dropdown">
+            
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Donativos
               </a>
@@ -54,7 +55,7 @@ const AppNav = (props) => {
                 Donaciones Insumos{" "}
                 </NavLink>
               </div>
-            </li>
+            </li> */}
             {profile.isAdmin === true && 
             <Link className='nav-link' to='/Admin'>Admin</Link>}
         
