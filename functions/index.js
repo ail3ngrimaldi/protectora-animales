@@ -8,12 +8,12 @@ admin.initializeApp();
 * Here we're using Gmail to send 
 */
 let transporter = nodemailer.createTransport({
-    host: "smtp.hostinger.com.ar",
+    host: "smtp-relay.sendinblue.com",
     port: 587,
     ssl: false,
     auth: {
-        user: 'henrybank@mauricioarizaga.com.ar',
-        pass: 'Henrybank12345'
+        user: 'haroldognjunior@gmail.com',
+        pass: 'xhFp7SAUwvWtQVH1'
     }
 });
 
@@ -37,12 +37,15 @@ exports.sendMail = functions.https.onRequest((req, res) => {
         const dest = req.query.dest;
 
         const mailOptions = {
-            from: 'Your Account Name <yourgmailaccount@gmail.com>', // Something like: Jane Doe <janedoe@gmail.com>
+            from: 'Protectora Sarmiento <info@protectorasarmiento.com>', // Something like: Jane Doe <janedoe@gmail.com>
             to: dest,
-            subject: 'I\'M A PICKLE!!!', // email subject
-            html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
+            bcc: 'rodrigomp88@gmail.com', 
+            subject: 'Hemos recibido tu email ', // email subject
+            html: `<img src="https://firebasestorage.googleapis.com/v0/b/protectoraanimales-9c9db.appspot.com/o/Logo.png?alt=media&token=bbc10da0-2497-4fd9-8260-138cf332a84d" />
+            <p style="font-size: 16px;">Muchas gracias por habernos enviado tus informaciones. <br />
+            Pronto entraremos en contacto contigo =) </p>
                 <br />
-                <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
+                
             ` // email content in HTML
         };
   
