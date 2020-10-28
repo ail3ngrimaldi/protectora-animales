@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
 
@@ -36,6 +37,27 @@ const useStyles = makeStyles({
 
   const classes = useStyles();
 
+  function onDeleteLink(id) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡El usuario sera borrado definitivamente!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Si, borrarlo!'
+    }).then((result) => {
+      if (result.value) {
+        db.collection("users").doc(id).delete();
+        Swal.fire(
+          '¡Borrado!',
+          '¡El usuario ha sido borrado correctamente!',
+          'success'
+        )
+      }
+    })
+  }
+
   return (
     <TableContainer className='pl-3 pr-3' component={Paper}>
       <Table className={classes.table} aria-label="simple table">
@@ -57,10 +79,11 @@ const useStyles = makeStyles({
               </TableCell>
               <TableCell component="th" scope="row" >{user.lastName}</TableCell>
               <TableCell component="th" scope="row" >{user.email}</TableCell>
-              <TableCell component="th" scope="row" >{user.id}</TableCell>
-              <TableCell component="th" scope="row" > Cosas que puede hacer admin
-              <button className='btn btn-info'>X</button>
-              </TableCell>
+              <TableCell component="th" scope="row" >{user.id}</TableCell> 
+              <TableCell component="th" scope="row">
+                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(user.id)} class="fas fa-trash-alt"></i></button>
+                </TableCell>
+              
             </TableRow>
           ))}
         </TableBody>
