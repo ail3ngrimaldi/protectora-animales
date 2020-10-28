@@ -4,6 +4,8 @@ import './petnavbar.css'
 import ButtonsAdmin from './ButtonsAdmin';
 import Container from 'react-bootstrap/Container';
 import NavBar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 
 const PetCrud = () => {
   return (

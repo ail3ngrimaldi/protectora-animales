@@ -55,7 +55,8 @@ const AppNav = (props) => {
                 </NavLink>
               </div>
             </li>
-            <Link className='nav-link' to='/Admin'>Admin</Link>
+            {profile.isAdmin === true && 
+            <Link className='nav-link' to='/Admin'>Admin</Link>}
         
         </Nav>
 
