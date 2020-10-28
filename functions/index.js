@@ -8,10 +8,12 @@ admin.initializeApp();
 * Here we're using Gmail to send 
 */
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: "smtp.hostinger.com.ar",
+    port: 587,
+    ssl: false,
     auth: {
-        user: 'yourgmailaccount@gmail.com',
-        pass: 'yourgmailaccpassword'
+        user: 'henrybank@mauricioarizaga.com.ar',
+        pass: 'Henrybank12345'
     }
 });
 
