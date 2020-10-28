@@ -28,9 +28,9 @@ export default function ButtonsAdmin () {
                 <Link to="/Admin/Mascotas">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Mascotas</button>
                 </Link>
-                <Link to="/Admin/Createpet">
+                {/* <Link to="/Admin/Createpet">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Crear Mascota</button>
-                </Link>
+                </Link> */}
                 <Link to="/Admin/Adopciones">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Adopciones</button>
                 </Link>
