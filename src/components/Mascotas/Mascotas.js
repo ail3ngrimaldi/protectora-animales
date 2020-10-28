@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 const Mascotas = ({ nombre, especie, img, id }) => {
   return (
     <div className="col-md-6 col-md-offset-6">
+      
       <div className="container">
         <p>Nombre: {nombre}</p>
         <p>Especie: {especie}</p>
