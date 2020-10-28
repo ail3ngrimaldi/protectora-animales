@@ -19,6 +19,7 @@ import { MoneyBanner } from './components/Donations/MoneyBanner'
 import Petimage from './components/Gallery/Petimage'
 import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
 import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
+import VoluntariosAdmin from './components/Administrator/Tablas/VoluntariosAdmin';
 import PetDetail from './components/Info/PetDetail'
 
 //CRUD
@@ -111,6 +112,7 @@ function App() {
           <Route exact path="/Admin/ReadPet" component={ReadPet} />
           <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
           <Route exact path="/Admin/DeletePet" component={DeletePet} />
+          <Route exact path="/Admin/Voluntarios" component={VoluntariosAdmin} />
 
           {/* RESTO DE COSAS */}
           <Route exact path="/dash" component={Dashboard} />
