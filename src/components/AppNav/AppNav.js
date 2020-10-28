@@ -13,13 +13,14 @@ const AppNav = (props) => {
 
     <Container className='p-0' fluid={true}>
     <NavBar className='border-bottom' bg='light' expand='lg'>
-      <NavBar.Brand>
+      <NavBar.Brand href="#home">
+      <Link className="navbar-brand" to="/">
         <img  src="/img/Logo.png"
             width="201px"
             height="103px"
             alt=""
             loading="lazy"
-        /> {" "}
+        /> {" "} </Link>
       </NavBar.Brand>
       
       <NavBar.Toggle className='border-0' aria-controls='navbar-toggle' />
