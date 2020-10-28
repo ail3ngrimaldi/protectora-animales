@@ -15,8 +15,11 @@ export const Carrousel = () => {
     <div className="carru">
 
       <div className="texto">
-        <h1>Acá no sé que info poner</h1>
-        <p>¿Qué info ponemos? AYUDA</p>
+        <h1>¡Conocenos!</h1>
+          <p>Quieres conocerme a mi y a mis amigos?</p>
+          <p>Entra aca y mira nuestra gran galeria y si te animas</p>
+          <p>¡Adoptanos!</p>
+          <p>Estamos llenos de amor para dar</p>
 
         <NavLink
           exact
