@@ -4,6 +4,7 @@ import { Carrousel2 } from "../Carrousel/Carrousel2";
 import { EventsHome } from "../Events/EventsHome";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Alert from '../Alert/Alert'
 import "./Home.css";
 
 export const Home = () => {
@@ -11,7 +12,8 @@ export const Home = () => {
     <div className="StyleHome">
       <div>
         <div >
-        <container>
+          <Alert/>
+        {/* <container>
           <div class="alert alert-success" role="alert">
               <h4 class="alert-heading">¡Atención!</h4>
               <p>El refugio Sarmiento es una ONG (Organización No Gubernamental).</p>
@@ -19,7 +21,7 @@ export const Home = () => {
               <hr></hr>
               <p class="mb-0">El principal objetivo consiste en cuidar y asistir en la adopción para entonces reubicar a nuestros animales..</p>     
           </div> 
-          </container>
+          </container> */}
           <Carrousel2 />
           <div className="row">
             <div className="aboutus" data-wow-delay="0.3s">

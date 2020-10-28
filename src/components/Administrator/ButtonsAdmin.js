@@ -37,9 +37,7 @@ export default function ButtonsAdmin () {
                 <Link to="/Admin/Voluntarios">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Voluntarios</button>
                 </Link>
-                <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded" onClick={handleclick}>
-                   Desactivar Cartel Atención.
-                </button>
+                <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded" onClick={handleclick}>Desactivar Cartel</button>
                 </div>
             </div>
     );
