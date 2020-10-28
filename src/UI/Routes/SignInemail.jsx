@@ -3,7 +3,6 @@ import { useFirebase } from "react-redux-firebase";
 import { useHistory, NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container'
 import SignIn from "./SignIn"
-import './Style.css'
 
 const SignInmail = () => {
   const firebase = useFirebase();

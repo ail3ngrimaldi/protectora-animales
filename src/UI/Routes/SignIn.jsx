@@ -1,7 +1,6 @@
 import React from "react";
 import { useFirebase } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import './Style.css'
 
 const SignIn = () => {
   const firebase = useFirebase();
