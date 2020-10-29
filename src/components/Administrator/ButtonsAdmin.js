@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ButtonsAdmin () {
-    const [booleano, setBooleano] = useState(true);
-
-    const handleclick = () => {
-         if (!booleano) {
-             setBooleano(true)
-             console.log("TRUE", booleano);
-         } else {
-             setBooleano(false)
-             console.log("FALSE", booleano);
-         }         
-    } 
-
-    useEffect(() => {
-        handleclick(true);
-    }, [])
-
+export default function ButtonsAdmin (props) {
     return(
         <div className="container text-center h-100 bg-light d-flex justify-content-center align-items-center">
         {/* // <div className="container bg-light"> */}
@@ -34,7 +18,7 @@ export default function ButtonsAdmin () {
                 <Link to="/Admin/Voluntarios">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Voluntarios</button>
                 </Link>
-                <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded" onClick={handleclick}>
+                <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded" onClick={props.handle}>
                    Desactivar Cartel Atención.
                 </button>
                 </div>

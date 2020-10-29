@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+
 
 export const Volunteering = () => {
     return (
         <div>
-            <h3> FORM DE VOLUNTARIADO </h3>
+            <h3> Registrate para ser voluntario </h3>
+            
         </div>
     )
 }

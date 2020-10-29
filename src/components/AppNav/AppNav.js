@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Nav2 from './Navbarlogin'
 import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
@@ -62,8 +62,8 @@ const AppNav = (props) => {
   );
 };
 
+
 const mapStateToProps = (state) => {
-  // console.log(state);
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile

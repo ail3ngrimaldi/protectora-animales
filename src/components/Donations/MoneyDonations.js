@@ -31,6 +31,8 @@ export const MoneyDonations = () => {
                     </NavLink>
                 </div>
             </div>
+            
+            </div>
 
             <div className="CardContainer">
                 <div className="MPCard">
@@ -38,6 +40,8 @@ export const MoneyDonations = () => {
                         className="card-img-top"
                         src="/img/mercadopago.png"
                         alt="Card cap"
+                        
+                    
                     ></img>
                     <h5 className="card-title">Doná a través de MERCADOPAGO</h5>
                     <h6 className="card-subtitle mb-2 text-muted">(Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)</h6>
@@ -103,6 +107,16 @@ export const MoneyDonations = () => {
                     </div>
                 </div>
 
+                <div className="Opcard">
+                    <h5 className="card-title">Dona 500 $ARG</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                        <button type="button" 
+                            className="btn btn-primary">¡Haz tu donativo AQUI!
+                        </button>
+                    </a>
+                </div> 
+            </div>
 
                 <div className="CardContainer">
                     <div className="MPCard">

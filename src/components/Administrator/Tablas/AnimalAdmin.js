@@ -80,6 +80,7 @@ const ListPets = () => {
                 <TableCell component="th" scope="row">
                   <Link to={{ pathname: `/editpet/${pet.id}`, state: { pet: pet } }} className="btn btn-warning"><i className="fas fa-edit"></i></Link>
                   <button className="btn btn-danger" onClick={() => onDeleteLink(pet.id)} ><i className="fas fa-trash-alt"></i></button>
+
                 </TableCell>
                 <TableCell component="th" scope="row">
                   <img src={pet.avatar} alt={pet.name} className="img-fluid" width='70' height='70' />

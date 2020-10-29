@@ -4,8 +4,10 @@ import './petnavbar.css'
 import ButtonsAdmin from './ButtonsAdmin';
 import Container from 'react-bootstrap/Container';
 import NavBar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
-const PetCrud = () => {
+
+const PetCrud = (props) => {
   return (
 
     <Container className='p-0 ' fluid={true}>
@@ -14,7 +16,7 @@ const PetCrud = () => {
           <h1 className='title1 bg-light'>¿Qué vas a hacer hoy?</h1>
         </div>
       </NavBar>
-      <ButtonsAdmin />
+      <ButtonsAdmin handle={props.handle}/>
     </Container>
   );
 };

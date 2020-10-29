@@ -32,6 +32,9 @@ export const History = () => {
                   trabajo que aportamos hace años los voluntarios.
                 </h6>
               </div>
+              <div className="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft">
+              <img class="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="500" height="500"/>
+              </div>
             </div>
           </div>
         </div>

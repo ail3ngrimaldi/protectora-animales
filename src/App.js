@@ -56,8 +56,22 @@ import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
 // import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
+import Contactus from './components/sendemail'
+import ContactUs from "./components/sendemail";
+
 function App() {
-  const [albums, setAlbums] = useState([]);
+  const [albums, setAlbums] = useState([]);  
+  const [booleano, setBooleano] = useState(false);
+
+    const handleclick = () => {
+        if (!booleano) {
+            setBooleano(true)
+            console.log("TRUE", booleano);
+        } else {
+            setBooleano(false)
+            console.log("FALSE", booleano);
+        }
+    }
 
   useEffect(() => {
     const unmount = db.collection("pet").onSnapshot((snapshot) => {
@@ -67,8 +81,10 @@ function App() {
       });
       setAlbums(tempAlbums);
     });
+    setBooleano(true)
     return unmount;
   }, []);
+
 
   return (
     <BrowserRouter>
@@ -82,7 +98,7 @@ function App() {
           </PrivateRoute>
 
           {/* COMPONENTES */}
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={() => <Home bool={booleano} />} />
           <Route exact path="/AboutUs" component={AboutUs} />
           <Route exact path="/Gallery" component={Petimage} />
           <Route exact path="/Volunteering" component={Volunteering} />
@@ -105,7 +121,7 @@ function App() {
           <Route exact path="/crearusuario" component={CrearUsuario} />
 
           {/* CRUD */}
-          <Route exact path="/Admin" component={PetCrud} />
+          <Route exact path="/Admin" render={() => <PetCrud handle={handleclick} />} />
           <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
           <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
           <Route exact path="/Admin/Createpet" component={CreatePet} />
@@ -135,7 +151,6 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 
 export default App;
