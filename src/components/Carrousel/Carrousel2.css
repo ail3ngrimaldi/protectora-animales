@@ -5,7 +5,7 @@
 }
 
 .carousel-item img {
-  width: 10px;
+  width: 100px;
 }
 
 @media (max-width: 600px) {
