@@ -25,11 +25,10 @@
 }
 
 .aboutus {
-
   display: flex;
   align-items: center;
-  background-color:#f5f5dfd6;
-  width: 100%;
+  background-color: #f5f5dfd6;
+  width: 80%;
   justify-content: center;
 }
 
