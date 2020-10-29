@@ -26,10 +26,10 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields ++
                     
                 }
-                else if(pregunta13.length < 20){
+                else if(pregunta13.split(' ').length < 3 || pregunta13.split(' ')[2] === ''){
                     
                     countError++
-                    setErrTrece('Debe ingresar una respuesta valida!')
+                    setErrTrece('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrTrece('')
@@ -38,9 +38,9 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields++
                     
                 }
-                else if(pregunta14.length < 20){
+                else if(pregunta14.split(' ').length < 3 || pregunta14.split(' ')[2] === ''){
                     countError++
-                    setErrCatorce('Debe ingresar una respuesta valida!')
+                    setErrCatorce('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrCatorce('')
@@ -49,9 +49,9 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields++
                     
                 }
-                else if(pregunta15.length < 20){
+                else if(pregunta15.split(' ').length < 3 || pregunta15.split(' ')[2] === ''){
                     countError++
-                    setErrQuince('Debe ingresar una respuesta valida!')
+                    setErrQuince('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrQuince('')
@@ -60,9 +60,9 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields++
                     
                 }
-                else if(pregunta16.length < 20){
+                else if(pregunta16.split(' ').length < 3 || pregunta16.split(' ')[2] === ''){
                     countError++
-                    setErrDieciseis('Debe ingresar una respuesta valida!')
+                    setErrDieciseis('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrDieciseis('')
@@ -71,9 +71,9 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields++
                     
                 }
-                else if(pregunta17.length < 20){
+                else if(pregunta17.split(' ').length < 3 || pregunta17.split(' ')[2] === ''){
                     countError++
-                    setErrDiecisiete('Debe ingresar una respuesta valida!')
+                    setErrDiecisiete('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrDiecisiete('')
@@ -82,9 +82,9 @@ const PreguntasTres = ({formData, setForm, navigation} ) => {
                     emptyFields++
                     
                 }
-                else if(pregunta18.length < 20){
+                else if(pregunta18.split(' ').length < 3 || pregunta18.split(' ')[2] === ''){
                     countError++
-                    setErrDieciocho('Debe ingresar una respuesta valida!')
+                    setErrDieciocho('La respuesta ser una frase compuesta por al menos 3 palabras!')
                 }
                 else{
                     setErrDieciocho('')

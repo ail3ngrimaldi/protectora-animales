@@ -26,7 +26,7 @@ const CrearUsuario = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
   // const { uid } = useSelector((state) => state.firebase.auth);
-
+   
   const initialState = {
     email: "",
     password: "",
@@ -45,6 +45,7 @@ const CrearUsuario = () => {
   const [requiredFields, setRequiredFields] = React.useState('')
   const [classError, setClassError] = React.useState('')
   const [classInfo, setClassInfo] = React.useState('')
+  const [mailExistente, setMailExistente] = React.useState('')
   const updateField = (e) => {
     setUsuario({
       ...usuario,
@@ -208,11 +209,17 @@ const CrearUsuario = () => {
           console.error(error)
         /*  Materialize.toast(error.message, 4000) */
         })
-
+        history.push("/")
       })
       .catch(error => {
         console.error(error)
       /*   Materialize.tost(error.message, 4000) */
+       setError(true)
+       if('The email address is already in use by another account'){
+         setMailExistente('La dirección de correo electrónico ya está siendo utilizada por otra cuenta.')
+       }else{
+        setMailExistente('No se ha podido realizar su registro. Verifique que los datos ingresados sean correctos.')
+       }
       });
    
     
@@ -245,7 +252,7 @@ const CrearUsuario = () => {
   //       // ...
   //     });
     
-    history.push("/")
+    
     }
     
     
@@ -354,6 +361,12 @@ const CrearUsuario = () => {
               
               </div>
               </div>
+              {
+                mailExistente ?
+                <p className='text-justify text-danger'>{mailExistente}</p>
+                :
+                <span></span>
+              }
               <Error classError={classError} classInfo={classInfo} showError={showError} requiredFields={requiredFields}/>
               <input type="submit" className="btn btn-dark" onClick={(e) => {
                 e.preventDefault(); createEmail(); 
