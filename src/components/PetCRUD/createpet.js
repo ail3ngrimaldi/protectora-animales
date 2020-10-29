@@ -147,7 +147,6 @@ export const CreatePet = () => {
                                             <option value="Mediano">Mediano</option>
                                             <option value="Mediano">Grande</option>
                                         </select>
-                                        {/* <Form.Control input id='size' name='size' type='text' placeholder='Tamaño' /> */}
 
                                     </Col>
                                 </Row>
