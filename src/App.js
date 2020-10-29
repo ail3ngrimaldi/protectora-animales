@@ -57,6 +57,9 @@ import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
 // import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
+import Contactus from './components/sendemail'
+import ContactUs from "./components/sendemail";
+
 function App() {
   const [albums, setAlbums] = useState([]);  
   const [booleano, setBooleano] = useState(false);
@@ -82,6 +85,7 @@ function App() {
     setBooleano(true)
     return unmount;
   }, []);
+
 
   return (
     <BrowserRouter>
@@ -147,7 +151,6 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 
 export default App;
