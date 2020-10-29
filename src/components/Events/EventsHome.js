@@ -21,13 +21,13 @@ export const EventsHome = () => {
                   La “Protectora de Animales Domingo Faustino Sarmiento” realiza
                   eventos para recaudar fondos. <strong> Además, podes ayudarnos: </strong>
                 </h6>
-                <p className="text-sm-left font-weight-bold ">                
-                  <ul> ♥ Adoptando</ul>
-                  <ul> ♥ Siendo voluntario </ul>
-                  <ul> ♥ Donando dinero o insumos</ul> 
-                  <ul> ♥ Prestando tu hogar como tránsito </ul>
-                  <ul> ♥ Transportando Sarmientos de un lugar a otro </ul>
-                 </p>
+                <ul>
+                  <li><span className="text-sm-left font-weight-bold "><i class="fas fa-heart"> Adoptando</i></span></li>
+                  <li><span className="text-sm-left font-weight-bold "><i class="fas fa-heart"> Siendo voluntario </i></span></li>
+                  <li><span className="text-sm-left font-weight-bold "><i class="fas fa-heart"> Donando dinero o insumos</i></span></li> 
+                  <li><span className="text-sm-left font-weight-bold "><i class="fas fa-heart"> Prestando tu hogar como tránsito </i></span></li>
+                  <li><span className="text-sm-left font-weight-bold "><i class="fas fa-heart"> Transportando Sarmientos de un lugar a otro </i></span> </li>
+                </ul>
               </div>
             </div>
           </div>
