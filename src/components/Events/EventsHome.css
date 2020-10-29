@@ -14,3 +14,7 @@
   float: left;
   opacity: 1;
 }
+
+.lista {
+  list-style: none;
+}
