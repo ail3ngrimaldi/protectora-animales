@@ -12,6 +12,7 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "emailjs": "^3.3.0",
+    "emailjs-com": "^2.6.3",
     "firebase": "^7.23.0",
     "grpc": "^1.24.3",
     "jquery": "^3.5.1",
