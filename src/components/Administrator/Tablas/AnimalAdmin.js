@@ -79,7 +79,7 @@ const ListPets = () => {
               <TableRow key={pet.id}>
                 <TableCell component="th" scope="row">
                   <button className="btn btn-warning"><i class="fas fa-edit"></i></button>
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(pet.id)} class="fas fa-trash-alt"></i></button>
+                  <button className="btn btn-danger" onClick={() => onDeleteLink(pet.id)} ><i class="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
                   <img src={pet.avatar} alt={pet.name} class="img-fluid" width='70' height='70' />

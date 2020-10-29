@@ -9,7 +9,6 @@ import PetCrud from "./components/Administrator/petnavbar";
 import { Home } from "./components/Home/Home";
 import { AboutUs } from "./components/AboutUs/AboutUs";
 import { Volunteering } from "./components/Volunteering/Volunteering";
-import { Gallery } from "./components/Gallery/Gallery";
 import { MoneyDonations } from "./components/Donations/MoneyDonations";
 import { Supplies } from "./components/Donations/SuppliesDonations";
 import Adoptions from "./components/Adoptions/Adoptions";
@@ -28,6 +27,7 @@ import { CreatePet } from "./components/PetCRUD/createpet"
 import { ReadPet } from "./components/PetCRUD/readpet"
 import { UpdatePet } from "./components/PetCRUD/updatepet"
 import { DeletePet } from "./components/PetCRUD/deletepet"
+import { editpet} from "./components/PetCRUD/editpet"
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -37,7 +37,6 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
-import CardPet from "./components/Info/CardPet.js";
 
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
@@ -94,6 +93,7 @@ function App() {
           <Route exact path="/MoneyBanner" component={MoneyBanner} />
           {/* <Route exact path="/Modal" component={ModalDetalleMascota} /> */}
           <Route exact path="/pet/:id" component={PetDetail} />
+          <Route exact path="/editpet/:id" component={editpet} />
 
           <Route exact path="/SuppliesDonations" component={Supplies} />
 

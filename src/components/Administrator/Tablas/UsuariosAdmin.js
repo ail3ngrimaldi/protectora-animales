@@ -45,7 +45,8 @@ const useStyles = makeStyles({
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: '¡Si, borrarlo!'
+      confirmButtonText: '¡Si, borrarlo!',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         db.collection("users").doc(id).delete();
@@ -81,7 +82,7 @@ const useStyles = makeStyles({
               <TableCell component="th" scope="row" >{user.email}</TableCell>
               <TableCell component="th" scope="row" >{user.id}</TableCell> 
               <TableCell component="th" scope="row">
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(user.id)} class="fas fa-trash-alt"></i></button>
+                  <button className="btn btn-danger" onClick={() => onDeleteLink(user.id)}><i class="fas fa-trash-alt"></i></button>
                 </TableCell>
               
             </TableRow>

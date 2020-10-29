@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PetForm from "./VoluntarioForm"; 
+import VoluntaryForm from "./VoluntarioForm"; 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -10,7 +10,6 @@ import Paper from '@material-ui/core/Paper';
 import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
-import { toast } from "react-toastify";
 
 const Test = () => {
   const [links, setLinks] = useState([]);
@@ -29,18 +28,19 @@ const Test = () => {
   function onDeleteLink(id) {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "¡La mascota sera borrada definitivamente!",
+      text: "¡El voluntario será borrado definitivamente!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: '¡Si, borrarlo!'
+      confirmButtonText: '¡Si, borrarlo!',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         db.collection("voluntary").doc(id).delete();
         Swal.fire(
           '¡Borrado!',
-          '¡Su mascota ha sido borrada correctamente!',
+          '¡El voluntario ha sido borrado correctamente!',
           'success'
         )
       }
@@ -60,14 +60,18 @@ const Test = () => {
         Swal.fire({
             icon: 'success',
             title: 'Perfecto',
-            text: '¡Voluntario agregado con exito!'
+            text: '¡Voluntario agregado con exito!',
+            showConfirmButton: false,
+            timer: 1500
           })
       } else {
         await db.collection("voluntary").doc(currentId).update(linkObject);
         Swal.fire({
             icon: 'success',
             title: 'Perfecto',
-            text: '¡Voluntario editado con exito!'
+            text: '¡Voluntario editado con exito!',
+            showConfirmButton: false,
+            timer: 1500
           })
         setCurrentId("");
       }
@@ -79,7 +83,7 @@ const Test = () => {
   return (
     <div className="text-center">
       <div className="col-md-4 p-2">
-       <PetForm {...{ addOrEditLink, currentId, links }} /> 
+       <VoluntaryForm {...{ addOrEditLink, currentId, links }} /> 
       </div>
       <TableContainer className='pl-3 pr-3' component={Paper}>
         <Table aria-label="simple table">
@@ -98,8 +102,8 @@ const Test = () => {
 
               <TableRow key={link.id}>
                 <TableCell component="th" scope="row">
-                  <button className="btn btn-warning"><i onClick={() => setCurrentId(link.id)} class="fas fa-edit"></i></button>
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(link.id)} class="fas fa-trash-alt"></i></button>
+                  <button className="btn btn-warning" onClick={() => setCurrentId(link.id)}><i class="fas fa-edit"></i></button>
+                  <button className="btn btn-danger" onClick={() => onDeleteLink(link.id)}><i class="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {link.name}

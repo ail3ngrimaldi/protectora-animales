@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from  "../../../index";
 
-const PetForm = (props) => {
+const VoluntarioForm = (props) => {
   const initialStateValues = {
     name: '',
     age: '',
@@ -110,4 +110,4 @@ const PetForm = (props) => {
   );
 };
 
-export default PetForm;
+export default VoluntarioForm;
