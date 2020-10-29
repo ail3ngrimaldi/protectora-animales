@@ -36,10 +36,11 @@ export const Home = (props) => {
                   </Link>
                 </div>
               </div>
-              <img className="StyleImg"
+              {/* <img className="StyleImg"
                 src="/img/Gallery/Dogs/Dogo4.jpg"
                 alt=""
-              />
+              /> */}
+              <iframe width="683" height="384" src="https://www.youtube.com/embed/w-tu_Wpsz3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>          
           <Carrousel />
