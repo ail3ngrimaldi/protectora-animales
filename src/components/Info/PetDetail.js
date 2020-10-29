@@ -47,7 +47,7 @@ docRef.get().then(function(doc) {
           </div>
           <div className="col">
               <div className="card-block px-2">
-                  <p className="card-text font-weight-bold">Especificaciones:</p>
+                  <p className="card-text font-weight-bold">Mascota:</p>
                   <div className='d-flex justify-content-around'>
                   <p className="card-text"><strong>Edad:</strong> {pet.age} años</p>
                   <p className="card-text"><strong>Tamaño: </strong>{pet.size}</p>
@@ -55,7 +55,7 @@ docRef.get().then(function(doc) {
                   <p className="card-text"><strong>Castrado:</strong> {pet.castreted}</p>
                   </div>
                   <p className="card-text"><strong>Personalidad</strong> {pet.personality}</p>
-  <p className="card-text"><strong>Historia: </strong> {pet.history}</p>
+  {/* <p className="card-text"><strong>Historia: </strong> {pet.history}</p> */}
                   <Link to={{pathname:`/Adoptions/Form/${pet.name}/`, state:pet}}>
                     <button className='btn btn-info'>
                     Adoptar
