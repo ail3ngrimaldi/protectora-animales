@@ -9,19 +9,19 @@ import Nav from 'react-bootstrap/Nav';
 
 const AppNav = (props) => {
   const { auth, profile } = props;
+
+
   return (
 
-    <div>
     <Container className='p-0' fluid={true}>
     <NavBar className='border-bottom' bg='light' expand='lg'>
-      <NavBar.Brand href="#home">
-      <Link className="navbar-brand" to="/">
-        <img  src="/img/Logo.png"
-            width="201px"
-            height="103px"
-            alt=""
-            loading="lazy"
-        /> {" "} </Link>
+      <NavBar.Brand href="/">
+            <img  src="/img/Logo.png"
+                width="201px"
+                height="103px"
+                alt=""
+                loading="lazy"
+            />
       </NavBar.Brand>
       
       <NavBar.Toggle className='border-0' aria-controls='navbar-toggle' />
@@ -37,10 +37,10 @@ const AppNav = (props) => {
       <Nav2/>
       </NavBar.Collapse>
     </NavBar>
-  </Container>
-  </div>
+    </Container>
   );
 };
+
 
 const mapStateToProps = (state) => {
   return{
