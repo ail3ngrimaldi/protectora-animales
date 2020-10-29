@@ -27,13 +27,13 @@ export const Footer = () => {
               <ul>
                 <li className="list-unstyled">
                   <a href="https://www.facebook.com/ProtectoraSarmiento.Rosario/about/?ref=page_internal">
-                    <i class="fab fa-facebook fa-2x fa-lg"></i>
+                    <i className="fab fa-facebook fa-2x fa-lg"></i>
                   </a>
                 </li>
                 <br></br>
                 <li className="list-unstyled">
                   <a href="https://www.instagram.com/protectorasarmiento/?hl=es-la">
-                    <i class="fab fa-instagram fa-2x fa-lg"></i>
+                    <i className="fab fa-instagram fa-2x fa-lg"></i>
                   </a>
                 </li>
                 {/* <li className="list-unstyled">

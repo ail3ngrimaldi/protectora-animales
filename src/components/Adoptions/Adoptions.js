@@ -1,17 +1,17 @@
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { arrayMascotas } from "../Constants/arrayMascotas";
 import Mascotas from "../Mascotas/Mascotas";
 
-const Adoptions = () => { 
+const Adoptions = () => {
 
   return (
     <div>
-      <div class="container">
-        <table class="table table-striped table-dark table-bordered">
+      <div className="container">
+        <table className="table table-striped table-dark table-bordered">
           <thead>
             <tr>
-              <h1 class="user">Lista de animales</h1>
+              <h1 className="user">Lista de animales</h1>
             </tr>
           </thead>
         </table>

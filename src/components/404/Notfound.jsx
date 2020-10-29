@@ -9,8 +9,8 @@ const NotFound = () => {
       <img src={Foto1}  alt="..." />
       </div>
       <Link to={"/"}>
-      <div class="col-md-12 text-center mt-5">
-        <button type="button" class="btn btn-danger btn-lg">Volver al Inicio</button>
+      <div className="col-md-12 text-center mt-5">
+        <button type="button" className="btn btn-danger btn-lg">Volver al Inicio</button>
       </div>
       </Link>
       <div className="d-flex justify-content-center text-center mt-4">

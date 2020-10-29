@@ -21,7 +21,7 @@ export const ReadPet = () => {
                         </Col>
                     </Row>
                 </Form.Group>
-                <button type="submit" class="btn btn-primary">BUSCAR</button>
+                <button type="submit" className="btn btn-primary">BUSCAR</button>
             </Container>
         </div>
 

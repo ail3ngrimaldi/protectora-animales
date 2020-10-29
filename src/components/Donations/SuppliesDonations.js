@@ -42,7 +42,7 @@ export const Supplies = () => {
                             <Row>
                                 <Col md={6}>
                                     <label for="inputState">Medicamentos para humanos</label>
-                                    <select id="inputState" class="form-control" placeholder="Genero">
+                                    <select id="inputState" className="form-control" placeholder="Genero">
                                         <option selected>Seleccione una opción</option>
                                         <option>Cefalexina en comprimidos de 500mg – 1g o suspensión</option>
                                         <option>Rumiclamox 250mg y 500mg</option>
@@ -58,7 +58,7 @@ export const Supplies = () => {
                                 </Col>
                                 <Col md={6}>
                                     <label for="inputState">Medicamentos de Veterinaria</label>
-                                    <select id="inputState" class="form-control">
+                                    <select id="inputState" className="form-control">
                                         <option selected>Seleccione una opción</option>
                                         <option >Antiparasitarios en comprimidos o suspensión (Total Full, Meltra, Endofour, Apto Max, Sulfadim, Giacoccide)</option>
                                         <option >Pipetas antipulgas perros y gatos</option>
@@ -95,7 +95,7 @@ export const Supplies = () => {
                             <Row>
                                 <Col md={6}>
                                     <label for="inputState">Insumos de enfermeria</label>
-                                    <select id="inputState" class="form-control">
+                                    <select id="inputState" className="form-control">
                                         <option selected>Seleccione una opción</option>
                                         <option >Zaleas</option>
                                         <option >Pañales adultos G, XG y XXG</option>
@@ -118,7 +118,7 @@ export const Supplies = () => {
                             <Row>
                                 <Col md={6}>
                                     <label for="inputState">Tipo de alimento</label>
-                                    <select id="inputState" class="form-control">
+                                    <select id="inputState" className="form-control">
                                         <option selected>Seleccione una opción</option>
                                         <option >Perro</option>
                                         <option >Gato</option>
@@ -145,7 +145,7 @@ export const Supplies = () => {
                             </Row>
                         </Form.Group>
 
-                        <button type="submit" class="btn btn-primary">Crear Solicitud</button>
+                        <button type="submit" className="btn btn-primary">Crear Solicitud</button>
 
                     </Col>
                 </Row>

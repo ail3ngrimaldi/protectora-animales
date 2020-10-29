@@ -4,7 +4,6 @@ import { db } from '../../index'
 
 const ResetPassword = () => {
 	const firebase = useFirebase();
-	const firestore = useFirestore();
 	const [pass, setPass] = React.useState({});
 	const [userList, setUserList] = React.useState([]);
 	var modal = false;

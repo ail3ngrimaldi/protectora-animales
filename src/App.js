@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { db, app } from './index'
+import { db } from './index'
 import "./App.css"
 
 // COMPONENTES
@@ -27,7 +27,7 @@ import { CreatePet } from "./components/PetCRUD/createpet"
 import { ReadPet } from "./components/PetCRUD/readpet"
 import { UpdatePet } from "./components/PetCRUD/updatepet"
 import { DeletePet } from "./components/PetCRUD/deletepet"
-import { editpet} from "./components/PetCRUD/editpet"
+import Editpet from "./components/PetCRUD/editpet"
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -93,7 +93,7 @@ function App() {
           <Route exact path="/MoneyBanner" component={MoneyBanner} />
           {/* <Route exact path="/Modal" component={ModalDetalleMascota} /> */}
           <Route exact path="/pet/:id" component={PetDetail} />
-          <Route exact path="/editpet/:id" component={editpet} />
+          <Route exact path="/editpet/:id" component={Editpet} />
 
           <Route exact path="/SuppliesDonations" component={Supplies} />
 

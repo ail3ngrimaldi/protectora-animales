@@ -46,7 +46,7 @@ const VoluntarioForm = (props) => {
     <div className="text-center">
         
     <h1>Crear nuevo voluntario</h1>
-    <form id="formlogin" class="form-signin justify-content-center" onSubmit={handleSubmit}>
+    <form id="formlogin" className="form-signin justify-content-center" onSubmit={handleSubmit}>
     <div className="form-row">
         <div className="form-group col-md-6">
         <input

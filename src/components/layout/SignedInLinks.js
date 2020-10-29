@@ -11,20 +11,20 @@ const SignedInLinks = (props) => {
     <div>
       {/* <ul className="right">
         {/* <li><NavLink to='/create'>Vacío</NavLink></li> */}
-        {/* <li><a onClick={props.signOut}>Log Out</a></li> */}
-        {/*<li><SignOut/></li>
+      {/* <li><a onClick={props.signOut}>Log Out</a></li> */}
+      {/*<li><SignOut/></li>
         <li><NavLink to='/' className="btn btn-floating">
           {props.profile.initials}
         </NavLink></li>
       </ul> */}
-      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         {name}
+      <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {name}
       </a>
 
       <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <Link className="dropdown-item" to="/MiPerfil">Ver mi Perfil</Link>
-        <SignOut/>
-        
+        <SignOut />
+
       </div>
     </div>
   )

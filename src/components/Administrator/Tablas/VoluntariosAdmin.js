@@ -102,8 +102,8 @@ const Test = () => {
 
               <TableRow key={link.id}>
                 <TableCell component="th" scope="row">
-                  <button className="btn btn-warning" onClick={() => setCurrentId(link.id)}><i class="fas fa-edit"></i></button>
-                  <button className="btn btn-danger" onClick={() => onDeleteLink(link.id)}><i class="fas fa-trash-alt"></i></button>
+                  <button className="btn btn-warning" onClick={() => setCurrentId(link.id)}><i className="fas fa-edit"></i></button>
+                  <button className="btn btn-danger" onClick={() => onDeleteLink(link.id)}><i className="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {link.name}

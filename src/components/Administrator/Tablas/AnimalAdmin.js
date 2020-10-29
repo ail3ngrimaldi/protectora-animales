@@ -78,11 +78,11 @@ const ListPets = () => {
 
               <TableRow key={pet.id}>
                 <TableCell component="th" scope="row">
-                  <button className="btn btn-warning"><i class="fas fa-edit"></i></button>
-                  <button className="btn btn-danger" onClick={() => onDeleteLink(pet.id)} ><i class="fas fa-trash-alt"></i></button>
+                  <Link to={{ pathname: `/editpet/${pet.id}`, state: { pet: pet } }} className="btn btn-warning"><i className="fas fa-edit"></i></Link>
+                  <button className="btn btn-danger" onClick={() => onDeleteLink(pet.id)} ><i className="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  <img src={pet.avatar} alt={pet.name} class="img-fluid" width='70' height='70' />
+                  <img src={pet.avatar} alt={pet.name} className="img-fluid" width='70' height='70' />
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {pet.name}

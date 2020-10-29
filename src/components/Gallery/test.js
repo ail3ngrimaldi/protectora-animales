@@ -68,6 +68,7 @@ const Test = () => {
                 <h4>tamaño: {link.size}</h4>
                 <h4>género: {link.gender}</h4>
                 <h4>castrado: {link.castreted}</h4>
+                <img src={link.avatar} />
 
                 <div>
                   <i

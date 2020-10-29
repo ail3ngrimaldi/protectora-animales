@@ -37,10 +37,10 @@ const SignInmail = () => {
     <div>      
       <Container>
         <div className="text-center ">
-      <form id="formlogin" class="form-signin justify-content-center">
-      <img class="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
-      <div class="form-row">
-    <div class="col-md-6 mb-3">
+      <form id="formlogin" className="form-signin justify-content-center">
+      <img className="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
+      <div className="form-row">
+    <div className="col-md-6 mb-3">
               <input
                 id="inputEmail"
                 type="email"
@@ -53,7 +53,7 @@ const SignInmail = () => {
               />
               </div>
               
-              <div class="col-md-6 mb-3">
+              <div className="col-md-6 mb-3">
               <input
               id="inputPassword"
                 type="password"
@@ -67,7 +67,7 @@ const SignInmail = () => {
               </div>
               
         </form>
-          <div class="form-signin ">
+          <div className="form-signin ">
             <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={signInWithmail} value='Ingresa con tu cuenta'/>  
           </div> 
 

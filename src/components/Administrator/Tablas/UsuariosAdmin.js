@@ -29,11 +29,11 @@ const ListUsers = () => {
     getUsers();
   }, []);
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
+  const useStyles = makeStyles({
+    table: {
+      minWidth: 650,
+    },
+  });
 
   const classes = useStyles();
 
@@ -80,22 +80,22 @@ const useStyles = makeStyles({
               </TableCell>
               <TableCell component="th" scope="row" >{user.lastName}</TableCell>
               <TableCell component="th" scope="row" >{user.email}</TableCell>
-              <TableCell component="th" scope="row" >{user.id}</TableCell> 
+              <TableCell component="th" scope="row" >{user.id}</TableCell>
               <TableCell component="th" scope="row">
-                  <button className="btn btn-danger" onClick={() => onDeleteLink(user.id)}><i class="fas fa-trash-alt"></i></button>
-                </TableCell>
-              
+                <button className="btn btn-danger" onClick={() => onDeleteLink(user.id)}><i className="fas fa-trash-alt"></i></button>
+              </TableCell>
+
             </TableRow>
           ))}
         </TableBody>
       </Table>
       <div>
-      <Link to="/Admin">
-      <button type="button" className="btn btn-info btn-rounded btn-block">Volver</button>
-      </Link>    
+        <Link to="/Admin">
+          <button type="button" className="btn btn-info btn-rounded btn-block">Volver</button>
+        </Link>
       </div>
     </TableContainer>
-    
+
   );
 }
 

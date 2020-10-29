@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { db } from  "../../index";
+import { db } from "../../index";
+import { useFirebase, useFirestore } from "react-redux-firebase";
+import { useSelector } from "react-redux";
+import { app } from '../../index'
 import { toast } from "react-toastify";
 
 const PetForm = (props) => {
@@ -12,6 +15,7 @@ const PetForm = (props) => {
     gender: '',
     castreted: ''
   };
+  const [fileUrl, setFileUrl] = React.useState(null);
 
   const [values, setValues] = useState(initialStateValues);
 
@@ -20,12 +24,21 @@ const PetForm = (props) => {
     setValues({ ...values, [name]: value });
   };
 
- 
+  const onFileChange = async (e) => {
+    // const file = e.target.files[0];
+    // const storageRef = app.storage().ref();
+    // const fileRef = storageRef.child(file.name);
+    // await fileRef.put(file);
+    // setFileUrl(await fileRef.getDownloadURL());
+    await setFileUrl(e.target.files[0])
+
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   
+
 
     props.addOrEditLink(values);
     setValues({ ...initialStateValues });
@@ -34,6 +47,7 @@ const PetForm = (props) => {
   const getLinkById = async (id) => {
     const doc = await db.collection("pet").doc(id).get();
     setValues({ ...doc.data() });
+    setValues({ ...values, avatar: fileUrl });
   };
 
   useEffect(() => {
@@ -141,6 +155,11 @@ const PetForm = (props) => {
           className="form-control"
           onChange={handleInputChange}
         />
+      </div>
+      <div>
+
+        <input type="file" onChange={onFileChange} />
+        <button type="submit" className="btn btn-primary">INGRESAR MASCOTA</button>
       </div>
 
       <button className="btn btn-primary btn-block">
