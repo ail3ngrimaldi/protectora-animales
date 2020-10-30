@@ -1,6 +1,5 @@
 import React from "react";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

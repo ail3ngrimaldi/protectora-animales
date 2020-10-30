@@ -8,7 +8,7 @@ import NavBar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 const AppNav = (props) => {
-  const { auth, profile } = props;
+  const { profile } = props;
 
 
   return (

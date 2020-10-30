@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import * as firebase from 'firebase'
-import { updateLocale } from 'moment';
+import * as firebase from 'firebase';
 
 class FileUpload extends Component {
   constructor () {
@@ -39,7 +38,7 @@ class FileUpload extends Component {
         <br />
         <input type='file' onChange={this.handleOnChange.bind(this)}/>
         <br />
-        <img width='90' src={this.state.picture} />
+        <img width='90' src={this.state.picture} alt='Foto Mascota'/>
       </div>
     )
   }

@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useFirebase, useFirestore } from "react-redux-firebase";
+import React, { useEffect } from "react";
+import { useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
 import firebase from 'firebase/app'
-import { db } from '../../index'
-import { FormatAlignJustify } from "@material-ui/icons";
 
 
 const EditProfile = (props) => {

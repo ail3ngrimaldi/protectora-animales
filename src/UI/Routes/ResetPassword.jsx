@@ -1,10 +1,9 @@
 import React,{ useEffect } from "react";
-import { useFirebase, useFirestore } from "react-redux-firebase";
+import { useFirebase } from "react-redux-firebase";
 import { db } from '../../index'
 
 const ResetPassword = () => {
 	const firebase = useFirebase();
-	const firestore = useFirestore();
 	const [pass, setPass] = React.useState({});
 	const [userList, setUserList] = React.useState([]);
 	var modal = false;

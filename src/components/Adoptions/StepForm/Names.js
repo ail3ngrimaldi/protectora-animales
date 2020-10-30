@@ -6,15 +6,14 @@ import { useHistory } from "react-router-dom";
 
 
 const Names = (props ) => {
-    const {match, formData, setForm, navigation} = props
+    const { formData, setForm, navigation} = props
     const history = useHistory();
     const [requireFields, setRequireFields] = React.useState('')
     const [errNombreCompleto, setErrNombreCompleto] = React.useState('')
     const [errEdad, setErrEdad] = React.useState('')
     const [errProfesion, setErrProfesion] = React.useState('')
     const [error,setError] = React.useState(true)
-    const [resaltar, setResaltar] = React.useState('')
-    const { id } = match.params
+    const [ setResaltar] = React.useState('')
   
     const pet = props.location.state
     
@@ -22,7 +21,6 @@ const Names = (props ) => {
     const {nombreCompleto, edad, profesion } = formData;
     
     const loadData = ()=>{
-        let errorMessages = [];
         let countError = 0
         let emptyFields = 0
             if(error){

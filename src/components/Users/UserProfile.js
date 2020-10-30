@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
 const UserProfile = (props) => {
-    const { auth, profile } = props
+    const { profile } = props
 
     return (
         <div>

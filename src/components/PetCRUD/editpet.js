@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { db, app } from '../../index'
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container'
 import Form from "react-bootstrap/Form";
 //import Button from "react-bootstrap/Button";
@@ -11,7 +11,6 @@ const Editpet = (props) => {
 	const pet = props.location.state.pet
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [pets, setPets] = React.useState({});
-	const history = useHistory();
 
 	const handleChange = (e) => {
 		setPets({

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 import { db } from "../../index";
@@ -10,7 +10,7 @@ import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
 
 
 export default function CardPet(props) {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [ setModalShow] = React.useState(false);
   const [pets, setPets] = useState([]);
   
   const getPets = async () => {

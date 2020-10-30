@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import "./Info.css";
 
 // FacebookShareButton permitirá compartir cualquier tipo de contenido a través de sus props
@@ -17,22 +16,22 @@ export default function PetDetail(props) {
       
     var docRef = db.collection("pet").doc(props.match.params.id);
 
-docRef.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-        setPet(doc.data())
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            setPet(doc.data())
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
   };
 
   useEffect(() => {
-    getPet();
-    
+      getPet();
+      
   }, []);
 
   return (

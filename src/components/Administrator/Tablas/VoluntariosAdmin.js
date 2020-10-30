@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const Test = () => {
   const [links, setLinks] = useState([]);

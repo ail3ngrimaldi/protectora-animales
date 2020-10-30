@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Info from "../Info/Info";
-import styles from './Gallery.css'
+import './Gallery.css'
 
 import { db } from "../../index";
 

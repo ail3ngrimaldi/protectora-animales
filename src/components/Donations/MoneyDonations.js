@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./MoneyDonations.css"
 
 export const MoneyDonations = () => {
@@ -49,7 +49,7 @@ export const MoneyDonations = () => {
                         (Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)
                     </h6>               
                 <div className="Opcard">                    
-                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
                             class="btn btn-primary">$ 100
                         </button>
@@ -57,7 +57,7 @@ export const MoneyDonations = () => {
                 </div> 
                 <br></br>
                 <div className="Opcard">                    
-                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
                             class="btn btn-primary">$ 200
                         </button>
@@ -65,7 +65,7 @@ export const MoneyDonations = () => {
                 </div> 
                 <br></br>
                 <div className="Opcard">                    
-                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
                             class="btn btn-primary">$ 300
                         </button>
@@ -73,7 +73,7 @@ export const MoneyDonations = () => {
                 </div> 
                 <br></br>
                 <div className="Opcard">                    
-                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
                             class="btn btn-primary">$ 400
                         </button>
@@ -81,7 +81,7 @@ export const MoneyDonations = () => {
                 </div>
                 <br></br>
                 <div className="Opcard">                    
-                    <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                    <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
                             class="btn btn-primary">$ 500
                         </button>
@@ -101,7 +101,7 @@ export const MoneyDonations = () => {
                 <h6 class="card-subtitle mb-2 text-muted">(Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)</h6>
                 
                         <div className="Opcard">                           
-                            <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                            <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
                                     class="btn btn-primary">¡Apadriná 1/2 Castración!
                                 </button>
@@ -109,7 +109,7 @@ export const MoneyDonations = () => {
                         </div> 
                         <br></br>
                         <div className="Opcard">                            
-                            <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                            <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
                                     class="btn btn-primary">¡Apadriná 1 Castración!
                                 </button>
@@ -117,7 +117,7 @@ export const MoneyDonations = () => {
                         </div> 
                         <br></br>
                         <div className="Opcard">                            
-                            <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
+                            <a href ="https://mpago.la/2MNYQgd" target="_blank" rel="noopener noreferrer">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
                                     class="btn btn-primary">¡Apadriná 2 Castración!
                                 </button>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Carrousel } from "../Carrousel/Carrousel"
 import { Carrousel2 } from "../Carrousel/Carrousel2";
 import { EventsHome } from "../Events/EventsHome";
@@ -40,7 +40,7 @@ export const Home = (props) => {
                 src="/img/Gallery/Dogs/Dogo4.jpg"
                 alt=""
               /> */}
-              <iframe width="683" height="384" src="https://www.youtube.com/embed/w-tu_Wpsz3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="683" height="384" src="https://www.youtube.com/embed/w-tu_Wpsz3U" title='Protectora Sarmiento Refugio de Animales' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>          
           <Carrousel />

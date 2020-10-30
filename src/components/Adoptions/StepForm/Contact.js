@@ -12,7 +12,6 @@ const Address = (props ) => {
     const [errCelular, setErrCelular] = React.useState('')
     const [errEmail, setErrEmail] = React.useState('')
     const [errRedesSociales, setErrRedesSociales] = React.useState('')
-    const [showError, setShowError] = React.useState([])
     const [error,setError] = React.useState(true)
 
     const loadData = ()=>{

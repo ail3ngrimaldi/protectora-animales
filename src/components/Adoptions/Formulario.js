@@ -1,6 +1,5 @@
 import React from 'react';
 import { useForm, useStep } from 'react-hooks-helper';
-import { arrayMascotas } from '../Constants/arrayMascotas';
 import Names from './StepForm/Names';
 import Contact from './StepForm/Contact';
 import Preguntas from './StepForm/Preguntas';
@@ -54,12 +53,7 @@ const steps = [
 const Formulario = (props) => {
   
 
-  
-  const { match } = props
-  const { id } = match.params
-  const mascota = arrayMascotas.filter(a => {
-  return a.id == id
-  })[0]
+    
 
   const [formData, setForm] = useForm(defaultData);
   const {step, navigation} = useStep({

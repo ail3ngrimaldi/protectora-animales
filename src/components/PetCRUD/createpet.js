@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 
 export const CreatePet = () => {
 	const [fileUrl, setFileUrl] = React.useState(null);
-	const [pets, setPets] = React.useState([]);
+	const [ setPets] = React.useState([]);
 	const [animals, setAnimals] = React.useState({})
 	const history = useHistory();
 
