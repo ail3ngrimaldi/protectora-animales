@@ -14,7 +14,7 @@ export const Footer = () => {
           <Row className="text-left">
             <Col className="Fonts py-2 p-0' md={3} sm={12}">
               <h5 className="title">Protectora Sarmiento</h5>
-              <p>Asociacion Civil sin fines de lucro</p>
+              <p>Asociación Civil sin fines de lucro</p>
               <p>Personería jurídica 0599 / 70</p>
               {/* <p>Cuit: 30-70152191-5</p>
               <p>Telefono: +54 9 3412 76-9534</p> */}
