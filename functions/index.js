@@ -39,7 +39,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
         const mailOptions = {
             from: 'Protectora Sarmiento <info@protectorasarmiento.com>', // Something like: Jane Doe <janedoe@gmail.com>
             to: dest,
-            bcc: 'rodrigomp88@gmail.com', 
+            bcc: 'haroldognjunior@hotmail.com', 
             subject: 'Hemos recibido tu email ', // email subject
             html: `<img src="https://firebasestorage.googleapis.com/v0/b/protectoraanimales-9c9db.appspot.com/o/Logo.png?alt=media&token=bbc10da0-2497-4fd9-8260-138cf332a84d" />
             <p style="font-size: 16px;">Muchas gracias por habernos enviado tus informaciones. <br />

@@ -11,7 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import { db } from '../../../index'
 import { useFirebase, useFirestore } from "react-redux-firebase";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+
 
 const Review = (props) => {
     const { formData, navigation } = props
@@ -44,9 +46,10 @@ const Review = (props) => {
         pregunta17,
         pregunta18,
     } = formData;
-
+    
     const onSubmit = () => {
         const date = new Date().toLocaleDateString()
+        
         // db.collection("adoptions").doc(uid).set({ // SOLO UN USUARIO REGISTRADO PUEDE ADOPTAR: ID DE LA PETICION ES EL ID DEL USUARIO LOGUEADO
         db.collection("adoptions").add({
             estadoDeSolicitud: "Pendiente",
@@ -78,9 +81,17 @@ const Review = (props) => {
             pregunta18: pregunta18,
             nombrepet: props.location.state.name,
             tipopet: props.location.state.kind
-        });
+        });      
+      
+          
     };
 
+    const sendmail = async (email) => {
+        
+       axios.get(`https://us-central1-protectoraanimales-9c9db.cloudfunctions.net/sendMail?dest=${email}`)
+        
+      }
+      
     return (
         <Container maxWidth='sm'>
             <h3>Review</h3>
@@ -129,7 +140,7 @@ const Review = (props) => {
                 Enviar
             </Button> */}
             <input type="submit" className="btn btn-outline-dark" onClick={(e) => {
-                e.preventDefault(); onSubmit(); go('submit')
+                e.preventDefault(); onSubmit(); sendmail(); go('submit')
             }} value='Enviar' />
         </Container>
     )
