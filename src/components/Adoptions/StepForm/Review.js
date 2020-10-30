@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetail from '@material-ui/core/AccordionDetails';
@@ -16,8 +15,6 @@ import { useSelector } from "react-redux";
 
 const Review = (props) => {
     const { formData, navigation } = props
-    const firebase = useFirebase();
-    const firestore = useFirestore();
     const { uid } = useSelector((state) => state.firebase.auth);
     const { go } = navigation;
     const {
@@ -51,7 +48,7 @@ const Review = (props) => {
     const onSubmit = () => {
         const date = new Date().toLocaleDateString()
         // db.collection("adoptions").doc(uid).set({ // SOLO UN USUARIO REGISTRADO PUEDE ADOPTAR: ID DE LA PETICION ES EL ID DEL USUARIO LOGUEADO
-        db.collection("adoptions").add().set({
+        db.collection("adoptions").add({
             estadoDeSolicitud: "Pendiente",
             fechaDeSolicitud: date,
             nombreCompleto: nombreCompleto,
