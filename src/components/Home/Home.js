@@ -11,8 +11,7 @@ export const Home = (props) => {
   return (
     <div className="StyleHome">
       <div>
-        <div >
-          <Carrousel2 />
+        <div >          
           <section>
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading">¡Atención!</h4>
@@ -22,6 +21,7 @@ export const Home = (props) => {
                 <p class="mb-0">El principal objetivo consiste en cuidar y asistir en la adopción para entonces reubicar a nuestros animales..</p>     
             </div> 
           </section>
+          <Carrousel2 />
           <div className="row">
             <div className="aboutus" data-wow-delay="0.3s">
               <div className="title container text-center h-100 bg-white d-flex justify-content-center align-items-center">
