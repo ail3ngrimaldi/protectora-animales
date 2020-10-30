@@ -51,7 +51,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 100
+                            class="btn btn-primary">Dona $ 100
                         </button>
                     </a>
                 </div> 
@@ -59,7 +59,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 200
+                            class="btn btn-primary">Dona $ 200
                         </button>
                     </a>
                 </div> 
@@ -67,7 +67,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 300
+                            class="btn btn-primary">Dona $ 300
                         </button>
                     </a>
                 </div> 
@@ -75,7 +75,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 400
+                            class="btn btn-primary">Dona $ 400
                         </button>
                     </a>
                 </div>
@@ -83,7 +83,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 500
+                            class="btn btn-primary">Dona $ 500
                         </button>
                     </a>
                 </div> 
@@ -103,7 +103,7 @@ export const MoneyDonations = () => {
                         <div className="Opcard">                           
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Apadriná 1/2 Castración!
+                                    class="btn btn-primary">¡1/2 Castración!
                                 </button>
                             </a>
                         </div> 
@@ -111,7 +111,7 @@ export const MoneyDonations = () => {
                         <div className="Opcard">                            
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Apadriná 1 Castración!
+                                    class="btn btn-primary">¡1 Castración!
                                 </button>
                             </a>
                         </div> 
@@ -119,7 +119,7 @@ export const MoneyDonations = () => {
                         <div className="Opcard">                            
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Apadriná 2 Castración!
+                                    class="btn btn-primary">¡2 Castraciones!
                                 </button>
                             </a>
                         </div> 

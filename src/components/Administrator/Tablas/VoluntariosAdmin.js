@@ -8,9 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Swal from 'sweetalert2';
-
 import { db } from "../../../index";
-import { toast } from "react-toastify";
+
 
 const Test = () => {
   const [links, setLinks] = useState([]);
@@ -51,7 +50,7 @@ const Test = () => {
     getLinks();
   }, []);
 
-  
+  console.log("LINKS",links);
 
   const addOrEditLink = async (linkObject) => {
     try {
@@ -91,6 +90,7 @@ const Test = () => {
               <TableCell>Email</TableCell>
               <TableCell>Dirección</TableCell>
               <TableCell>Contribucion</TableCell>
+              <TableCell>Tipo</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -115,6 +115,9 @@ const Test = () => {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {link.contribution}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {link.type}
                 </TableCell>
               </TableRow>
             ))}
