@@ -124,7 +124,7 @@ const Test = () => {
         <PetForm {...{ addOrEditLink, currentId, links }} />
       </div>
       <div className="mt-5">
-        <h3>Administrar solicitudes de adopción</h3>
+        <h3>Administrar voluntarios</h3>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>

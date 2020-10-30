@@ -69,20 +69,9 @@ export default function AdopcionesAdmin() {
           timer: 1500
         })
 
-      confirmButtonText: '¡Si, aprobarla!'
-    }).then((result) => {
-      if (result.value) {
-        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Aprobado" });
-        Swal.fire(
-          '¡Aprobado!',
-          '¡La solicitud ha sido aprobada!',
-          'success'
-        )
-
       }
     })
   }
-
   async function onUpdateReject(id) {
     await Swal.fire({
       title: '¿Desea rechazar la solicitud?',
@@ -104,21 +93,10 @@ export default function AdopcionesAdmin() {
           showConfirmButton: false,
           timer: 1500
         })
-
-      confirmButtonText: '¡Si, borrarlo!'
-    }).then((result) => {
-      if (result.value) {
-        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Rechazado" });
-        Swal.fire(
-          '¡Rechazado!',
-          '¡La solicitud ha sido rechazada!',
-          'warning'
-        )
-
+  
       }
     })
   }
-
   useEffect(() => {
     getAdoptions();
   }, []);
@@ -182,4 +160,4 @@ export default function AdopcionesAdmin() {
       </div>
     </div>
   )
-};
+}
