@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ButtonsAdmin (props) {
     return(
-        <div className="container text-center h-100 bg-light d-flex justify-content-center align-items-center">
-        {/* // <div className="container bg-light"> */}
+        <div className="container text-center h-100 bg-light d-flex justify-content-center align-items-center">        
             <div className="col-md-6 w-50 p-3 center-block">
                 <Link to="/Admin/Usuarios">
                     <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Usuarios</button>
@@ -17,10 +16,7 @@ export default function ButtonsAdmin (props) {
                 </Link>
                 <Link to="/Admin/Voluntarios">
                 <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded">Voluntarios</button>
-                </Link>
-                <button type="button" className="btn-block btn-outline-info p-2 mt-3 rounded" onClick={props.handle}>
-                   Desactivar Cartel Atención.
-                </button>
+                </Link>                
                 </div>
             </div>
     );

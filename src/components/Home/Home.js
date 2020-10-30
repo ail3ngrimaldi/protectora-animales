@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Carrousel } from "../Carrousel/Carrousel"
 import { Carrousel2 } from "../Carrousel/Carrousel2";
+import Alert from "../Alert/AlertHome";
 import { EventsHome } from "../Events/EventsHome";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -8,19 +9,23 @@ import "./Home.css";
 
 export const Home = (props) => {
 
+  const initialStateValues = {
+    booleano: true
+  };
+
+  const [values, setValues] = useState(initialStateValues);
+
+  const handleInputChange = (e) => {
+    const { booleano, value } = e.target;
+    setValues({ ...values, [booleano]: value });
+  };
+  
+
   return (
     <div className="StyleHome">
       <div>
-        <div >          
-          <section>
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">¡Atención!</h4>
-                <p>El refugio Sarmiento es una ONG (Organización No Gubernamental).</p>
-                <p>La protectora no recibe animales hoy en día porque estamos trabajando al límite de nuestra capacidad. Los animales que eventualmente ingresan son los que están en extrema emergencia, para  que el refugio no sea un lugar de depósito...</p>
-                <hr></hr>
-                <p class="mb-0">El principal objetivo consiste en cuidar y asistir en la adopción para entonces reubicar a nuestros animales..</p>     
-            </div> 
-          </section>
+        <div >         
+          {handleInputChange ? <Alert/> : null}
           <Carrousel2 />
           <div className="row">
             <div className="aboutus" data-wow-delay="0.3s">
@@ -35,11 +40,7 @@ export const Home = (props) => {
                     </Button>{' '}
                   </Link>
                 </div>
-              </div>
-              {/* <img className="StyleImg"
-                src="/img/Gallery/Dogs/Dogo4.jpg"
-                alt=""
-              /> */}
+              </div>            
               <iframe width="683" height="384" src="https://www.youtube.com/embed/w-tu_Wpsz3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>          
