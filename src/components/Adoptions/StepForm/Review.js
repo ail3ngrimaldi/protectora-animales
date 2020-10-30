@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-// import TextField from '@material-ui/core/Textfield';
 import Button from '@material-ui/core/Button';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
@@ -21,7 +20,6 @@ const Review = (props) => {
     const firestore = useFirestore();
     const { uid } = useSelector((state) => state.firebase.auth);
     const {go} = navigation;
-    console.log(props, "porpssssssssssssssssssssssssssssssss revie")
     const {
         nombreCompleto,
         edad,
@@ -51,8 +49,11 @@ const Review = (props) => {
     } = formData;
     
     const onSubmit = () => {
-        console.log(nombreCompleto, "nombreeeeeeeeeeee")
+        const date = new Date()
+        console.log(date)
         db.collection("adoptions").doc(uid).set({
+            estadoDeSolicitud: "Pendiente",
+            fechaDeSolicitud: date.toString(),
             nombreCompleto : nombreCompleto,
             edad : edad,
             profesion : profesion,
@@ -80,10 +81,7 @@ const Review = (props) => {
             pregunta18 : pregunta18,
             nombrepet: props.location.state.name,
             tipopet:props.location.state.kind
-                });
-       
-       
-         
+                });        
       };
 
     return (

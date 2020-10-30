@@ -5,9 +5,7 @@ import Button from '@material-ui/core/Button';
 
 
 const Address = (props ) => {
-    // console.log(navigation.previous())
     const {formData, setForm, navigation} = props
-    console.log(props, "propssssss contac")
     const {direccion, celular, email, redesSociales } = formData;
     const [requireFields, setRequireFields] = React.useState('')
     const [errDireccion, setErrDireccion] = React.useState('')
