@@ -21,16 +21,16 @@ export const MoneyDonations = () => {
                 </div>
             </div>
             <div class="CBUCard border border-warning ml-4">
-                <h4 class="card-header">Donacion de Insumos</h4>
+                <h4 class="card-header">Donación de Insumos</h4>
                 <div class="card-body">
-                    <p class="card-subtitle mb-2 text-muted">Card subtitle</p>
+                    {/* <p class="card-subtitle mb-2 text-muted">Card subtitle</p> */}
                     <p class="card-text">Agradecemos las colaboraciones para los Sarmientitos.</p>
                     <NavLink
                         exact
                         activeClassName="active"
                         to="/SuppliesBanner"
                         className="nav-item nav-link">
-                        <button type="button" class="btn btn-primary">Informacion!</button>
+                        <button type="button" class="btn btn-primary">¡Información!</button>
                     </NavLink>
                 </div>
             </div>
@@ -51,7 +51,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 100
+                            class="btn btn-primary">Botón para donar $ 100
                         </button>
                     </a>
                 </div> 
@@ -59,7 +59,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 200
+                            class="btn btn-primary">Botón para donar $ 200
                         </button>
                     </a>
                 </div> 
@@ -67,7 +67,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 300
+                            class="btn btn-primary">Botón para donar $ 300
                         </button>
                     </a>
                 </div> 
@@ -75,7 +75,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 400
+                            class="btn btn-primary">Botón para donar $ 400
                         </button>
                     </a>
                 </div>
@@ -83,7 +83,7 @@ export const MoneyDonations = () => {
                 <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">$ 500
+                            class="btn btn-primary">Botón para donar $ 500
                         </button>
                     </a>
                 </div> 
