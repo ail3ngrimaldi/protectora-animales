@@ -142,7 +142,6 @@ export const CreatePet = () => {
 											<option value="Mediano">Mediano</option>
 											<option value="Mediano">Grande</option>
 										</select>
-
 									</Col>
 								</Row>
 							</Form.Group>

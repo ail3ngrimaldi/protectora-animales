@@ -10,8 +10,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
 import { db } from "../../../index";
+
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -36,6 +36,7 @@ const useStyles = makeStyles({
     minWidth: 100,
   },
 });
+
 
 const Test = () => {
   const [links, setLinks] = useState([]);
@@ -74,6 +75,12 @@ const Test = () => {
       }
     })
   }
+
+  useEffect(() => {
+    getLinks();
+  }, []);
+
+  console.log("LINKS",links);
 
   const addOrEditLink = async (linkObject) => {
     try {

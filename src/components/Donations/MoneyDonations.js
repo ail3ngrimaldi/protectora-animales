@@ -16,21 +16,20 @@ export const MoneyDonations = () => {
                     <p class="card-title">Cuenta: 757766</p>
                     <p class="card-title">Asociación Civil sin Fines de Lucro</p>
                     <p class="card-title">Personería Jurídica 0599 / 70</p>
-                    <p class="card-title">Cuit 30-70152191-5</p>
-                    
+                    <p class="card-title">Cuit 30-70152191-5</p>                    
                 </div>
             </div>
             <div class="CBUCard border border-warning ml-4">
-                <h4 class="card-header">Donacion de Insumos</h4>
+                <h4 class="card-header">Donación de Insumos</h4>
                 <div class="card-body">
-                    <p class="card-subtitle mb-2 text-muted">Card subtitle</p>
+                    {/* <p class="card-subtitle mb-2 text-muted">Card subtitle</p> */}
                     <p class="card-text">Agradecemos las colaboraciones para los Sarmientitos.</p>
                     <NavLink
                         exact
                         activeClassName="active"
                         to="/SuppliesBanner"
                         className="nav-item nav-link">
-                        <button type="button" class="btn btn-primary">Informacion!</button>
+                        <button type="button" class="btn btn-primary">¡Información!</button>
                     </NavLink>
                 </div>
             </div>
@@ -123,7 +122,6 @@ export const MoneyDonations = () => {
                                 </button>
                             </a>
                         </div> 
-
                     </div>
                 </div>
             </div>

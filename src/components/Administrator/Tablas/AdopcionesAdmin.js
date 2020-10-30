@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
 import { db } from "../../../index";
 
 const StyledTableCell = withStyles((theme) => ({
@@ -69,6 +68,17 @@ export default function AdopcionesAdmin() {
           showConfirmButton: false,
           timer: 1500
         })
+
+      confirmButtonText: '¡Si, aprobarla!'
+    }).then((result) => {
+      if (result.value) {
+        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Aprobado" });
+        Swal.fire(
+          '¡Aprobado!',
+          '¡La solicitud ha sido aprobada!',
+          'success'
+        )
+
       }
     })
   }
@@ -81,6 +91,7 @@ export default function AdopcionesAdmin() {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
+
       confirmButtonText: '¡Si, rechazarla!',
       cancelButtonText: 'Cancelar'
     }).then((result) => {
@@ -93,6 +104,17 @@ export default function AdopcionesAdmin() {
           showConfirmButton: false,
           timer: 1500
         })
+
+      confirmButtonText: '¡Si, borrarlo!'
+    }).then((result) => {
+      if (result.value) {
+        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Rechazado" });
+        Swal.fire(
+          '¡Rechazado!',
+          '¡La solicitud ha sido rechazada!',
+          'warning'
+        )
+
       }
     })
   }

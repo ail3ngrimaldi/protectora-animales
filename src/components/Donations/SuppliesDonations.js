@@ -22,11 +22,11 @@ export const Supplies = () => {
                                         <Form.Control id='donatorname' name='donatorname' type='text' placeholder='Escriba aquí su nombre' />
                                     </Col>
                                     <Col md={6}>
-                                        <label for="inputState">Correo</label>
+                                        <label for="inputState">Correo electrónico</label>
                                         <Form.Control id='donatoremail' name='donatoremail' type='text' placeholder='Escriba aquí su email' />
                                     </Col>
                                     <Col md={6}>
-                                        <label for="inputState">Telefono</label>
+                                        <label for="inputState">Teléfono</label>
                                         <Form.Control id='donatortel' name='donatortel' type='text' placeholder='Escriba aquí su telefono' />
                                     </Col>
                                 </Row>
@@ -145,7 +145,7 @@ export const Supplies = () => {
                             </Row>
                         </Form.Group>
 
-                        <button type="submit" class="btn btn-primary">Crear Solicitud</button>
+                        <button type="submit" class="btn btn-primary">¡Haz tu donación!</button>
 
                     </Col>
                 </Row>

@@ -7,7 +7,8 @@ const PetForm = (props) => {
     age: '',
     email: '',
     address: '',
-    contribution: ''
+    contribution: '',
+    type: ''
   };
 
   const [values, setValues] = useState(initialStateValues);
@@ -101,9 +102,22 @@ const PetForm = (props) => {
         />
       </div>
 
-      <button className="btn btn-primary btn-block">
+      <div className="btn-group mr-2" role="group">
+      <div className="dropdown">
+        <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tipo
+        </button>
+        <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Guardar" : "Actualizar"}
-      </button>
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a className="dropdown-item" href="#">Animales de paso</a>
+          <a className="dropdown-item" href="#">En el refugio</a>
+          <a className="dropdown-item" href="#">Rescatando</a>
+        </div>        
+      </div>
+      </div>
+      
       </div>
     </form>
     </div>
