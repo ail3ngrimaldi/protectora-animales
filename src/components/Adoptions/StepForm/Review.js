@@ -50,7 +50,6 @@ const Review = (props) => {
     
     const onSubmit = () => {
         const date = new Date()
-        console.log(date)
         db.collection("adoptions").doc(uid).set({
             estadoDeSolicitud: "Pendiente",
             fechaDeSolicitud: date.toString(),
