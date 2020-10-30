@@ -16,7 +16,7 @@ const PetCrud = (props) => {
           <h1 className='title1 bg-light'>¿Qué vas a hacer hoy?</h1>
         </div>
       </NavBar>
-      <ButtonsAdmin handle={props.handle}/>
+      <ButtonsAdmin handle={props.handle} bool={props.bool} />
     </Container>
   );
 };

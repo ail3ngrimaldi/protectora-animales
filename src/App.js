@@ -66,10 +66,8 @@ function App() {
   const handleclick = () => {
     if (!booleano) {
       setBooleano(true)
-      console.log("TRUE", booleano);
     } else {
       setBooleano(false)
-      console.log("FALSE", booleano);
     }
   }
 
@@ -120,7 +118,7 @@ function App() {
           <Route exact path="/crearusuario" component={CrearUsuario} />
 
           {/* CRUD */}
-          <Route exact path="/Admin" render={() => <PetCrud handle={handleclick} />} />
+          <Route exact path="/Admin" render={() => <PetCrud handle={handleclick} bool={booleano} />} />
           <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
           <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
           <Route exact path="/Admin/Adopciones" component={AdopcionesAdmin} />
