@@ -8,12 +8,9 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const Editpet = (props) => {
-	console.log(props)
 	const pet = props.location.state.pet
-	console.log(props.location.state.pet)
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [pets, setPets] = React.useState({});
-	// const [animals, setAnimals] = React.useState({})
 	const history = useHistory();
 
 	const handleChange = (e) => {
@@ -148,14 +145,14 @@ const Editpet = (props) => {
 										<input type="file" onChange={onFileChange} />
 									</Col>
 									<Col md={6}>
-										<button type="submit" className="btn btn-primary">ACTUALIZAR</button>
+										<button type="submit" className="btn btn-primary">Actualizar</button>
 									</Col>
 								</Row>
 							</Form.Group>
 							<Form.Group>
 								<Row>
 									<Col md={6}>
-										<Link to="/Admin">
+										<Link to="/Admin/Mascotas">
 											<button type="button" className="btn-danger p-2 mt-3 rounded">Volver</button>
 										</Link>
 									</Col>

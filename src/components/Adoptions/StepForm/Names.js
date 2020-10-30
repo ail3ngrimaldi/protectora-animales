@@ -14,7 +14,6 @@ const Names = (props ) => {
     const [errProfesion, setErrProfesion] = React.useState('')
     const [error,setError] = React.useState(true)
     const [resaltar, setResaltar] = React.useState('')
-    /* const { match } = props */
     const { id } = match.params
   
     const pet = props.location.state

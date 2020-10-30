@@ -53,10 +53,10 @@ const ListPets = () => {
     <div>
       <div className="text-center">
         <Link to="/Admin/Createpet">
-          <button type="button" className=" btn-info p-2 mt-3 rounded">Ingresar Mascota</button>
+          <button type="button" className=" btn-info p-2 mt-3 rounded m-2">Ingresar Mascota</button>
         </Link>
         <Link to="/Admin">
-          <button type="button" className="btn-danger p-2 mt-3 rounded">Volver</button>
+          <button type="button" className="btn-danger p-2 mt-3 rounded m-2">Volver</button>
         </Link>
       </div>
       <TableContainer className='pl-3 pr-3' component={Paper}>
@@ -79,9 +79,8 @@ const ListPets = () => {
 
               <TableRow key={pet.id}>
                 <TableCell component="th" scope="row">
-                  {/* <button className="btn btn-warning"><i class="fas fa-edit"></i></button> */}
-                  <Link to={{ pathname: `/Admin/editpet/${pet.id}`, state: { pet: pet } }} className="btn btn-warning"><i className="fas fa-edit"></i></Link>
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(pet.id)} class="fas fa-trash-alt"></i></button>
+                  <Link to={{ pathname: `/Admin/editpet/${pet.id}`, state: { pet: pet } }} className="btn btn-warning m-2"><i className="fas fa-edit"></i></Link>
+                  <button className="btn btn-danger m-2"><i onClick={() => onDeleteLink(pet.id)} className="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
                   <img src={pet.avatar} alt={pet.name} class="img-fluid" width='70' height='70' />
