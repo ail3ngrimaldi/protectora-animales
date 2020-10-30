@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
 
-export default function AdopcionesAdmin () {
+export default function AdopcionesAdmin() {
   const [adoptions, setAdoptions] = useState([]);
 
   const getAdoptions = async () => {
@@ -35,7 +35,7 @@ export default function AdopcionesAdmin () {
       confirmButtonText: '¡Si, aprobarla!'
     }).then((result) => {
       if (result.value) {
-        db.collection("adoptions").doc(id).update({estadoDeSolicitud : "Aprobado"});
+        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Aprobado" });
         Swal.fire(
           '¡Aprobado!',
           '¡La solicitud ha sido aprobada!',
@@ -46,7 +46,7 @@ export default function AdopcionesAdmin () {
   }
 
   async function onUpdateReject(id) {
-   await Swal.fire({
+    await Swal.fire({
       title: '¿Desea rechazar la solicitud?',
       text: "¡La solicitud será borrada definitivamente!",
       icon: 'warning',
@@ -56,7 +56,7 @@ export default function AdopcionesAdmin () {
       confirmButtonText: '¡Si, borrarlo!'
     }).then((result) => {
       if (result.value) {
-        db.collection("adoptions").doc(id).update({estadoDeSolicitud : "Rechazado"});
+        db.collection("adoptions").doc(id).update({ estadoDeSolicitud: "Rechazado" });
         Swal.fire(
           '¡Rechazado!',
           '¡La solicitud ha sido rechazada!',
@@ -93,11 +93,11 @@ export default function AdopcionesAdmin () {
           </TableHead>
           <TableBody>
             {adoptions.map((adoption) => (
-                
+
 
               <TableRow key={adoption.id}>
                 <TableCell component="th" scope="row">
-                  <button className="btn btn-danger m-2" onClick={() => onUpdateReject(adoption.id)}> <i  className="far fa-window-close"></i></button>
+                  <button className="btn btn-danger m-2" onClick={() => onUpdateReject(adoption.id)}> <i className="far fa-window-close"></i></button>
                   <button className="btn btn-success m-2" onClick={() => onUpdateAprove(adoption.id)}> <i className="far fa-check-square" ></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
@@ -113,7 +113,7 @@ export default function AdopcionesAdmin () {
                   {adoption.nombrepet}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {adoption.fechaDeSolicitud.toString()}
+                  {adoption.fechaDeSolicitud}
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {adoption.estadoDeSolicitud}
@@ -129,5 +129,5 @@ export default function AdopcionesAdmin () {
         </div>
       </TableContainer>
     </div>
-    )
+  )
 };
