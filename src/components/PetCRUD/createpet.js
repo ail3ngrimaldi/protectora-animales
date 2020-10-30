@@ -66,7 +66,16 @@ export const CreatePet = () => {
 	return (
 		<div>
 			<Container fluid={true}>
-				<h3 className="display-6 font-weight-light justify-content py-4 ml-5">CREAR MASCOTA</h3>
+				<Form.Group className="text-center">
+					<Row>
+						<Col md={6}>
+							<Link to="/Admin">
+								<button type="button" className="btn-danger p-2 mt-3 rounded">Volver a administrar</button>
+							</Link>
+						</Col>
+					</Row>
+				</Form.Group>
+				<h3 className="display-6 font-weight-light justify-content py-4 ml-5 text-center">Crear mascota</h3>
 				<Row className='justify-content-center'>
 					<Col md={8}>
 						<Form onSubmit={onSubmit}>
@@ -133,7 +142,6 @@ export const CreatePet = () => {
 											<option value="Mediano">Mediano</option>
 											<option value="Mediano">Grande</option>
 										</select>
-
 									</Col>
 								</Row>
 							</Form.Group>
@@ -144,15 +152,6 @@ export const CreatePet = () => {
 									</Col>
 									<Col md={6}>
 										<button type="submit" className="btn btn-primary">INGRESAR MASCOTA</button>
-									</Col>
-								</Row>
-							</Form.Group>
-							<Form.Group>
-								<Row>
-									<Col md={6}>
-										<Link to="/Admin">
-											<button type="button" className="btn-danger p-2 mt-3 rounded">Volver</button>
-										</Link>
 									</Col>
 								</Row>
 							</Form.Group>

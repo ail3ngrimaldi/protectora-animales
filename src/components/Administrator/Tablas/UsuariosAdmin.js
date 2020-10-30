@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -11,6 +11,30 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 import { db } from "../../../index";
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650,
+  },
+});
 
 const ListUsers = () => {
   const [users, setUsers] = useState([]);
@@ -29,72 +53,72 @@ const ListUsers = () => {
     getUsers();
   }, []);
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
-
-  const classes = useStyles();
-
   function onDeleteLink(id) {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "¡El usuario sera borrado definitivamente!",
+      text: "¡El usuario será borrado definitivamente!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: '¡Si, borrarlo!'
+      confirmButtonText: '¡Si, borrarlo!',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         db.collection("users").doc(id).delete();
-        Swal.fire(
-          '¡Borrado!',
-          '¡El usuario ha sido borrado correctamente!',
-          'success'
-        )
+        Swal.fire({
+          title: '¡Borrado!',
+          text: '¡El usuario ha sido borrado correctamente!',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     })
   }
 
+  const classes = useStyles();
+
   return (
-    <TableContainer className='pl-3 pr-3' component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Nombre</TableCell>
-            <TableCell >Apellido</TableCell>
-            <TableCell >Email</TableCell>
-            <TableCell >ID</TableCell>
-            <TableCell >Acciones</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {console.log(users)}
-          {users.map((user) => (
-            <TableRow key={user.id}>
-              <TableCell component="th" scope="row">
-                {user.firstName}
-              </TableCell>
-              <TableCell component="th" scope="row" >{user.lastName}</TableCell>
-              <TableCell component="th" scope="row" >{user.email}</TableCell>
-              <TableCell component="th" scope="row" >{user.id}</TableCell> 
-              <TableCell component="th" scope="row">
-                  <button className="btn btn-danger"><i onClick={() => onDeleteLink(user.id)} class="fas fa-trash-alt"></i></button>
-                </TableCell>
-              
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <div>
-      <Link to="/Admin">
-      <button type="button" className="btn btn-info btn-rounded btn-block">Volver</button>
-      </Link>    
+    <div className="container text-center">
+      <div className="mt-5">
+        <Link to="/Admin">
+          <button type="button" className="btn-danger p-2 mt-3 rounded m-2"><i class="fa fa-arrow-left"></i> Volver a administrar</button>
+        </Link>
       </div>
-    </TableContainer>
-    
+      <div className="mt-5">
+        <h3>Administrar usuarios registrados</h3>
+        <TableContainer component={Paper}>
+          <Table className={classes.table} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell align="center">Acciones</StyledTableCell>
+                <StyledTableCell align="center">Nombre</StyledTableCell>
+                <StyledTableCell align="center">Apellido</StyledTableCell>
+                <StyledTableCell align="center">Correo</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {console.log(users)}
+              {users.map((user) => (
+                <StyledTableRow key={user.id}>
+                  <StyledTableCell align="center">
+                    <button className="btn btn-danger" onClick={() => onDeleteLink(user.id)} data-toggle="tooltip" data-placement="bottom" title="Eliminar usuario"><i class="fas fa-trash-alt"></i>
+                    </button>
+                  </StyledTableCell>
+                  <StyledTableCell align="center">{user.firstName}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">{user.lastName}
+                  </StyledTableCell>
+                  <StyledTableCell align="center">{user.email}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    </div>
   );
 }
 
