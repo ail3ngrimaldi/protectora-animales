@@ -25,9 +25,7 @@ import PetDetail from './components/Info/PetDetail'
 //CRUD
 
 import { CreatePet } from "./components/PetCRUD/createpet"
-import { ReadPet } from "./components/PetCRUD/readpet"
-import { UpdatePet } from "./components/PetCRUD/updatepet"
-import { DeletePet } from "./components/PetCRUD/deletepet"
+import UpdatePet from "./components/PetCRUD/editpet"
 
 // RESTO DE COSAS
 import Dashboard from "./components/dashboard/Dashboard";
@@ -61,18 +59,18 @@ import Contactus from './components/sendemail'
 import ContactUs from "./components/sendemail";
 
 function App() {
-  const [albums, setAlbums] = useState([]);  
+  const [albums, setAlbums] = useState([]);
   const [booleano, setBooleano] = useState(false);
 
-    const handleclick = () => {
-        if (!booleano) {
-            setBooleano(true)
-            console.log("TRUE", booleano);
-        } else {
-            setBooleano(false)
-            console.log("FALSE", booleano);
-        }
+  const handleclick = () => {
+    if (!booleano) {
+      setBooleano(true)
+      console.log("TRUE", booleano);
+    } else {
+      setBooleano(false)
+      console.log("FALSE", booleano);
     }
+  }
 
   useEffect(() => {
     const unmount = db.collection("pet").onSnapshot((snapshot) => {
@@ -125,9 +123,7 @@ function App() {
           <Route exact path="/Admin/Usuarios" component={UsuariosAdmin} />
           <Route exact path="/Admin/Mascotas" component={MascotasAdmin} />
           <Route exact path="/Admin/Createpet" component={CreatePet} />
-          <Route exact path="/Admin/ReadPet" component={ReadPet} />
-          <Route exact path="/Admin/UpdatePet" component={UpdatePet} />
-          <Route exact path="/Admin/DeletePet" component={DeletePet} />
+          <Route exact path="/Admin/editpet/:id" component={UpdatePet} />
           <Route exact path="/Admin/Voluntarios" component={VoluntariosAdmin} />
 
           {/* RESTO DE COSAS */}

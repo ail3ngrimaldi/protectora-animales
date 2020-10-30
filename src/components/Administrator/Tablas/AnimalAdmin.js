@@ -71,6 +71,7 @@ const ListPets = () => {
               <TableCell>Tamaño</TableCell>
               <TableCell>Castrado</TableCell>
               <TableCell>Personalidad</TableCell>
+              <TableCell>Historia</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -79,6 +80,7 @@ const ListPets = () => {
               <TableRow key={pet.id}>
                 <TableCell component="th" scope="row">
                   {/* <button className="btn btn-warning"><i class="fas fa-edit"></i></button> */}
+                  <Link to={{ pathname: `/Admin/editpet/${pet.id}`, state: { pet: pet } }} className="btn btn-warning"><i className="fas fa-edit"></i></Link>
                   <button className="btn btn-danger"><i onClick={() => onDeleteLink(pet.id)} class="fas fa-trash-alt"></i></button>
                 </TableCell>
                 <TableCell component="th" scope="row">
@@ -101,6 +103,9 @@ const ListPets = () => {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {pet.personality}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {pet.history}
                 </TableCell>
               </TableRow>
             ))}
