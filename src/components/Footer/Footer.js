@@ -22,7 +22,7 @@ export const Footer = () => {
               <p>Rosario - Argentina</p>
             </Col>
             <Col className="Fonts2 p-0 d-flex justify-content-end'md={3} ">
-              <h5 className="title">Contactanos</h5>
+              <h5 className="title">Contáctanos</h5>
               <br />
               <ul>
                 <li className="list-unstyled">
