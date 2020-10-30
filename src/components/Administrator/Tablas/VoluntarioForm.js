@@ -43,9 +43,9 @@ const PetForm = (props) => {
   }, [props.currentId]);
 
   return (
-    <div className="text-center">
+    <div className="text-center mt-5">
         
-    <h1>Crear nuevo voluntario</h1>
+    <h3>Crear nuevo voluntario</h3>
     <form id="formlogin" class="form-signin justify-content-center" onSubmit={handleSubmit}>
     <div className="form-row">
         <div className="form-group col-md-6">

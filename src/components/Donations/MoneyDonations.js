@@ -42,68 +42,53 @@ export const MoneyDonations = () => {
                     <img
                         class="card-img-top max-width: 5%"
                         src="/img/mercadopago.png"
-                        alt="Card cap"
-                        
-                    
+                        alt="Card cap"                    
                     ></img>
                     <h5 class="card-title">Doná a través de MERCADOPAGO</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">(Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)</h6>
-
-                
-            
-
-                <div className="Opcard">
-                    <h5 class="card-title">Dona 100 $ARG</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        (Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)
+                    </h6>               
+                <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                            class="btn btn-primary">$ 100
                         </button>
                     </a>
                 </div> 
-
-                <div className="Opcard">
-                    <h5 class="card-title">Dona 200 $ARG</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <br></br>
+                <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                            class="btn btn-primary">$ 200
                         </button>
                     </a>
                 </div> 
-
-                <div className="Opcard">
-                    <h5 class="card-title">Dona 300 $ARG</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <br></br>
+                <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                            class="btn btn-primary">$ 300
                         </button>
                     </a>
                 </div> 
-
-                <div className="Opcard">
-                    <h5 class="card-title">Dona 400 $ARG</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <br></br>
+                <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                            class="btn btn-primary">$ 400
                         </button>
                     </a>
                 </div>
-
-                <div className="Opcard">
-                    <h5 class="card-title">Dona 500 $ARG</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <br></br>
+                <div className="Opcard">                    
                     <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                         <button type="button" 
-                            class="btn btn-primary">¡Haz tu donativo AQUI!
+                            class="btn btn-primary">$ 500
                         </button>
                     </a>
                 </div> 
                 
             </div>
-
                 
             <div className="CardContainer">
             <div className="MPCard">
@@ -115,32 +100,26 @@ export const MoneyDonations = () => {
                 <h5 class="card-title">Apadriná Castraciones con MERCADOPAGO</h5>
                 <h6 class="card-subtitle mb-2 text-muted">(Todas las tarjetas de crédito y débito, Pago Fácil, Rapipago, Link, Banelco y otros.)</h6>
                 
-                        <div className="Opcard">
-                            <h5 class="card-title">Apadriná 1/2 Castración</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <div className="Opcard">                           
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Haz tu donativo AQUI!
+                                    class="btn btn-primary">¡Apadriná 1/2 Castración!
                                 </button>
                             </a>
                         </div> 
-
-                        <div className="Opcard">
-                            <h5 class="card-title">Apadriná 1 Castración</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <br></br>
+                        <div className="Opcard">                            
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Haz tu donativo AQUI!
+                                    class="btn btn-primary">¡Apadriná 1 Castración!
                                 </button>
                             </a>
                         </div> 
-
-                        <div className="Opcard">
-                            <h5 class="card-title">Apadriná 2 Castración</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <br></br>
+                        <div className="Opcard">                            
                             <a href ="https://mpago.la/2MNYQgd" target="_blank">  {/* LINK AL MERCADO PAGO DE LAUTARO */}
                                 <button type="button" 
-                                    class="btn btn-primary">¡Haz tu donativo AQUI!
+                                    class="btn btn-primary">¡Apadriná 2 Castración!
                                 </button>
                             </a>
                         </div> 

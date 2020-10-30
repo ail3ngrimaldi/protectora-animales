@@ -13,12 +13,63 @@ const SignInmail = () => {
   };
 
   const [usuario, setUsuario] = React.useState(initialState);
+  const [error, setError] = React.useState(true)
+  const [errorMail, setErrorMail] = React.useState('')
+  const [errorPassword, setErrorPassword] = React.useState('')
+  const [requireFields, setRequireFields] = React.useState('')
+  const expreg = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+  const [errorLogin, setErrorLogin] = React.useState('')
   const updateField = (e) => {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
   };
+
+  const loadData = ()=>{
+
+    let countError = 0
+    let emptyFields = 0
+    if(usuario.email === ''){
+        
+      emptyFields ++
+      
+      
+    }else if(!expreg.test(usuario.email)){
+      
+        countError ++;
+        setErrorMail('Debe ingresar un email Valido!')
+        
+        
+      
+    }else{
+      setErrorMail('')
+     
+    }
+    if(usuario.password === ''){
+      emptyFields ++
+    }else  if(usuario.password.length < 6)
+     {
+        countError ++;
+        setErrorPassword('Las contraseña debe contener al menos 6 carateres')
+        
+        
+      
+    }else{
+      setErrorPassword('')
+     
+    }
+    if(emptyFields !== 0){
+      setRequireFields('Es obligatorio completar todos los campos')
+      
+    }else{
+      setRequireFields('')
+    }
+    
+    if(countError === 0 && emptyFields === 0){
+      setError(false)
+    }
+  }
   const signInWithmail = () => {
     
     firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)
@@ -26,7 +77,8 @@ const SignInmail = () => {
       history.push("/");
     })
     .catch(function(error) {
-       return error;
+        console.log(error);
+        setErrorLogin('El email o contraseña ingresada no se hallan registrados')
       });
     
   };
@@ -64,11 +116,35 @@ const SignInmail = () => {
                 placeholder="Contraseña"
               />
               </div>
+              {
+                errorMail ?
+                <p className='text-justify text-danger'>{errorMail}</p>
+                :
+                <span></span>
+              }
+              {
+                errorPassword ?
+                <p className='text-justify text-danger'>{errorPassword}</p>
+                :
+                <span></span>
+              }
+              {
+                errorLogin ?
+                <p className='text-justify text-danger'>{errorLogin}</p>
+                :
+                <span></span>
+              }
+              {
+                requireFields ?
+                <p className='text-justify text-danger'>{requireFields}</p>
+                :
+                <span></span>
+              }
               </div>
               
         </form>
           <div class="form-signin ">
-            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={signInWithmail} value='Ingresa con tu cuenta'/>  
+            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={()=>error? loadData() : signInWithmail()} value='Ingresa con tu cuenta'/>  
           </div> 
 
           <div className="form-group">       
