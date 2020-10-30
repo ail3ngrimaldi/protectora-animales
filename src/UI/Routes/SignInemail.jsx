@@ -6,7 +6,7 @@ import SignIn from "./SignIn"
 
 const SignInmail = () => {
   const firebase = useFirebase();
-
+  console.log(firebase.auth())
   const initialState = {
     email: "",
     password: ""
@@ -40,7 +40,7 @@ const SignInmail = () => {
         countError ++;
         setErrorMail('Debe ingresar un email Valido!')
         
-        
+    
       
     }else{
       setErrorMail('')
@@ -78,7 +78,7 @@ const SignInmail = () => {
     })
     .catch(function(error) {
         console.log(error);
-        setErrorLogin('El email o contraseña ingresada no se hallan registrados')
+        setErrorLogin('No tenemos registros del email ingresado!')
       });
     
   };

@@ -26,7 +26,7 @@ const CrearUsuario = () => {
   const firebase = useFirebase();
   const firestore = useFirestore();
   // const { uid } = useSelector((state) => state.firebase.auth);
-   
+   console.log(firebase.auth().currentUser)
   const initialState = {
     email: "",
     password: "",
@@ -185,6 +185,7 @@ const CrearUsuario = () => {
 
       firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
       .then(result => {
+        //console.log(result)
         result.user.updateProfile({
           displayName : usuario.firstName
         })
@@ -206,20 +207,19 @@ const CrearUsuario = () => {
         })
         
         result.user.sendEmailVerification(configuracion).catch(error =>{
-          console.error(error)
+          //console.error(error)
         /*  Materialize.toast(error.message, 4000) */
         })
         history.push("/")
       })
       .catch(error => {
-        console.error(error)
+      console.error(error)
       /*   Materialize.tost(error.message, 4000) */
-       setError(true)
-       if('The email address is already in use by another account'){
-         setMailExistente('La dirección de correo electrónico ya está siendo utilizada por otra cuenta.')
-       }else{
-        setMailExistente('No se ha podido realizar su registro. Verifique que los datos ingresados sean correctos.')
-       }
+      
+        setError(true)
+        setMailExistente('El email ingresado ya está siendo utilizado por otra cuenta.')
+    
+       
       });
    
     
