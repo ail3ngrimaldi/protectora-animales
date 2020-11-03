@@ -11,6 +11,7 @@ export const CreatePet = () => {
 	const [pets, setPets] = React.useState([]);
 	const [animals, setAnimals] = React.useState({})
 	const history = useHistory();
+	console.log(pets)
 
 	const handleChange = (e) => {
 		setAnimals({

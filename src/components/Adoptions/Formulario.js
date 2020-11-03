@@ -1,6 +1,5 @@
 import React from 'react';
 import { useForm, useStep } from 'react-hooks-helper';
-import { arrayMascotas } from '../Constants/arrayMascotas';
 import Names from './StepForm/Names';
 import Contact from './StepForm/Contact';
 import Preguntas from './StepForm/Preguntas';
@@ -16,8 +15,8 @@ const defaultData = {
   edad: '',
   profesion: '',
   direccion: '',
-  celular:'',
-  email:'',
+  celular: '',
+  email: '',
   redesSociales: '',
   pregunta1: '',
   pregunta2: '',
@@ -41,44 +40,36 @@ const defaultData = {
 };
 
 const steps = [
-  {id: 'names'},
-  {id: 'contact'},
-  {id: 'preguntas'},
-  {id: 'preguntas2'},
-  {id: 'preguntas3'},
-  {id: 'review'},
-  {id: 'submit'},
+  { id: 'names' },
+  { id: 'contact' },
+  { id: 'preguntas' },
+  { id: 'preguntas2' },
+  { id: 'preguntas3' },
+  { id: 'review' },
+  { id: 'submit' },
 
 ]
 
 const Formulario = (props) => {
-  
-
-  
-  const { match } = props
-  const { id } = match.params
-  const mascota = arrayMascotas.filter(a => {
-  return a.id == id
-  })[0]
-
   const [formData, setForm] = useForm(defaultData);
-  const {step, navigation} = useStep({
-    steps, 
-    initialStep:0,
+  const { step, navigation } = useStep({
+    steps,
+    initialStep: 0,
   })
 
 
-  const prop = {formData, setForm, navigation}
+  const prop = { formData, setForm, navigation }
 
-  switch(step.id){
+  switch (step.id) {
     // case 'mascota': return <Mascota {...props} {...prop} next={step[1]} />;
     case 'names': return <Names {...prop} {...props} />;
-    case 'contact': return <Contact {...prop}/>;
-    case 'preguntas': return <Preguntas {...prop}/>;
-    case 'preguntas2': return <PreguntasDos {...prop}/>;
-    case 'preguntas3': return <PreguntasTres {...prop}/>;
-    case 'review': return <Review {...prop} {...props}/>;
-    case 'submit': return <Submit {...prop} {...props}/>;
+    case 'contact': return <Contact {...prop} />;
+    case 'preguntas': return <Preguntas {...prop} />;
+    case 'preguntas2': return <PreguntasDos {...prop} />;
+    case 'preguntas3': return <PreguntasTres {...prop} />;
+    case 'review': return <Review {...prop} {...props} />;
+    case 'submit': return <Submit {...prop} {...props} />;
+    default: break;
   }
 
   return (

@@ -16,57 +16,57 @@ export const Carrousel = () => {
 
       <div className="texto">
         <h1>¡Conocenos!</h1>
-          <p>Quieres conocerme a mi y a mis amigos?</p>
-          <p>Entra aca y mira nuestra gran galeria y si te animas</p>
-          <p>¡Adoptanos!</p>
-          <p>Estamos llenos de amor para dar</p>
+        <p>Quieres conocerme a mi y a mis amigos?</p>
+        <p>Entra aca y mira nuestra gran galeria y si te animas</p>
+        <p>¡Adoptanos!</p>
+        <p>Estamos llenos de amor para dar</p>
 
         <NavLink
           exact
           activeClassName="active"
           to="/Gallery"
           className="nav-item nav-link">
-          <button type="button" class="btn btn-info">Conoce más</button>
+          <button type="button" className="btn btn-info">Conoce más</button>
         </NavLink>
       </div>
 
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <ol className="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src={Foto1} alt="First slide"></img>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img className="d-block w-100" src={Foto1} alt="First slide"></img>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={Foto2} alt="Second slide"></img>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={Foto2} alt="Second slide"></img>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={Foto3} alt="Third slide"></img>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={Foto3} alt="Third slide"></img>
           </div>
-          <div class="carousel-item ">
-            <img class="d-block w-100" src={Foto4} alt="First slide"></img>
+          <div className="carousel-item ">
+            <img className="d-block w-100" src={Foto4} alt="First slide"></img>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={Foto5} alt="Second slide"></img>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={Foto5} alt="Second slide"></img>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={Foto6} alt="Third slide"></img>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={Foto6} alt="Third slide"></img>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
+        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Anterior</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
+        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Siguiente</span>
         </a>
       </div>
     </div>

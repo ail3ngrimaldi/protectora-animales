@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { useFirebase, useFirestore } from "react-redux-firebase";
+import React, { useEffect } from "react";
+import { useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
 import firebase from 'firebase/app'
-import { db } from '../../index'
-import { FormatAlignJustify } from "@material-ui/icons";
+// import { db } from '../../index'
+// import { FormatAlignJustify } from "@material-ui/icons";
 
 
 const EditProfile = (props) => {
@@ -23,8 +23,6 @@ const EditProfile = (props) => {
     isAdmin: profile.isAdmin
   };
 
-
-
   const [usuario, setUsuario] = React.useState(initialState);
   const updateField = (e) => {
     setUsuario({
@@ -33,18 +31,16 @@ const EditProfile = (props) => {
     });
   };
 
-
   const firestore = useFirestore();
   var user = firebase.auth().currentUser;
-  const getUser = async () => {
-    firestore.collection("users").doc(user.uid).set({
-    })
-  };
 
   useEffect(() => {
-
+    const getUser = async () => {
+      firestore.collection("users").doc(user.uid).set({
+      })
+    };
     getUser();
-  }, [])
+  }, [user, firestore])
 
   const createEmail = () => {
     var user = firebase.auth().currentUser;

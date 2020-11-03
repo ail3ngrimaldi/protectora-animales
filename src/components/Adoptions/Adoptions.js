@@ -1,9 +1,9 @@
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { arrayMascotas } from "../Constants/arrayMascotas";
 import Mascotas from "../Mascotas/Mascotas";
 
-const Adoptions = () => { 
+const Adoptions = () => {
 
   return (
     <div>

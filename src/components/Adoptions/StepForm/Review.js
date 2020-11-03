@@ -10,12 +10,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import { db } from '../../../index'
-import { useFirebase, useFirestore } from "react-redux-firebase";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const Review = (props) => {
     const { formData, navigation } = props
-    const { uid } = useSelector((state) => state.firebase.auth);
+    // const { uid } = useSelector((state) => state.firebase.auth);
     const { go } = navigation;
     const {
         nombreCompleto,

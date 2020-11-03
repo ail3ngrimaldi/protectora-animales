@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Info.css";
 import { db } from "../../index";
@@ -12,7 +12,7 @@ import FacebookShareButton from '../FacebookShareButton/FacebookShareButton'
 export default function CardPet(props) {
   const [modalShow, setModalShow] = React.useState(false);
   const [pets, setPets] = useState([]);
-  
+
   const getPets = async () => {
     db.collection("pet").onSnapshot((querySnapshot) => {
       const docs = [];
@@ -29,27 +29,27 @@ export default function CardPet(props) {
 
   return (
     <div>
-    {pets ? <div> <Link to={`/pet/${props.petId}`}>
-                      <Button variant="warning" onClick={() => setModalShow(true)}>
-                      VER
+      {pets ? <div> <Link to={`/pet/${props.petId}`}>
+        <Button variant="warning" onClick={() => setModalShow(true)}>
+          VER
                       </Button>
-                  </Link>
+      </Link>
 
         {/* Agrego botoncito para compartir en Facebook 
             Los atributos se condiderarán una vez esté deployada la web :)
          - Lean */}
-            <FacebookShareButton
-            url = "https://www.facebook.com/ProtectoraSarmiento.Rosario" 
-            />
-        </div>
+        <FacebookShareButton
+          url="https://www.facebook.com/ProtectoraSarmiento.Rosario"
+        />
+      </div>
 
-       : <div>Por el momento no hay mascotas en adopción</div>}
-       {/* <ModalDetalleMascota
+        : <div>Por el momento no hay mascotas en adopción</div>}
+      {/* <ModalDetalleMascota
         show={modalShow}
         onHide={() => setModalShow(false)}
         state={pets}
       /> */}
-    
+
     </div>
   );
 }
