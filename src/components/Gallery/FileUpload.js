@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase'
-import { updateLocale } from 'moment';
 
 class FileUpload extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       uploadValue: 0
     }
   }
 
-  handleOnChange (e) {
+  handleOnChange(e) {
     const file = e.target.files[0]
     const storageRef = firebase.storage().ref(`pictures/${file.name}`)
     const task = storageRef.put(file)
@@ -30,16 +29,16 @@ class FileUpload extends Component {
     })
   }
 
-  render () {
+  render() {
     return (
       <div>
         <progress value={this.state.uploadValue} max='100'>
           {this.state.uploadValue} %
         </progress>
         <br />
-        <input type='file' onChange={this.handleOnChange.bind(this)}/>
+        <input type='file' onChange={this.handleOnChange.bind(this)} />
         <br />
-        <img width='90' src={this.state.picture} />
+        <img width='90' alt="imagen subida" src={this.state.picture} />
       </div>
     )
   }

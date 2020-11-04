@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { db } from  "../../index";
-import { toast } from "react-toastify";
+import { db } from "../../index";
+// import { toast } from "react-toastify";
 
 const PetForm = (props) => {
   const initialStateValues = {
@@ -20,12 +20,12 @@ const PetForm = (props) => {
     setValues({ ...values, [name]: value });
   };
 
- 
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-   
+
 
     props.addOrEditLink(values);
     setValues({ ...initialStateValues });
@@ -42,7 +42,6 @@ const PetForm = (props) => {
     } else {
       getLinkById(props.currentId);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentId]);
 
   return (

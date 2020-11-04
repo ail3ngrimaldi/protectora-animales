@@ -11,9 +11,10 @@ const SignInmail = () => {
     email: "",
     password: ""
   };
-
+  
+  const history = useHistory();
   const [usuario, setUsuario] = React.useState(initialState);
-  const [error, setError] = React.useState(true)
+  // const [error, setError] = React.useState(true)
   const [errorMail, setErrorMail] = React.useState('')
   const [errorPassword, setErrorPassword] = React.useState('')
   const [requireFields, setRequireFields] = React.useState('')
@@ -26,7 +27,7 @@ const SignInmail = () => {
     });
   };
 
-  const loadData = ()=>{
+  const loadData = async () => {
 
     let countError = 0
     let emptyFields = 0
@@ -67,32 +68,35 @@ const SignInmail = () => {
     }
     
     if(countError === 0 && emptyFields === 0){
-      setError(false)
+      setRequireFields('Es obligatorio completar todos los campos')
     }
   }
-  const signInWithmail = () => {
-    
-    firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)
-    .then(() => {
-      history.push("/");
-    })
-    .catch(function(error) {
-        console.log(error);
-        setErrorLogin('El email o contraseña ingresada no se hallan registrados')
-      });
-    
+
+  const signInWithmail = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password)
+      .then(() => {
+        history.push("/");
+      })
+      .catch(function(err) {
+          console.log(err);
+          setErrorLogin('El email o contraseña ingresada no se hallan registrados')
+        });
+
+    } catch (err) {
+       await loadData()
+    }
   };
 
-  const history = useHistory();
 
   return (
     <div>      
       <Container>
         <div className="text-center ">
-      <form id="formlogin" class="form-signin justify-content-center">
-      <img class="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
-      <div class="form-row">
-    <div class="col-md-6 mb-3">
+      <form id="formlogin" className="form-signin justify-content-center">
+      <img className="mb-4" src="https://scontent.fmdz5-1.fna.fbcdn.net/v/t1.0-9/84985666_2934435266609344_8840466609970610176_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=5cEbvo-tyT8AX-FQXoq&_nc_ht=scontent.fmdz5-1.fna&oh=4f8adb17ac81b1be40945c4399e6ad2f&oe=5FB3E968" alt="" width="172" height="172"/>
+      <div className="form-row">
+    <div className="col-md-6 mb-3">
               <input
                 id="inputEmail"
                 type="email"
@@ -101,11 +105,11 @@ const SignInmail = () => {
                 onChange={updateField}
                 className="form-control"
                 placeholder="E-mail"
-                autofocus="autofocus"
+                autoFocus="autofocus"
               />
               </div>
               
-              <div class="col-md-6 mb-3">
+              <div className="col-md-6 mb-3">
               <input
               id="inputPassword"
                 type="password"
@@ -143,8 +147,8 @@ const SignInmail = () => {
               </div>
               
         </form>
-          <div class="form-signin ">
-            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={()=>error? loadData() : signInWithmail()} value='Ingresa con tu cuenta'/>  
+          <div className="form-signin ">
+            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={async ()=> await signInWithmail() } value='Ingresa con tu cuenta'/>  
           </div> 
 
           <div className="form-group">       

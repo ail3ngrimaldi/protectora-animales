@@ -1,12 +1,12 @@
 import React from "react";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import "./Footer.css";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="Styles mt-5">
       <Container color="blue" className="font-small pt-4 mt-4" fluid={true}>
@@ -27,13 +27,13 @@ export const Footer = () => {
               <ul>
                 <li className="list-unstyled">
                   <a href="https://www.facebook.com/ProtectoraSarmiento.Rosario/about/?ref=page_internal">
-                    <i class="fab fa-facebook fa-2x fa-lg"></i>
+                    <i className="fab fa-facebook fa-2x fa-lg"></i>
                   </a>
                 </li>
                 <br></br>
                 <li className="list-unstyled">
                   <a href="https://www.instagram.com/protectorasarmiento/?hl=es-la">
-                    <i class="fab fa-instagram fa-2x fa-lg"></i>
+                    <i className="fab fa-instagram fa-2x fa-lg"></i>
                   </a>
                 </li>
                 {/* <li className="list-unstyled">
@@ -53,18 +53,7 @@ export const Footer = () => {
         </div>
       </Container>
     </footer>
-
-    // <footer className='mt-5'>
-    //         <Container fluid={true}>
-    //             <Row className='border-top justify-content-between p-3'>
-    //                 <Col className='p-0' md={3} sm={12} >
-    //                     Florencia Ramirez
-    //                 </Col>
-    //                 <Col className='p-0 d-flex justify-content-end'md={3}>
-    //                     This site was made by Florencia Ramirez
-    //                 </Col>
-    //             </Row>
-    //         </Container>
-    //     </footer>
   );
 };
+
+export default Footer;

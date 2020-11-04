@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "./SuppliesDonations.css"
 
-export const Supplies = () => {
+const Supplies = () => {
     return (
         <div>
             <Container fluid={true}>
@@ -153,3 +153,5 @@ export const Supplies = () => {
         </div >
     )
 }
+
+export default Supplies

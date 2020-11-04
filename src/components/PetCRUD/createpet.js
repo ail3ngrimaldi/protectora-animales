@@ -6,11 +6,12 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-export const CreatePet = () => {
+function CreatePet() {
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [pets, setPets] = React.useState([]);
 	const [animals, setAnimals] = React.useState({})
 	const history = useHistory();
+	console.log(pets)
 
 	const handleChange = (e) => {
 		setAnimals({
@@ -162,3 +163,5 @@ export const CreatePet = () => {
 		</div>
 	)
 }
+
+export default CreatePet;

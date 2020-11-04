@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 
 // NO SE
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
+const firebase = require('firebase/app')
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/storage'
@@ -47,20 +48,20 @@ export const db = firebase.firestore();
 const initialState = {};
 const store = createStore(rootReducer, initialState);
 const rrfProps = {
-   firebase,	
-   config: rrfConfig,
-   dispatch: store.dispatch,
-   createFirestoreInstance,
-};	
-	  ReactDOM.render(
-	  	<React.StrictMode>
-		  	<Provider store={store}>
-			  	<ReactReduxFirebaseProvider {...rrfProps}>
-				  	<BrowserRouter>
-				  		<App />
-				  	</BrowserRouter>
-			  	</ReactReduxFirebaseProvider>
-		  	</Provider>
-	  	</React.StrictMode>, 
-	  document.getElementById('root'));
-    serviceWorker.unregister();
+  firebase,
+  config: rrfConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance,
+};
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ReactReduxFirebaseProvider>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root'));
+serviceWorker.unregister();

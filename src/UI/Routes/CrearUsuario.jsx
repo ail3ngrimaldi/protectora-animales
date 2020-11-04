@@ -263,7 +263,7 @@ const CrearUsuario = () => {
     <div className="text-center">
       
       <h1>Crear un Usuario</h1>
-      <form id="formlogin" class="form-signin justify-content-center">
+      <form id="formlogin" className="form-signin justify-content-center">
         <div className="form-row">
         <div className="form-group col-md-6">
               <input
@@ -273,7 +273,7 @@ const CrearUsuario = () => {
                 onChange={updateField}
                 className="form-control"
                 placeholder="E-mail"
-                autofocus="autofocus"
+                autoFocus="autofocus"
               />
               
               </div>

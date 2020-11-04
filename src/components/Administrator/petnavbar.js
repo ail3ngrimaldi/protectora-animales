@@ -1,10 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import './petnavbar.css'
 import ButtonsAdmin from './ButtonsAdmin';
 import Container from 'react-bootstrap/Container';
 import NavBar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 
 
 const PetCrud = (props) => {

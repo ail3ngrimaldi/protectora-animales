@@ -1,10 +1,10 @@
 import React,{ useEffect } from "react";
-import { useFirebase, useFirestore } from "react-redux-firebase";
+import { useFirebase } from "react-redux-firebase";
 import { db } from '../../index'
 
 const ResetPassword = () => {
 	const firebase = useFirebase();
-	const firestore = useFirestore();
+	// const firestore = useFirestore();
 	const [pass, setPass] = React.useState({});
 	const [userList, setUserList] = React.useState([]);
 	var modal = false;
@@ -21,7 +21,7 @@ const ResetPassword = () => {
 
 		if(userList.some(user => user.email === pass.email)){
 			firebase.auth().sendPasswordResetEmail(pass.email)
-			.then(result => {
+			.then(() => {
 			alert('Te hemos enviado un correo electronico') //------------------------------------- BORRAR 
 			modal = false;
 		})

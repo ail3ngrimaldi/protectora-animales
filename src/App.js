@@ -1,21 +1,21 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { db, app } from './index'
+// import { db } from './index'
 import "./App.css"
 
 // COMPONENTES
 import AppNav from "./components/AppNav/AppNav";
 import PetCrud from "./components/Administrator/petnavbar";
-import { Home } from "./components/Home/Home";
-import { AboutUs } from "./components/AboutUs/AboutUs";
-import { Volunteering } from "./components/Volunteering/Volunteering";
-import { Gallery } from "./components/Gallery/Gallery";
-import { MoneyDonations } from "./components/Donations/MoneyDonations";
-import { Supplies } from "./components/Donations/SuppliesDonations";
+import Home from "./components/Home/Home";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Volunteering from "./components/Volunteering/Volunteering";
+// import Gallery from "./components/Gallery/Gallery";
+import MoneyDonations from "./components/Donations/MoneyDonations";
+import Supplies from "./components/Donations/SuppliesDonations";
 import Adoptions from "./components/Adoptions/Adoptions";
-import { Footer } from "./components/Footer/Footer";
-import { SuppliesBanner } from './components/Donations/SuppliesBanner'
-import { MoneyBanner } from './components/Donations/MoneyBanner'
+import Footer from "./components/Footer/Footer";
+import SuppliesBanner from './components/Donations/SuppliesBanner'
+import MoneyBanner from './components/Donations/MoneyBanner'
 import Petimage from './components/Gallery/Petimage'
 import UsuariosAdmin from './components/Administrator/Tablas/UsuariosAdmin';
 import MascotasAdmin from './components/Administrator/Tablas/AnimalAdmin';
@@ -25,7 +25,7 @@ import PetDetail from './components/Info/PetDetail'
 
 //CRUD
 
-import { CreatePet } from "./components/PetCRUD/createpet"
+import CreatePet from "./components/PetCRUD/createpet"
 import UpdatePet from "./components/PetCRUD/editpet"
 
 // RESTO DE COSAS
@@ -36,7 +36,7 @@ import ProjectDetails from "./components/projects/ProjectDetails";
 import CreateProject from "./components/projects/CreateProject";
 import Formulario from "./components/Adoptions/Formulario";
 import Info from "./components/Info/Info.js";
-import CardPet from "./components/Info/CardPet.js";
+// import CardPet from "./components/Info/CardPet.js";
 
 //prueba backend
 import PrivateRoute from "./UI/Components/PrivateRoute";
@@ -56,12 +56,12 @@ import EditProfile from './components/Users/EditProfile'
 import ResetPassword from './UI/Routes/ResetPassword.jsx'
 // import ModalDetalleMascota from "./components/Info/ModalDetalleMascota";
 
-import Contactus from './components/sendemail'
-import ContactUs from "./components/sendemail";
+// import Contactus from './components/sendemail'
+// import ContactUs from "./components/sendemail";
 
 function App() {
-  const [albums, setAlbums] = useState([]);
-  const [booleano, setBooleano] = useState(false);
+  // const [albums, setAlbums] = useState([]);
+  const [booleano, setBooleano] = useState();
 
   const handleclick = () => {
     if (!booleano) {
@@ -72,15 +72,15 @@ function App() {
   }
 
   useEffect(() => {
-    const unmount = db.collection("pet").onSnapshot((snapshot) => {
-      const tempAlbums = [];
-      snapshot.forEach((doc) => {
-        tempAlbums.push({ ...doc.data(), id: doc.name });
-      });
-      setAlbums(tempAlbums);
-    });
-    setBooleano(true)
-    return unmount;
+    // const unmount = db.collection("pet").onSnapshot((snapshot) => {
+    //   const tempAlbums = [];
+    //   snapshot.forEach((doc) => {
+    //     tempAlbums.push({ ...doc.data(), id: doc.name });
+    //   });
+    //   setAlbums(tempAlbums);
+    // });
+    setBooleano(false)
+    // return unmount;
   }, []);
 
 
