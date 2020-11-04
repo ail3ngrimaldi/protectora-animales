@@ -3,7 +3,8 @@ import { useFirestore } from "react-redux-firebase";
 import { useHistory } from "react-router-dom";
 // import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
+const firebase = require('firebase/app')
 // import { db } from '../../index'
 // import { FormatAlignJustify } from "@material-ui/icons";
 

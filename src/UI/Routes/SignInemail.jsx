@@ -14,7 +14,7 @@ const SignInmail = () => {
   
   const history = useHistory();
   const [usuario, setUsuario] = React.useState(initialState);
-  const [error, setError] = React.useState(true)
+  // const [error, setError] = React.useState(true)
   const [errorMail, setErrorMail] = React.useState('')
   const [errorPassword, setErrorPassword] = React.useState('')
   const [requireFields, setRequireFields] = React.useState('')
@@ -68,9 +68,8 @@ const SignInmail = () => {
     }
     
     if(countError === 0 && emptyFields === 0){
-      setError(false)
+      setRequireFields('Es obligatorio completar todos los campos')
     }
-    console.log('ERROR')
   }
 
   const signInWithmail = async () => {
@@ -79,16 +78,14 @@ const SignInmail = () => {
       .then(() => {
         history.push("/");
       })
-      .catch(function(error) {
-          console.log(error);
+      .catch(function(err) {
+          console.log(err);
           setErrorLogin('El email o contraseña ingresada no se hallan registrados')
         });
 
     } catch (err) {
-      console.error('Error ' + err)
+       await loadData()
     }
-    
-    console.log('LOGUEADO')
   };
 
 
@@ -151,7 +148,7 @@ const SignInmail = () => {
               
         </form>
           <div className="form-signin ">
-            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={async ()=> await error ? await loadData() : await signInWithmail()} value='Ingresa con tu cuenta'/>  
+            <input type="submit" className="btn btn-lg btn-dark btn-block" onClick={async ()=> await signInWithmail() } value='Ingresa con tu cuenta'/>  
           </div> 
 
           <div className="form-group">       

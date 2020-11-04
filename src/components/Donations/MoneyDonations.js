@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import "./MoneyDonations.css"
 
-export const MoneyDonations = () => {
+const MoneyDonations = () => {
     return (
         <div>
 
@@ -128,3 +128,5 @@ export const MoneyDonations = () => {
         </div>
     )
 }
+
+export default MoneyDonations;

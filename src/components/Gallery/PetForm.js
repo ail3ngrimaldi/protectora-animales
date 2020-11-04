@@ -42,7 +42,6 @@ const PetForm = (props) => {
     } else {
       getLinkById(props.currentId);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentId]);
 
   return (

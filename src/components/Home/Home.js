@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./Home.css";
 
-export const Home = (props) => {
+const Home = (props) => {
   const [values, setValues] = useState(false);
 
   useEffect(() => {
@@ -63,3 +63,5 @@ export const Home = (props) => {
     </div>
   );
 };
+
+export default Home;
