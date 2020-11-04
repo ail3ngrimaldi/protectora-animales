@@ -28,8 +28,9 @@ const AppNav = (props) => {
       <NavBar.Collapse id='navbar-toggle'>
         <Nav className='ml-auto'>
             <Link className='nav-link' to='/AboutUs'>Historia</Link>
-            {/* <Link className='nav-link' to='/Volunteering'>Voluntariado</Link> */}
+            <Link className='nav-link' to='/Volunteering'>Voluntariado</Link>
             <Link className='nav-link' to='/Gallery'>Mascotas</Link>
+            <Link className='nav-link' to='/Gallery'>Tienda</Link>
             <Link className='nav-link' to='MoneyBanner'>Donaciones</Link>
             {profile.isAdmin === true && 
             <Link className='nav-link' to='/Admin'>Administrador</Link>}
