@@ -24,7 +24,7 @@ import * as serviceWorker from "./serviceWorker";
 // Index CSS
 import './index.css';
 
-  const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyAt59iskNq8lNrlngI_waNKdgi8t2cKgDU",
   authDomain: "protectoraanimales-9c9db.firebaseapp.com",
   databaseURL: "https://protectoraanimales-9c9db.firebaseio.com",
