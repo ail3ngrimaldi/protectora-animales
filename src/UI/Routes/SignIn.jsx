@@ -18,10 +18,10 @@ const SignIn = () => {
 
   const history = useHistory();
   return (
-    <div class="form-signin">
+    <div className="form-signin">
 
       <button
-      class="btn btn-lg btn-danger btn-block"
+      className="btn btn-lg btn-danger btn-block"
         onClick={(event) => {
           event.preventDefault();
           signInWithGoogle();
