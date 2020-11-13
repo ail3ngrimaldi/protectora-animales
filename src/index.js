@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 // NO SE
 // import firebase from 'firebase/app';
-const firebase = require('firebase/app')
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/storage'
@@ -35,7 +34,7 @@ const firebaseConfig = {
   appId: "1:1086332164987:web:b2d086178b65c85b793bde"
 };
 
-
+const firebase = require('firebase/app')
 
 const rrfConfig = {
   userProfile: 'users',
